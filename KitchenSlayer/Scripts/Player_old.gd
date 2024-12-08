@@ -1,20 +1,21 @@
 extends CharacterBody2D
 
+var bullet = preload("res://Scene/Object/TomatoBullet.tscn")
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
-# Constants
-const SPEED = 200          # Speed for horizontal movement
-const JUMP_FORCE = -250    # Jump force (negative because Y-axis goes down)
+@onready var bullet_root = $Sprite2D/BulletRoot
+
+const SPEED = 100          # Speed for horizontal movement
+const JUMP_FORCE = -280    # Jump force (negative because Y-axis goes down)
 const GRAVITY = 900        # Gravity applied when the player is in the air
 
-# Variable to handle vertical velocity
-var vertical_velocity = 0.0  # Vertical speed (gravity, jumping, falling)
+var vertical_velocity = 0.0
 var attackAction = false
 var delayAction = false
+var face_dir : String
 var delayAttackTimer: Timer
 
-# Reference to UI labels
 var health_label: Label
 var points_label: Label
 var winLose_panel: Panel
@@ -27,6 +28,8 @@ func _ready():
 	winLose_panel = get_node("../CanvasLayer/UI/WinLosePanel")
 	winLose_label = get_node("../CanvasLayer/UI/WinLosePanel/WinLoseLabel")
 	delayAttackTimer = get_node("DelayAttackTimer")
+	
+	face_dir = "right"
 
 func _process(delta):
 	if (Global.stopGame == true && Global.health > 0):
@@ -46,12 +49,20 @@ func handle_movement(delta):
 	
 	# Left and Right Movement
 	if Input.is_action_pressed("ui_right"):
+		face_dir = "right"
 		direction.x += 1
 	if Input.is_action_pressed("ui_left"):
+		face_dir = "left"
 		direction.x -= 1
 
-	if Input.is_action_just_pressed("ui_attack"):
-		attackAction = true
+	if Input.is_action_just_pressed("shoot"):
+		#attackAction = true
+		var ins = bullet.instantiate()
+		if face_dir == "right":
+			ins.dir = 1
+		elif face_dir == "left":
+			ins.dir = -1
+		add_child(ins)
 	
 	# Set the horizontal movement velocity
 	velocity.x = direction.x * SPEED
@@ -62,9 +73,10 @@ func handle_movement(delta):
 	if attackAction == false && delayAction == false:
 		update_animations(direction.x)
 	elif attackAction == true && delayAction == false:
-		ap.play("attack")
-		delayAction = true
-		delayAttackTimer.start()
+		#ap.play("attack")
+		#delayAction = true
+		#delayAttackTimer.start()
+		pass
 
 func switch_direction(horizontal_direction):
 	sprite.flip_h = (horizontal_direction == -1)

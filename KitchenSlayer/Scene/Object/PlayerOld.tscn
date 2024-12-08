@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp43hk6qcsmqj"]
+
+[ext_resource type="Script" path="res://Scripts/Player_old.gd" id="1_phlbn"]
+[ext_resource type="Texture2D" uid="uid://dvrlml4uectv0" path="res://Sprite/Player/player_right_idle.png" id="2_wesx2"]
+[ext_resource type="Texture2D" uid="uid://bmfatck085r7n" path="res://Sprite/Player/player_right_move.png" id="3_6iku0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur3mg"]
+radius = 3.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0ayi"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_ogu1n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wesx2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j3mgq"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wesx2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_k60ys"]
+resource_name = "run"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_6iku0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7qet"]
+_data = {
+"RESET": SubResource("Animation_ogu1n"),
+"idle": SubResource("Animation_j3mgq"),
+"run": SubResource("Animation_k60ys")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 2
+collision_layer = 2
+collision_mask = 29
+script = ExtResource("1_phlbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wesx2")
+hframes = 2
+
+[node name="AttackArea" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackArea"]
+position = Vector2(5, 3)
+rotation = 1.5708
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_ur3mg")
+disabled = true
+
+[node name="BulletRoot" type="Node2D" parent="Sprite2D"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CapsuleShape2D_x0ayi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_right = 3250
+editor_draw_limits = true
+
+[node name="DelayAttackTimer" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k7qet")
+}
+autoplay = "idle"
+
+[connection signal="timeout" from="DelayAttackTimer" to="." method="_on_delay_attack_timer_timeout"]
