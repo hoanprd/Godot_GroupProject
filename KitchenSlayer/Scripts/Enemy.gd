@@ -7,9 +7,12 @@ extends CharacterBody2D
 @export var rangeLeft : float
 @export var rangeRight : float
 
+#@onready var hp_ui = $HPBar
+
 var timer: Timer
 var hurtTimer: Timer
 var sprite: Sprite2D
+var hp_ui : ProgressBar
 
 var _id
 var _hp
@@ -24,6 +27,7 @@ func _ready():
 	hurtTimer = get_node("HurtTimer")
 	timer = get_node("Timer")
 	sprite = get_node("Sprite2D")
+	hp_ui = get_node("HPBar")
 	
 	# Store the initial position of the goblin
 	start_position = position
@@ -106,5 +110,6 @@ func get_hit(value):
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet"):
 		_hp -= 1
+		hp_ui.value = _hp
 		if _hp <= 0:
 			queue_free()

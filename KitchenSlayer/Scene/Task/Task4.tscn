@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blxl80jm2v1xm" path="res://Scene/Object/UI.tscn" id="4_72mwl"]
 [ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="5_36ind"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="6_dmx8l"]
-[ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyA.tscn" id="7_ln3o1"]
+[ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyAold.tscn" id="7_ln3o1"]
 [ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyB.tscn" id="8_j3hr7"]
 [ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyC.tscn" id="9_nbocc"]
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="10_ixtja"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blxl80jm2v1xm" path="res://Scene/Object/UI.tscn" id="4_do81l"]
 [ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="5_52glx"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="6_02cyw"]
-[ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyA.tscn" id="7_c16rl"]
+[ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyAold.tscn" id="7_c16rl"]
 [ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyB.tscn" id="8_1vgo6"]
 [ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyC.tscn" id="9_w2m1x"]
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="10_fgkq6"]
@@ -532,43 +532,36 @@ position = Vector2(2536, 522)
 [node name="Enemy" type="Node" parent="Danger"]
 
 [node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(314, 499)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA2" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(496, 535)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA3" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(713, 486)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA4" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(1050, 550)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA5" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(1982, 577)
 rangeLeft = -5.0
 rangeRight = 5.0
 
 [node name="EnemyA6" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(2556, 563)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA7" parent="Danger/Enemy" instance=ExtResource("7_c16rl")]
-z_index = 2
 position = Vector2(2863, 514)
 rangeLeft = -10.0
 rangeRight = 10.0
