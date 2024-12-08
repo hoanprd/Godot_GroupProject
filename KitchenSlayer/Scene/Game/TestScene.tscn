@@ -529,43 +529,36 @@ position = Vector2(2536, 522)
 [node name="Enemy" type="Node" parent="Danger"]
 
 [node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(314, 499)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA2" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(496, 535)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA3" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(713, 486)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA4" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(1050, 550)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA5" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(1982, 577)
 rangeLeft = -5.0
 rangeRight = 5.0
 
 [node name="EnemyA6" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(2556, 563)
 rangeLeft = -10.0
 rangeRight = 10.0
 
 [node name="EnemyA7" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
-z_index = 2
 position = Vector2(2863, 514)
 rangeLeft = -10.0
 rangeRight = 10.0

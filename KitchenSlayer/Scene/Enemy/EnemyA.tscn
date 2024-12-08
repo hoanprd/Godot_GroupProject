@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1eahrpwhxlfx"]
+[gd_scene load_steps=7 format=3 uid="uid://1eahrpwhxlfx"]
 
 [ext_resource type="Texture2D" uid="uid://oocsnon0lu0l" path="res://Sprite/Danger/Enemy/Enemy1_Default.png" id="1_70ma8"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ddy3i"]
@@ -6,9 +6,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqn8b"]
 radius = 11.0
 height = 28.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4c4w"]
-height = 24.0
 
 [sub_resource type="Animation" id="Animation_4vdvi"]
 resource_name = "Enemy1_idle"
@@ -48,9 +45,11 @@ _data = {
 }
 
 [node name="EnemyA" type="CharacterBody2D" groups=["enemy"]]
+z_index = 2
 collision_layer = 4
-collision_mask = 2
+collision_mask = 34
 script = ExtResource("1_ddy3i")
+hp = 2
 damageDeal = 10
 enemySpeed = 20.0
 rangeLeft = -20.0
@@ -60,15 +59,12 @@ rangeRight = 20.0
 texture = ExtResource("1_70ma8")
 hframes = 2
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 34
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["enemy"]]
 shape = SubResource("CapsuleShape2D_gqn8b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_c4c4w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -81,6 +77,7 @@ autoplay = "Enemy1_idle"
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

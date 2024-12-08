@@ -4,11 +4,11 @@ var bullet = preload("res://Scene/Object/TomatoBullet.tscn")
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
-@onready var bullet_root = $Sprite2D/BulletRoot
+@onready var bullet_root = $BulletRoot
 
-const SPEED = 100          # Speed for horizontal movement
-const JUMP_FORCE = -280    # Jump force (negative because Y-axis goes down)
-const GRAVITY = 900        # Gravity applied when the player is in the air
+const SPEED = 100
+const JUMP_FORCE = -280
+const GRAVITY = 900
 
 var vertical_velocity = 0.0
 var attackAction = false
@@ -16,14 +16,11 @@ var delayAction = false
 var face_dir : String
 var delayAttackTimer: Timer
 
-var health_label: Label
 var points_label: Label
 var winLose_panel: Panel
 var winLose_label: Label
 
 func _ready():
-	# Get the UI labels from the scene
-	health_label = get_node("../CanvasLayer/UI/HealthLabel")
 	points_label = get_node("../CanvasLayer/UI/PointsLabel")
 	winLose_panel = get_node("../CanvasLayer/UI/WinLosePanel")
 	winLose_label = get_node("../CanvasLayer/UI/WinLosePanel/WinLoseLabel")
@@ -62,7 +59,8 @@ func handle_movement(delta):
 			ins.dir = 1
 		elif face_dir == "left":
 			ins.dir = -1
-		add_child(ins)
+		get_parent().add_child(ins)
+		ins.global_position = $BulletRoot.global_position
 	
 	# Set the horizontal movement velocity
 	velocity.x = direction.x * SPEED
@@ -91,7 +89,6 @@ func update_animations(horizontal_direction):
 	else:
 		pass
 
-# Function to handle jumping, gravity, and falling
 func handle_gravity_and_jump(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_accept"):
@@ -101,12 +98,9 @@ func handle_gravity_and_jump(delta):
 	else:
 		vertical_velocity += GRAVITY * delta
 
-	# Update the vertical component of the velocity
 	velocity.y = vertical_velocity
 
-	# Move the player using the velocity vector
-	move_and_slide()  # Call this without parameters
-
+	move_and_slide()
 
 func _on_delay_attack_timer_timeout() -> void:
 	attackAction = false

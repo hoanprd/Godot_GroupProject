@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var id : int
+@export var hp : int
 @export var damageDeal : int
 @export var enemySpeed : float
 @export var rangeLeft : float
@@ -11,6 +12,7 @@ var hurtTimer: Timer
 var sprite: Sprite2D
 
 var _id
+var _hp
 var _speed
 var move_direction : Vector2
 var left_limit
@@ -27,6 +29,7 @@ func _ready():
 	start_position = position
 	
 	_id = id
+	_hp = hp
 	_damageDeal = damageDeal
 	_speed = enemySpeed
 	left_limit = rangeLeft
@@ -94,3 +97,14 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_hurt_timer_timeout() -> void:
 	Global.getHurt = false
+
+func get_hit(value):
+	hp -= value
+	print(hp)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bullet"):
+		_hp -= 1
+		if _hp <= 0:
+			queue_free()
