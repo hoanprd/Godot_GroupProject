@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="6_vcpxk"]
 [ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyAold.tscn" id="7_ayp5f"]
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="8_eq42v"]
-[ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyB.tscn" id="8_rh3gn"]
-[ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyC.tscn" id="9_hxq0f"]
+[ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyBold.tscn" id="8_rh3gn"]
+[ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyCOld.tscn" id="9_hxq0f"]
 [ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="9_rwvu2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc6vo"]

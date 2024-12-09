@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="5_36ind"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="6_dmx8l"]
 [ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyAold.tscn" id="7_ln3o1"]
-[ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyB.tscn" id="8_j3hr7"]
-[ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyC.tscn" id="9_nbocc"]
+[ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyBold.tscn" id="8_j3hr7"]
+[ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyCOld.tscn" id="9_nbocc"]
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="10_ixtja"]
 [ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="11_1un3a"]
 

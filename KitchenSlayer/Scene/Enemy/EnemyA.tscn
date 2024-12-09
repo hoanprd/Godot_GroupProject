@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qxb2ta8cornj"]
+[gd_scene load_steps=10 format=3 uid="uid://qxb2ta8cornj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ddy3i"]
 [ext_resource type="Texture2D" uid="uid://61lg7fa2wxjw" path="res://Sprite/Danger/Enemy/monster_A.png" id="2_u6u0h"]
@@ -9,6 +9,9 @@ bg_color = Color(0.977327, 0, 0.193679, 1)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqn8b"]
 radius = 11.0
 height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dd07j"]
+size = Vector2(112, 20)
 
 [sub_resource type="Animation" id="Animation_4vdvi"]
 resource_name = "Enemy1_idle"
@@ -60,6 +63,7 @@ damageDeal = 1
 enemySpeed = 20.0
 rangeLeft = -20.0
 rangeRight = 20.0
+chase_limit = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u6u0h")
@@ -75,12 +79,20 @@ max_value = 4.0
 value = 4.0
 show_percentage = false
 
-[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 4
 collision_mask = 34
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
 shape = SubResource("CapsuleShape2D_gqn8b")
+
+[node name="ChaseArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
+z_index = 2
+shape = SubResource("RectangleShape2D_dd07j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -96,8 +108,10 @@ wait_time = 0.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3q0yf")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="ChaseArea" to="." method="_on_chase_area_body_entered"]
+[connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]

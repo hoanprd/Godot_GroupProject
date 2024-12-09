@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cr5grlqb32mbk"]
+[gd_scene load_steps=17 format=4 uid="uid://cr5grlqb32mbk"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="2_a385h"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="3_41gr0"]
@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="5_3cabp"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="6_te6qt"]
 [ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="7_cnqte"]
-[ext_resource type="PackedScene" uid="uid://1eahrpwhxlfx" path="res://Scene/Enemy/EnemyAold.tscn" id="7_qhsb1"]
-[ext_resource type="PackedScene" uid="uid://8rio7ljd35um" path="res://Scene/Enemy/EnemyB.tscn" id="8_ub3ls"]
-[ext_resource type="PackedScene" uid="uid://bkfey185fr62p" path="res://Scene/Enemy/EnemyC.tscn" id="9_yv8al"]
+[ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="8_ub3ls"]
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="10_xfkji"]
 [ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="11_0k66j"]
 [ext_resource type="PackedScene" uid="uid://dp43hk6qcsmqj" path="res://Scene/Object/PlayerOld.tscn" id="11_11otd"]
@@ -529,64 +527,13 @@ position = Vector2(2536, 522)
 
 [node name="Enemy" type="Node" parent="Danger"]
 
-[node name="EnemyA8" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
+[node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("7_cnqte")]
 position = Vector2(327, 503)
 rangeLeft = -10.0
 rangeRight = 10.0
 
-[node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(880, 563)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyA2" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(496, 535)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyA3" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(713, 486)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyA4" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(1050, 550)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyA5" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(1982, 577)
-rangeLeft = -5.0
-rangeRight = 5.0
-
-[node name="EnemyA6" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(2556, 563)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyA7" parent="Danger/Enemy" instance=ExtResource("7_qhsb1")]
-position = Vector2(2863, 514)
-rangeLeft = -10.0
-rangeRight = 10.0
-
 [node name="EnemyB" parent="Danger/Enemy" instance=ExtResource("8_ub3ls")]
-position = Vector2(1168, 480)
-
-[node name="EnemyB2" parent="Danger/Enemy" instance=ExtResource("8_ub3ls")]
-position = Vector2(1473, 507)
-
-[node name="EnemyB3" parent="Danger/Enemy" instance=ExtResource("8_ub3ls")]
-position = Vector2(2033, 499)
-
-[node name="EnemyC" parent="Danger/Enemy" instance=ExtResource("9_yv8al")]
-position = Vector2(2446, 518)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyC2" parent="Danger/Enemy" instance=ExtResource("9_yv8al")]
-position = Vector2(2736, 566)
-rangeLeft = -10.0
-rangeRight = 10.0
+position = Vector2(527, 494)
 
 [node name="Static" type="Node" parent="Danger"]
 
