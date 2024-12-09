@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cr5grlqb32mbk"]
+[gd_scene load_steps=18 format=4 uid="uid://cr5grlqb32mbk"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="2_a385h"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="3_41gr0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="5_3cabp"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="6_te6qt"]
 [ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="7_cnqte"]
+[ext_resource type="PackedScene" uid="uid://cvy4f1s33eyv" path="res://Scene/Enemy/EnemyD.tscn" id="8_0bwtj"]
 [ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="8_ub3ls"]
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="10_xfkji"]
 [ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="11_0k66j"]
@@ -534,6 +535,11 @@ rangeRight = 10.0
 
 [node name="EnemyB" parent="Danger/Enemy" instance=ExtResource("8_ub3ls")]
 position = Vector2(527, 494)
+
+[node name="EnemyD" parent="Danger/Enemy" instance=ExtResource("8_0bwtj")]
+position = Vector2(717, 487)
+rangeLeft = -20.0
+rangeRight = 20.0
 
 [node name="Static" type="Node" parent="Danger"]
 

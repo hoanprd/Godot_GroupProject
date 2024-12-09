@@ -12,9 +12,10 @@ extends CharacterBody2D
 
 #@onready var hp_ui = $HPBar
 
-var timer: Timer
-var hurtTimer: Timer
-var sprite: Sprite2D
+var timer : Timer
+var hurtTimer : Timer
+var move_random_timer : Timer
+var sprite : Sprite2D
 var hp_ui : ProgressBar
 
 var _id
@@ -30,10 +31,15 @@ var _damageDeal
 var start_position: Vector2
 var player
 var go_back = false
+var move_rng = RandomNumberGenerator.new()
+var move_number : int
+var random_move_is_on = false
+var reset_move_rng = false
 
 func _ready():
 	hurtTimer = get_node("HurtTimer")
 	timer = get_node("Timer")
+	move_random_timer = get_node("MoveRandomTimer")
 	sprite = get_node("Sprite2D")
 	hp_ui = get_node("HPBar")
 	
@@ -53,22 +59,22 @@ func _ready():
 		move_direction = Vector2(1, 0)
 	elif _id == 1:
 		move_direction = Vector2(0, 1)
+	elif _id == 3:
+		move_direction = Vector2(1, 0)
 
 func _process(delta):
 	velocity = Vector2.ZERO
 	if player:
-		#velocity = position.direction_to(player.position) * _speed
-		print(abs(self.position.x))
-		print(abs(start_position.x) + chase_limit)
 		if (self.position.x <= start_position.x + chase_limit and self.position.x >= start_position.x - chase_limit) and go_back == false:
-			velocity = position.direction_to(player.position) * _speed
+			#velocity.x = position.direction_to(player.position).x * _speed
+			chase_logic(_id)
 		else:
 			go_back = true
 			if roundf(self.position.x) != start_position.x and go_back == true:
 				velocity = position.direction_to(Vector2(start_position.x, start_position.y)) * _speed
-				move_and_slide()
-				if start_position.x == roundf(self.position.x):
+				if start_position.x == roundf(self.position.x) or start_position.x == roundf(self.position.x) + 1 or start_position.x == roundf(self.position.x) - 1:
 					go_back = false
+					position = start_position
 			else:
 				move_enemy(delta)
 		move_and_slide()
@@ -81,10 +87,20 @@ func _process(delta):
 		else:
 			move_enemy(delta)
 
+func chase_logic(index):
+	if index == 0:
+		velocity.x = position.direction_to(player.position).x * _speed
+	elif index == 1:
+		velocity = position.direction_to(player.position) * _speed
+	elif index == 2:
+		pass
+	elif index == 3:
+		velocity.x = position.direction_to(player.position).x * _speed
+
 func move_enemy(delta):
 	if _id == 0:
 		position += move_direction * _speed * delta
-	
+		
 		if position.x <= start_position.x + left_limit:
 			move_direction.x = 1
 			#flip_sprite()
@@ -93,13 +109,22 @@ func move_enemy(delta):
 			#flip_sprite()
 	elif _id == 1:
 		position += move_direction * _speed * delta
-	
+		
 		if position.y <= start_position.y + _range_top:
 			move_direction.y = 1
 			flip_sprite()
 		elif position.y >= start_position.y + _range_down:
 			move_direction.y = -1
 			flip_sprite()
+	elif _id == 3:
+		position += move_direction * _speed * delta
+		
+		if position.x <= start_position.x + left_limit:
+			move_direction.x = 1
+			#flip_sprite()
+		elif position.x >= start_position.x + right_limit:
+			move_direction.x = -1
+			#flip_sprite()
 
 func flip_sprite():
 	if _id == 0:

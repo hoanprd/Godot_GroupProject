@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://qxb2ta8cornj"]
+[gd_scene load_steps=10 format=3 uid="uid://cvy4f1s33eyv"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ddy3i"]
-[ext_resource type="Texture2D" uid="uid://61lg7fa2wxjw" path="res://Sprite/Danger/Enemy/monster_A.png" id="2_u6u0h"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_c3rwm"]
+[ext_resource type="Texture2D" uid="uid://bnix1jsad5i7w" path="res://Sprite/Danger/Enemy/monster_D.png" id="2_87uqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv8vt"]
 bg_color = Color(0.977327, 0, 0.193679, 1)
@@ -12,22 +12,6 @@ height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_306k8"]
 radius = 48.0104
-
-[sub_resource type="Animation" id="Animation_4vdvi"]
-resource_name = "Enemy1_idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
 
 [sub_resource type="Animation" id="Animation_53iay"]
 length = 0.001
@@ -44,30 +28,48 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_4vdvi"]
+resource_name = "EnemyD_idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qcgqr"]
 _data = {
-"Enemy1_idle": SubResource("Animation_4vdvi"),
+"EnemyD_idle": SubResource("Animation_4vdvi"),
 "RESET": SubResource("Animation_53iay")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3q0yf"]
 height = 20.0
 
-[node name="EnemyA" type="CharacterBody2D" groups=["enemy"]]
+[node name="EnemyD" type="CharacterBody2D" groups=["enemy"]]
 z_index = 2
 collision_layer = 4
 collision_mask = 34
-script = ExtResource("1_ddy3i")
-hp = 4
+script = ExtResource("1_c3rwm")
+id = 3
+hp = 20
 damageDeal = 1
-enemySpeed = 20.0
+enemySpeed = 10.0
 rangeLeft = -20.0
 rangeRight = 20.0
 chase_limit = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_u6u0h")
-hframes = 4
+texture = ExtResource("2_87uqy")
+hframes = 2
 
 [node name="HPBar" type="ProgressBar" parent="."]
 offset_left = -16.0
@@ -75,8 +77,8 @@ offset_top = 12.0
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_yv8vt")
-max_value = 4.0
-value = 4.0
+max_value = 20.0
+value = 20.0
 show_percentage = false
 
 [node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
@@ -98,7 +100,7 @@ shape = SubResource("CircleShape2D_306k8")
 libraries = {
 "": SubResource("AnimationLibrary_qcgqr")
 }
-autoplay = "Enemy1_idle"
+autoplay = "EnemyD_idle"
 
 [node name="Timer" type="Timer" parent="."]
 
