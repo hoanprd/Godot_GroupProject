@@ -4,7 +4,7 @@ extends Control
 @onready var pointsLabel = $PointsLabel
 
 var hurtPanel: Panel
-var exitGameTimer: Timer
+var delay_hurt_get_shot : Timer
 var gameOver: bool
 var health_label: Label
 var points_label: Label
@@ -18,13 +18,16 @@ func _ready() -> void:
 	winLose_label = get_node("WinLosePanel/WinLoseLabel")
 	winLose_panel.visible = false
 	hurtPanel = get_node("HurtPanel")
-	exitGameTimer = get_node("ExitGameTimer")
+	delay_hurt_get_shot = get_node("DelayHurtGetShot")
 	gameOver = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Global.getHurt:
+		if Global.get_shot:
+			Global.get_shot = false
+			delay_hurt_get_shot.start()
 		hurtPanel.visible = true
 	else:
 		hurtPanel.visible = false
@@ -37,7 +40,7 @@ func _process(delta: float) -> void:
 		if (!gameOver):
 			gameOver = true
 			winLose_panel.visible = true
-			exitGameTimer.start()
+			#exitGameTimer.start()
 	
 	updateUI()
 	HealthUpdate()
@@ -51,5 +54,5 @@ func updateUI():
 	pointsLabel.text = str(Global.points)
 
 
-func _on_exit_game_timer_timeout() -> void:
-	get_tree().quit()
+func _on_delay_hurt_get_shot_timeout() -> void:
+	Global.getHurt = false

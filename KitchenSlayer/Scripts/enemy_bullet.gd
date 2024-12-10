@@ -10,8 +10,8 @@ func _physics_process(delta: float) -> void:
 
 func target_position_chase(body: Vector2):
 	velocity = position.direction_to(Vector2(body.x, body.y)) * SPEED
-	if self.position.x == body.x or self.position.x == body.x + 1:
-		pass
+	if roundf(self.position.x) == roundf(body.x) or roundf(self.position.x) == roundf(body.x) + 1 or roundf(self.position.x) == roundf(body.x) - 1:
+		queue_free()
 	move_and_slide()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

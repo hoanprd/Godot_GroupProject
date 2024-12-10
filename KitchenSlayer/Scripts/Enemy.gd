@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var range_down : float
 @export var chase_limit : float
 
+@onready var enemy_ap : AnimationPlayer
 #@onready var hp_ui = $HPBar
 var can_shoot = false
 var enemy_bullet = preload("res://Scene/Object/EnemyBullet.tscn")
@@ -17,6 +18,8 @@ var enemy_bullet = preload("res://Scene/Object/EnemyBullet.tscn")
 var timer : Timer
 var hurtTimer : Timer
 var delay_attack_timer : Timer
+var teleport_cast_timer : Timer
+var teleport_cooldown_timer : Timer
 var sprite : Sprite2D
 var hp_ui : ProgressBar
 
@@ -36,12 +39,16 @@ var go_back = false
 var move_rng = RandomNumberGenerator.new()
 var move_number : int
 var random_move_is_on = false
-var reset_move_rng = false
+var skill_cooldown = false
+var teleport = false
 
 func _ready():
+	enemy_ap = get_node("AnimationPlayer")
 	hurtTimer = get_node("HurtTimer")
 	timer = get_node("Timer")
 	delay_attack_timer = get_node("DelayAttackTimer")
+	teleport_cast_timer = get_node("TeleportCastTimer")
+	teleport_cooldown_timer = get_node("TeleportCoolDownTimer")
 	sprite = get_node("Sprite2D")
 	hp_ui = get_node("HPBar")
 	
@@ -110,6 +117,17 @@ func action_logic(index):
 			delay_attack_timer.start()
 	elif index == 3:
 		velocity.x = position.direction_to(player.position).x * _speed
+	elif index == 4:
+		if skill_cooldown == true:
+			enemy_ap.play("EnemyE_idle")
+			velocity.x = position.direction_to(player.position).x * _speed
+			if start_position.x == roundf(self.position.x) or start_position.x == roundf(self.position.x) + 1 or start_position.x == roundf(self.position.x) - 1:
+				skill_cooldown = false
+		elif skill_cooldown == false and teleport == false:
+			teleport = true
+			enemy_ap.play("EnemyE_attack")
+			teleport_cast_timer.start()
+			teleport_cooldown_timer.start()
 
 func move_enemy(delta):
 	if _id == 0:
@@ -148,6 +166,8 @@ func move_enemy(delta):
 		elif position.x >= start_position.x + right_limit:
 			move_direction.x = -1
 			#flip_sprite()
+	elif _id == 4:
+		pass
 
 func flip_sprite():
 	if _id == 0:
@@ -212,3 +232,19 @@ func _on_chase_area_body_exited(body: Node2D) -> void:
 
 func _on_delay_attack_timer_timeout() -> void:
 	can_shoot = true
+
+
+func _on_teleport_cast_timer_timeout() -> void:
+	if player:
+		if self.position.x - player.position.x >= 0:
+			self.position.x = self.position.x - left_limit
+		else:
+			self.position.x = self.position.x + right_limit
+		skill_cooldown = true
+	else:
+		skill_cooldown = true
+
+
+func _on_teleport_cool_down_timer_timeout() -> void:
+	skill_cooldown = false
+	teleport = false

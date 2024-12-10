@@ -110,3 +110,5 @@ func _on_delay_attack_timer_timeout() -> void:
 func _on_player_damage_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemyBullet"):
 		Global.health -= 1
+		Global.get_shot = true
+		Global.getHurt = true

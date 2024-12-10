@@ -8,3 +8,4 @@ var getHealth
 var loseKill = false
 var loseArea = false
 var win = false
+var get_shot = false

@@ -134,6 +134,9 @@ autoplay = "EnemyB_idle"
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="DelayAttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_3q0yf")

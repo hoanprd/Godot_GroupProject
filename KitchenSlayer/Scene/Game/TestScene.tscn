@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cr5grlqb32mbk"]
+[gd_scene load_steps=20 format=4 uid="uid://cr5grlqb32mbk"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="2_a385h"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="3_41gr0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="10_xfkji"]
 [ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="11_0k66j"]
 [ext_resource type="PackedScene" uid="uid://dp43hk6qcsmqj" path="res://Scene/Object/PlayerOld.tscn" id="11_11otd"]
+[ext_resource type="PackedScene" uid="uid://c2p3ylsbm155x" path="res://Scene/Enemy/EnemyE.tscn" id="13_c44fm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc6vo"]
 texture = ExtResource("2_a385h")
@@ -543,10 +544,10 @@ position = Vector2(717, 487)
 [node name="EnemyC" parent="Danger/Enemy" instance=ExtResource("9_uduv3")]
 position = Vector2(418, 450)
 
-[node name="Static" type="Node" parent="Danger"]
+[node name="EnemyE" parent="Danger/Enemy" instance=ExtResource("13_c44fm")]
+position = Vector2(197, 520)
 
-[node name="Spike" parent="Danger/Static" instance=ExtResource("10_xfkji")]
-position = Vector2(167, 520)
+[node name="Static" type="Node" parent="Danger"]
 
 [node name="Spike2" parent="Danger/Static" instance=ExtResource("10_xfkji")]
 position = Vector2(599, 488)
