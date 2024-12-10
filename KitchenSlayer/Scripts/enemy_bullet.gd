@@ -2,14 +2,16 @@ extends CharacterBody2D
 
 const SPEED = 150
 
-var body_target : Node2D
+var body_target : Vector2
 var spawnPos : Vector2
 
 func _physics_process(delta: float) -> void:
 	target_position_chase(body_target)
 
-func target_position_chase(body: Node2D):
-	velocity = position.direction_to(Vector2(body.position.x, body.position.y)) * SPEED
+func target_position_chase(body: Vector2):
+	velocity = position.direction_to(Vector2(body.x, body.y)) * SPEED
+	if self.position.x == body.x or self.position.x == body.x + 1:
+		pass
 	move_and_slide()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

@@ -11,12 +11,12 @@ extends CharacterBody2D
 @export var chase_limit : float
 
 #@onready var hp_ui = $HPBar
-
+var can_shoot = false
 var enemy_bullet = preload("res://Scene/Object/EnemyBullet.tscn")
 
 var timer : Timer
 var hurtTimer : Timer
-var move_random_timer : Timer
+var delay_attack_timer : Timer
 var sprite : Sprite2D
 var hp_ui : ProgressBar
 
@@ -41,6 +41,7 @@ var reset_move_rng = false
 func _ready():
 	hurtTimer = get_node("HurtTimer")
 	timer = get_node("Timer")
+	delay_attack_timer = get_node("DelayAttackTimer")
 	sprite = get_node("Sprite2D")
 	hp_ui = get_node("HPBar")
 	
@@ -98,11 +99,15 @@ func action_logic(index):
 	elif index == 1:
 		velocity = position.direction_to(player.position) * _speed
 	elif index == 2:
-		#velocity = position.direction_to(player.position) * _speed
-		var ins = enemy_bullet.instantiate()
-		get_parent().add_child(ins)
-		ins.body_target = player.position
-		ins.global_position = $BulletRoot.global_position
+		velocity = position.direction_to(player.position) * _speed
+		if can_shoot == true:
+			can_shoot = false
+			var ins = enemy_bullet.instantiate()
+			get_parent().add_child(ins)
+			var player_aim_position = Vector2(player.position.x, player.position.y)
+			ins.body_target = player_aim_position
+			ins.global_position = $BulletRoot.global_position
+			delay_attack_timer.start()
 	elif index == 3:
 		velocity.x = position.direction_to(player.position).x * _speed
 
@@ -195,8 +200,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_chase_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
+		if _id == 2:
+			can_shoot = true
 
 
 func _on_chase_area_body_exited(body: Node2D) -> void:
 	player = null
 	go_back = true
+	can_shoot = false
+
+
+func _on_delay_attack_timer_timeout() -> void:
+	can_shoot = true

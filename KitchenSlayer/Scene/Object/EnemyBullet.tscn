@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkkuq"]
 size = Vector2(14, 6)
 
-[node name="EnemyBullet" type="CharacterBody2D" groups=["bullet"]]
+[node name="EnemyBullet" type="CharacterBody2D" groups=["enemyBullet"]]
 z_index = 2
 collision_layer = 64
 collision_mask = 3
@@ -17,11 +17,11 @@ position = Vector2(4.76837e-07, 0)
 scale = Vector2(0.104687, 0.0390625)
 texture = ExtResource("2_io6kp")
 
-[node name="Hitbox" type="Area2D" parent="." groups=["bullet"]]
-collision_layer = 32
-collision_mask = 5
+[node name="Hitbox" type="Area2D" parent="." groups=["enemyBullet"]]
+collision_layer = 64
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["bullet"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemyBullet"]]
 shape = SubResource("RectangleShape2D_gkkuq")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

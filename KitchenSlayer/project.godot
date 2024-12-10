@@ -33,6 +33,7 @@ player=""
 enemy=""
 playerHitbox=""
 bullet=""
+enemyBullet=""
 
 [input]
 

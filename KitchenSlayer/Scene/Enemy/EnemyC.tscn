@@ -12,22 +12,6 @@ height = 22.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_306k8"]
 radius = 48.0104
 
-[sub_resource type="Animation" id="Animation_4vdvi"]
-resource_name = "Enemy1_idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
 [sub_resource type="Animation" id="Animation_53iay"]
 length = 0.001
 tracks/0/type = "value"
@@ -43,9 +27,25 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_4vdvi"]
+resource_name = "EnemyC_idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qcgqr"]
 _data = {
-"Enemy1_idle": SubResource("Animation_4vdvi"),
+"EnemyC_idle": SubResource("Animation_4vdvi"),
 "RESET": SubResource("Animation_53iay")
 }
 
@@ -58,11 +58,11 @@ collision_layer = 4
 collision_mask = 34
 script = ExtResource("1_6lj7e")
 id = 2
-hp = 4
+hp = 3
 damageDeal = 1
 enemySpeed = 20.0
-rangeLeft = -20.0
-rangeRight = 20.0
+range_top = -20.0
+range_down = 20.0
 chase_limit = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -75,8 +75,8 @@ offset_top = 12.0
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_yv8vt")
-max_value = 4.0
-value = 4.0
+max_value = 3.0
+value = 3.0
 show_percentage = false
 
 [node name="BulletRoot" type="Node2D" parent="."]
@@ -101,12 +101,15 @@ shape = SubResource("CircleShape2D_306k8")
 libraries = {
 "": SubResource("AnimationLibrary_qcgqr")
 }
-autoplay = "Enemy1_idle"
+autoplay = "EnemyC_idle"
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="DelayAttackTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3q0yf")
@@ -118,3 +121,4 @@ shape = SubResource("CapsuleShape2D_3q0yf")
 [connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]
+[connection signal="timeout" from="DelayAttackTimer" to="." method="_on_delay_attack_timer_timeout"]
