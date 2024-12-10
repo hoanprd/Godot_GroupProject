@@ -5,8 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bmfatck085r7n" path="res://Sprite/Player/player_right_move.png" id="3_6iku0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur3mg"]
-radius = 3.0
-height = 16.0
+radius = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0ayi"]
 radius = 7.0
@@ -116,14 +115,12 @@ z_index = 2
 texture = ExtResource("2_wesx2")
 hframes = 2
 
-[node name="AttackArea" type="Area2D" parent="Sprite2D"]
+[node name="PlayerDamageBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackArea"]
-position = Vector2(5, 3)
-rotation = 1.5708
-scale = Vector2(2, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDamageBox"]
 shape = SubResource("CapsuleShape2D_ur3mg")
-disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)
@@ -144,4 +141,5 @@ libraries = {
 }
 autoplay = "idle"
 
+[connection signal="area_entered" from="PlayerDamageBox" to="." method="_on_player_damage_box_area_entered"]
 [connection signal="timeout" from="DelayAttackTimer" to="." method="_on_delay_attack_timer_timeout"]

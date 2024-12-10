@@ -12,6 +12,8 @@ extends CharacterBody2D
 
 #@onready var hp_ui = $HPBar
 
+var enemy_bullet = preload("res://Scene/Object/EnemyBullet.tscn")
+
 var timer : Timer
 var hurtTimer : Timer
 var move_random_timer : Timer
@@ -39,7 +41,6 @@ var reset_move_rng = false
 func _ready():
 	hurtTimer = get_node("HurtTimer")
 	timer = get_node("Timer")
-	move_random_timer = get_node("MoveRandomTimer")
 	sprite = get_node("Sprite2D")
 	hp_ui = get_node("HPBar")
 	
@@ -59,15 +60,19 @@ func _ready():
 		move_direction = Vector2(1, 0)
 	elif _id == 1:
 		move_direction = Vector2(0, 1)
+	elif _id == 2:
+		move_direction = Vector2(0, 1)
 	elif _id == 3:
 		move_direction = Vector2(1, 0)
+	elif _id == 4:
+		move_direction = Vector2(0, 0)
 
 func _process(delta):
 	velocity = Vector2.ZERO
 	if player:
 		if (self.position.x <= start_position.x + chase_limit and self.position.x >= start_position.x - chase_limit) and go_back == false:
 			#velocity.x = position.direction_to(player.position).x * _speed
-			chase_logic(_id)
+			action_logic(_id)
 		else:
 			go_back = true
 			if roundf(self.position.x) != start_position.x and go_back == true:
@@ -87,13 +92,17 @@ func _process(delta):
 		else:
 			move_enemy(delta)
 
-func chase_logic(index):
+func action_logic(index):
 	if index == 0:
 		velocity.x = position.direction_to(player.position).x * _speed
 	elif index == 1:
 		velocity = position.direction_to(player.position) * _speed
 	elif index == 2:
-		pass
+		#velocity = position.direction_to(player.position) * _speed
+		var ins = enemy_bullet.instantiate()
+		get_parent().add_child(ins)
+		ins.body_target = player.position
+		ins.global_position = $BulletRoot.global_position
 	elif index == 3:
 		velocity.x = position.direction_to(player.position).x * _speed
 
@@ -116,6 +125,15 @@ func move_enemy(delta):
 		elif position.y >= start_position.y + _range_down:
 			move_direction.y = -1
 			flip_sprite()
+	elif _id == 2:
+		position += move_direction * _speed * delta
+		
+		if position.y <= start_position.y + _range_top:
+			move_direction.y = 1
+			#flip_sprite()
+		elif position.y >= start_position.y + _range_down:
+			move_direction.y = -1
+			#flip_sprite()
 	elif _id == 3:
 		position += move_direction * _speed * delta
 		

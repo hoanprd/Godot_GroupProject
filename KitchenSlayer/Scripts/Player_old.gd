@@ -105,3 +105,8 @@ func handle_gravity_and_jump(delta):
 func _on_delay_attack_timer_timeout() -> void:
 	attackAction = false
 	delayAction = false
+
+
+func _on_player_damage_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("EnemyBullet"):
+		Global.health -= 1

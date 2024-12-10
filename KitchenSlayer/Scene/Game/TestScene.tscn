@@ -538,8 +538,6 @@ position = Vector2(527, 494)
 
 [node name="EnemyD" parent="Danger/Enemy" instance=ExtResource("8_0bwtj")]
 position = Vector2(717, 487)
-rangeLeft = -20.0
-rangeRight = 20.0
 
 [node name="Static" type="Node" parent="Danger"]
 

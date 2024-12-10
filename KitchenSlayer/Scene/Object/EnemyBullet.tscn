@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ujxmlftkdcgc"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_446dw"]
+[ext_resource type="Texture2D" uid="uid://dbxqn2gd3erb6" path="res://icon.svg" id="2_io6kp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkkuq"]
+size = Vector2(14, 6)
+
+[node name="EnemyBullet" type="CharacterBody2D" groups=["bullet"]]
+z_index = 2
+collision_layer = 64
+collision_mask = 3
+script = ExtResource("1_446dw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.104687, 0.0390625)
+texture = ExtResource("2_io6kp")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["bullet"]]
+collision_layer = 32
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["bullet"]]
+shape = SubResource("RectangleShape2D_gkkuq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(5.96046e-08, 9.53674e-08)
+scale = Vector2(0.2, 0.1)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
