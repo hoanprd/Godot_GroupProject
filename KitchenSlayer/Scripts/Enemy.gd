@@ -41,6 +41,7 @@ var move_number : int
 var random_move_is_on = false
 var skill_cooldown = false
 var teleport = false
+var target_player : Vector2
 
 func _ready():
 	enemy_ap = get_node("AnimationPlayer")
@@ -121,8 +122,8 @@ func action_logic(index):
 		if skill_cooldown == true:
 			enemy_ap.play("EnemyE_idle")
 			velocity.x = position.direction_to(player.position).x * _speed
-			if start_position.x == roundf(self.position.x) or start_position.x == roundf(self.position.x) + 1 or start_position.x == roundf(self.position.x) - 1:
-				skill_cooldown = false
+			#if start_position.x == roundf(self.position.x) or start_position.x == roundf(self.position.x) + 1 or start_position.x == roundf(self.position.x) - 1:
+				#skill_cooldown = false
 		elif skill_cooldown == false and teleport == false:
 			teleport = true
 			enemy_ap.play("EnemyE_attack")
@@ -180,6 +181,11 @@ func flip_sprite():
 			sprite.scale.x = -abs(sprite.scale.x)
 		else:
 			sprite.scale.x = abs(sprite.scale.x)
+	elif _id == 4:
+		if move_direction.x == 1:
+			sprite.scale.x = -abs(sprite.scale.x)
+		else:
+			sprite.scale.x = abs(sprite.scale.x)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and Global.health <= 100 and Global.health > 0:
@@ -220,6 +226,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_chase_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
+		target_player = Vector2(player.position.x, player.position.y)
 		if _id == 2:
 			can_shoot = true
 
@@ -235,14 +242,13 @@ func _on_delay_attack_timer_timeout() -> void:
 
 
 func _on_teleport_cast_timer_timeout() -> void:
-	if player:
-		if self.position.x - player.position.x >= 0:
-			self.position.x = self.position.x - left_limit
-		else:
-			self.position.x = self.position.x + right_limit
-		skill_cooldown = true
-	else:
-		skill_cooldown = true
+	if skill_cooldown == false:
+		if start_position.x - target_player.x >= 0:
+			self.position.x = start_position.x + left_limit
+			skill_cooldown = true
+		elif start_position.x - target_player.x < 0:
+			self.position.x = start_position.x + right_limit
+			skill_cooldown = true
 
 
 func _on_teleport_cool_down_timer_timeout() -> void:
