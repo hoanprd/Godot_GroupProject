@@ -1,31 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgh65tl3tqgjp"]
 
 [ext_resource type="Script" path="res://Scripts/tomato_bullet.gd" id="1_bmujo"]
-[ext_resource type="Texture2D" uid="uid://dbxqn2gd3erb6" path="res://icon.svg" id="1_jr5ip"]
+[ext_resource type="Texture2D" uid="uid://chpdyytl81ltp" path="res://Sprite/Player/Tomato.png" id="2_x4rft"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkkuq"]
-size = Vector2(14, 6)
+[sub_resource type="CircleShape2D" id="CircleShape2D_k07ty"]
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o374"]
 radius = 2.0
 
 [node name="TomatoBullet" type="CharacterBody2D" groups=["bullet"]]
 z_index = 2
+scale = Vector2(0.5, 0.5)
 collision_layer = 32
 collision_mask = 5
 script = ExtResource("1_bmujo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.76837e-07, 0)
-scale = Vector2(0.104687, 0.0390625)
-texture = ExtResource("1_jr5ip")
+texture = ExtResource("2_x4rft")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["bullet"]]
 collision_layer = 32
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["bullet"]]
-shape = SubResource("RectangleShape2D_gkkuq")
+shape = SubResource("CircleShape2D_k07ty")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(5.96046e-08, 9.53674e-08)

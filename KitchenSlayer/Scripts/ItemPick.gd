@@ -30,8 +30,9 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.getHealth = true
 			queue_free()
 		elif _itemId == 2:
-			pass
+			Global.player_bullet_speed_buff = true
+			queue_free()
 		elif _itemId == 3:
-			pass
+			Global.player_bullet_size_buff = true
 		elif _itemId == 4:
-			pass
+			Global.player_bullet_quanity_buff = true
