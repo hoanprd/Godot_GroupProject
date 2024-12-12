@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		if (_itemId == 0):
+		if _itemId == 0:
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "global_position", targetPos + Vector2(1200, 10), 0.5).set_ease(Tween.EASE_IN)
 			tween.chain().tween_property(self, "visible", false, 0.0)
@@ -23,10 +23,15 @@ func _on_body_entered(body: Node2D) -> void:
 			tween.chain().tween_property(label, "scale", Vector2(1.0,1.0), 0.05)
 			Global.points += 1
 			tween.chain().tween_callback(queue_free)
-		elif (_itemId == 1):
+		elif _itemId == 1:
 			Global.health += 1
 			if Global.health > 3:
 				Global.health = 3
 			Global.getHealth = true
 			queue_free()
-		#queue_free()
+		elif _itemId == 2:
+			pass
+		elif _itemId == 3:
+			pass
+		elif _itemId == 4:
+			pass
