@@ -217,7 +217,7 @@ func get_hit(value):
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet"):
-		_hp -= 1
+		_hp -= Global.player_tomato_damage
 		hp_ui.value = _hp
 		if _hp <= 0:
 			queue_free()

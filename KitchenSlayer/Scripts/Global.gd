@@ -13,5 +13,6 @@ var player_bullet_speed_buff = false
 var player_bullet_speed_buff_value = 0
 var player_bullet_size_buff = false
 var player_bullet_size_buff_value = 0
-var player_bullet_quanity = false
+var player_bullet_quanity_buff = false
 var player_bullet_quanity_buff_value = 0
+var player_tomato_damage = 1

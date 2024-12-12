@@ -9,9 +9,12 @@ func _physics_process(delta: float) -> void:
 	if Global.player_bullet_speed_buff == true:
 		Global.player_bullet_speed_buff_value = 100
 	if Global.player_bullet_size_buff == true:
-		pass
-	if Global.player_bullet_quanity == true:
-		pass
+		Global.player_bullet_size_buff_value = 1.1
+		self.scale.x = Global.player_bullet_size_buff_value
+		self.scale.y = Global.player_bullet_size_buff_value
+	if Global.player_bullet_quanity_buff == true:
+		$Sprite2D.texture = load("res://Sprite/Player/TripleShot.png")
+		Global.player_tomato_damage = 3
 	position.x += (SPEED + Global.player_bullet_speed_buff_value) * dir * delta
 
 
