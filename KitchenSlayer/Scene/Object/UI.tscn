@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=13 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
 [ext_resource type="Texture2D" uid="uid://ii6ho85x15bk" path="res://Texture/HurtUI.png" id="1_kp5xg"]
 [ext_resource type="Texture2D" uid="uid://bchkaxqpmfcl7" path="res://Sprite/Item/Coin1.png" id="2_55u0l"]
+[ext_resource type="Texture2D" uid="uid://chq5xfmpws7ih" path="res://Sprite/Item/Bean_Sprout_Rice_Soup_32x32.png" id="4_syjej"]
+[ext_resource type="Texture2D" uid="uid://dpkd2w31s14yt" path="res://Sprite/Item/bean sprouts.png" id="5_4vf7d"]
+[ext_resource type="Texture2D" uid="uid://wvjgbakbifp0" path="res://Sprite/Item/Eggs.png" id="6_xik71"]
+[ext_resource type="Texture2D" uid="uid://k3nqmvrfpqp8" path="res://Sprite/Item/garlic.png" id="7_xlsr6"]
+[ext_resource type="Texture2D" uid="uid://dchwhg3fptsgb" path="res://Sprite/Item/green onion.png" id="8_vcyun"]
+[ext_resource type="Texture2D" uid="uid://belotrivab53r" path="res://Sprite/Item/rice.png" id="9_f6o15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
 bg_color = Color(0.36668, 0.0670769, 0.116715, 1)
@@ -63,7 +69,99 @@ text = "Level: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BeanSproutRiceSoupPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 135.0
+offset_bottom = 41.0
+
+[node name="BeanSproutRiceSoup" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+position = Vector2(8.5, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("4_syjej")
+
+[node name="BeanSprout" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+position = Vector2(38, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("5_4vf7d")
+
+[node name="BeanSproutLabel" type="Label" parent="BeanSproutRiceSoupPanel/BeanSprout"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Egg" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+position = Vector2(58, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("6_xik71")
+
+[node name="EggLabel" type="Label" parent="BeanSproutRiceSoupPanel/Egg"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Garlic" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+position = Vector2(79, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("7_xlsr6")
+
+[node name="GarlicLabel" type="Label" parent="BeanSproutRiceSoupPanel/Garlic"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GreenOnion" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+position = Vector2(99, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("8_vcyun")
+
+[node name="GreenOnionLabel" type="Label" parent="BeanSproutRiceSoupPanel/GreenOnion"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rice" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+position = Vector2(120, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("9_f6o15")
+
+[node name="RiceLabel" type="Label" parent="BeanSproutRiceSoupPanel/Rice"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BeanSproutRiceSoupPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_right = 42.0
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="WinLosePanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
@@ -78,6 +176,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TryAgainButton" type="Button" parent="WinLosePanel"]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 90.0
 offset_right = 207.0
@@ -85,6 +184,7 @@ offset_bottom = 121.0
 text = "TRY AGAIN"
 
 [node name="ExitButton" type="Button" parent="WinLosePanel"]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 129.0
 offset_right = 207.0

@@ -38,3 +38,6 @@ func _on_body_entered(body: Node2D) -> void:
 		elif _itemId == 4:
 			Global.player_bullet_quanity_buff = true
 			queue_free()
+		elif _itemId == 5:
+			Global.bean_sprout += 1
+			queue_free()
