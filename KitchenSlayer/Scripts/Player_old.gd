@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var bullet = preload("res://Scene/Object/TomatoBullet.tscn")
+var die_effect = preload("res://Scene/Object/Effect/DieEffect.tscn")
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -10,6 +11,7 @@ const SPEED = 100
 const JUMP_FORCE = -280
 const GRAVITY = 900
 
+var stop_effect = false
 var vertical_velocity = 0.0
 var attackAction = false
 var delayAction = false
@@ -36,6 +38,13 @@ func _process(delta):
 		winLose_label.text = "YOU LOSE"
 		winLose_panel.visible = true
 		Global.stopGame = true
+		if stop_effect == false:
+			stop_effect = true
+			$Sprite2D.visible = false
+			var ins = die_effect.instantiate()
+			get_parent().add_child(ins)
+			ins.global_position = self.global_position
+			#queue_free()
 	elif (Global.stopGame == false && Global.health > 0):
 		handle_movement(delta)
 		handle_gravity_and_jump(delta)

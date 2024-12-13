@@ -14,6 +14,7 @@ extends CharacterBody2D
 #@onready var hp_ui = $HPBar
 var can_shoot = false
 var enemy_bullet = preload("res://Scene/Object/EnemyBullet.tscn")
+var die_effect = preload("res://Scene/Object/Effect/DieEffect.tscn")
 
 var timer : Timer
 var hurtTimer : Timer
@@ -220,6 +221,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		_hp -= Global.player_tomato_damage
 		hp_ui.value = _hp
 		if _hp <= 0:
+			var ins = die_effect.instantiate()
+			get_parent().add_child(ins)
+			ins.global_position = $BulletRoot.global_position
 			queue_free()
 
 

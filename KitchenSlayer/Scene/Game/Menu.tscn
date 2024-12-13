@@ -14,12 +14,21 @@ offset_bottom = 180.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="PlayButton" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 112.0
-offset_top = 95.0
+offset_top = 90.0
 offset_right = 207.0
-offset_bottom = 118.0
+offset_bottom = 121.0
+text = "PLAY"
+
+[node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 129.0
+offset_right = 207.0
+offset_bottom = 160.0
+text = "EXIT"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -29,4 +38,5 @@ text = "Kitchen Slayer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

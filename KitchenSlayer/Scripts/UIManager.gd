@@ -62,3 +62,11 @@ func updateUI():
 
 func _on_delay_hurt_get_shot_timeout() -> void:
 	Global.getHurt = false
+
+
+func _on_try_again_button_pressed() -> void:
+	pass
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
