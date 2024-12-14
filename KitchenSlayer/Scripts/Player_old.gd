@@ -6,6 +6,11 @@ var die_effect = preload("res://Scene/Object/Effect/DieEffect.tscn")
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
 @onready var bullet_root = $BulletRoot
+@onready var musicBus = AudioServer.get_bus_index("Music")
+@onready var sfxBus = AudioServer.get_bus_index("SFX")
+@onready var jump_sound = $JumpFX
+@onready var attack_sound = $AttackFX
+@onready var hurt_sound = $HurtFX
 
 const SPEED = 100
 const JUMP_FORCE = -280
@@ -46,12 +51,18 @@ func _process(delta):
 			ins.global_position = self.global_position
 			#queue_free()
 	elif (Global.stopGame == false && Global.health > 0):
+		if Global.getHurt == true:
+			AudioServer.set_bus_mute(sfxBus, false)
+			hurt_sound.play()
 		handle_movement(delta)
 		handle_gravity_and_jump(delta)
 
 # Function to handle player movement (horizontal)
 func handle_movement(delta):
 	var direction = Vector2.ZERO
+	
+	if Global.player_buff_speed == true:
+		Global.player_buff_speed_value = 30
 	
 	# Left and Right Movement
 	if Input.is_action_pressed("ui_right"):
@@ -68,11 +79,13 @@ func handle_movement(delta):
 			ins.dir = 1
 		elif face_dir == "left":
 			ins.dir = -1
+		AudioServer.set_bus_mute(sfxBus, false)
+		attack_sound.play()
 		get_parent().add_child(ins)
 		ins.global_position = $BulletRoot.global_position
 	
 	# Set the horizontal movement velocity
-	velocity.x = direction.x * SPEED
+	velocity.x = direction.x * (SPEED + Global.player_buff_speed_value)
 	
 	if direction.x != 0:
 		switch_direction(direction.x)
@@ -101,6 +114,8 @@ func update_animations(horizontal_direction):
 func handle_gravity_and_jump(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_accept"):
+			AudioServer.set_bus_mute(sfxBus, false)
+			jump_sound.play()
 			vertical_velocity = JUMP_FORCE
 		else:
 			vertical_velocity = 0

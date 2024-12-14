@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bd0hly7uwfbhe"]
+[gd_scene load_steps=24 format=4 uid="uid://bd0hly7uwfbhe"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_vn7es"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_hbf8g"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dfywl0pc7t7o2" path="res://Scene/Object/Material/Garlic.tscn" id="10_ewpya"]
 [ext_resource type="PackedScene" uid="uid://op44npkc1pkw" path="res://Scene/Object/Material/GreenOnion.tscn" id="11_bnimu"]
 [ext_resource type="PackedScene" uid="uid://whfxb8t3eqvi" path="res://Scene/Object/Material/Rice.tscn" id="12_qupby"]
+[ext_resource type="PackedScene" uid="uid://dw4fibr71fvwq" path="res://Scene/Object/Buff/PlayerSpeedUp.tscn" id="14_0ycng"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="14_7gkm6"]
 [ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="15_qhql5"]
 
@@ -1666,6 +1667,9 @@ position = Vector2(504, 109)
 
 [node name="Health" parent="PickableItem/Booster" instance=ExtResource("14_7gkm6")]
 position = Vector2(457, 138)
+
+[node name="PlayerSpeedUp" parent="PickableItem/Booster" instance=ExtResource("14_0ycng")]
+position = Vector2(119, 169)
 
 [node name="Coin" type="Node" parent="PickableItem"]
 

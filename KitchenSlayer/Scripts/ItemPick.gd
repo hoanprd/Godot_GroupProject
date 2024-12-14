@@ -30,38 +30,41 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.getHealth = true
 			queue_free()
 		elif _itemId == 2:
-			Global.player_bullet_speed_buff = true
+			Global.player_buff_speed = true
 			queue_free()
 		elif _itemId == 3:
-			Global.player_bullet_size_buff = true
+			Global.player_bullet_speed_buff = true
 			queue_free()
 		elif _itemId == 4:
-			Global.player_bullet_quanity_buff = true
+			Global.player_bullet_size_buff = true
 			queue_free()
 		elif _itemId == 5:
-			Global.bean_sprout += 1
+			Global.player_bullet_quanity_buff = true
 			queue_free()
 		elif _itemId == 6:
-			Global.egg += 1
+			Global.bean_sprout += 1
 			queue_free()
 		elif _itemId == 7:
-			Global.garlic += 1
+			Global.egg += 1
 			queue_free()
 		elif _itemId == 8:
-			Global.green_onion += 1
+			Global.garlic += 1
 			queue_free()
 		elif _itemId == 9:
-			Global.rice += 1
+			Global.green_onion += 1
 			queue_free()
 		elif _itemId == 10:
-			Global.rice += Global.tofu
+			Global.rice += 1
 			queue_free()
 		elif _itemId == 11:
-			Global.rice += Global.kimchi
+			Global.rice += Global.tofu
 			queue_free()
 		elif _itemId == 12:
-			Global.rice += Global.pork
+			Global.rice += Global.kimchi
 			queue_free()
 		elif _itemId == 13:
+			Global.rice += Global.pork
+			queue_free()
+		elif _itemId == 14:
 			Global.rice += Global.red_pepper_powder
 			queue_free()

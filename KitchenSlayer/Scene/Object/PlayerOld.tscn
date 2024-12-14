@@ -142,5 +142,16 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="AttackFX" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="HurtFX" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+
 [connection signal="area_entered" from="PlayerDamageBox" to="." method="_on_player_damage_box_area_entered"]
 [connection signal="timeout" from="DelayAttackTimer" to="." method="_on_delay_attack_timer_timeout"]
