@@ -22,6 +22,26 @@ func _ready() -> void:
 	delay_hurt_get_shot = get_node("DelayHurtGetShot")
 	gameOver = false
 	$Heart.size.x = Global.health * heart_size
+	if Global.level == 1:
+		$BeanSproutRiceSoupPanel.visible = true
+	elif Global.level == 2:
+		$DubuKimchiPanel.visible = true
+	elif Global.level == 3:
+		$BibimbapPanel.visible = true
+	elif Global.level == 4:
+		$BibimbapPanel.visible = true
+	elif Global.level == 5:
+		$BibimbapPanel.visible = true
+	elif Global.level == 6:
+		$BibimbapPanel.visible = true
+	elif Global.level == 7:
+		$BibimbapPanel.visible = true
+	elif Global.level == 8:
+		$BibimbapPanel.visible = true
+	elif Global.level == 9:
+		$BibimbapPanel.visible = true
+	elif Global.level == 10:
+		$BibimbapPanel.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,6 +78,17 @@ func HealthUpdate():
 
 func updateUI():
 	pointsLabel.text = str(Global.points)
+	$BeanSproutRiceSoupPanel/BeanSprout/BeanSproutLabel.text = str(Global.bean_sprout)
+	$BeanSproutRiceSoupPanel/Egg/EggLabel.text = str(Global.egg)
+	$BeanSproutRiceSoupPanel/Garlic/GarlicLabel.text = str(Global.garlic)
+	$BeanSproutRiceSoupPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$BeanSproutRiceSoupPanel/Rice/RiceLabel.text = str(Global.rice)
+	if Global.missing_material == true:
+		$AnouLabel.text = "Material is missing!"
+		$AnouLabel.visible = true
+	else:
+		$AnouLabel.text = "Material is missing!"
+		$AnouLabel.visible = false
 
 
 func _on_delay_hurt_get_shot_timeout() -> void:
@@ -65,7 +96,7 @@ func _on_delay_hurt_get_shot_timeout() -> void:
 
 
 func _on_try_again_button_pressed() -> void:
-	pass
+	Global.reset_level = true
 
 
 func _on_exit_button_pressed() -> void:

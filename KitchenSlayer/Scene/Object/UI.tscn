@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=24 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
@@ -10,6 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://k3nqmvrfpqp8" path="res://Sprite/Item/garlic.png" id="7_xlsr6"]
 [ext_resource type="Texture2D" uid="uid://dchwhg3fptsgb" path="res://Sprite/Item/green onion.png" id="8_vcyun"]
 [ext_resource type="Texture2D" uid="uid://belotrivab53r" path="res://Sprite/Item/rice.png" id="9_f6o15"]
+[ext_resource type="Texture2D" uid="uid://dkake2ebajrof" path="res://Sprite/Item/Dubu_Kimchi_32x32.png" id="10_5rkbg"]
+[ext_resource type="Texture2D" uid="uid://c1t177jdgdun" path="res://Sprite/Item/tofu.png" id="10_7ojco"]
+[ext_resource type="Texture2D" uid="uid://b8w0m8wcepnwn" path="res://Sprite/Item/kimchi.png" id="12_i1ayg"]
+[ext_resource type="Texture2D" uid="uid://b6calkmfe4m8n" path="res://Sprite/Item/pork.png" id="13_2w3e7"]
+[ext_resource type="Texture2D" uid="uid://2yw2d8v0lpnn" path="res://Sprite/Item/red pepper powder.png" id="14_p0ite"]
+[ext_resource type="Texture2D" uid="uid://m6e3kakhevgn" path="res://Sprite/Item/Bibimbap_32x32.png" id="15_yjt7u"]
+[ext_resource type="Texture2D" uid="uid://ckkugx6qy2pyp" path="res://Sprite/Item/beef.png" id="16_sabxj"]
+[ext_resource type="Texture2D" uid="uid://msw10dgb7g5p" path="res://Sprite/Item/carrot.png" id="17_d6mbd"]
+[ext_resource type="Texture2D" uid="uid://cj7qhx6ui77o4" path="res://Sprite/Item/mushroom.png" id="18_qfb2a"]
+[ext_resource type="Texture2D" uid="uid://bp4uipbrux3ar" path="res://Sprite/Item/gochujang.png" id="19_iibl0"]
+[ext_resource type="Texture2D" uid="uid://b5kh37ky6xkn6" path="res://Sprite/Item/seasame oil.png" id="20_nh0wt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
 bg_color = Color(0.36668, 0.0670769, 0.116715, 1)
@@ -69,7 +80,17 @@ text = "Level: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AnouLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 43.0
+offset_right = 244.0
+offset_bottom = 66.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BeanSproutRiceSoupPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 20.0
 offset_right = 135.0
@@ -160,6 +181,218 @@ text = "="
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="DubuKimchiPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 20.0
+offset_right = 135.0
+offset_bottom = 41.0
+
+[node name="DubuKimchi" type="Sprite2D" parent="DubuKimchiPanel"]
+position = Vector2(8.5, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("10_5rkbg")
+
+[node name="Tofu" type="Sprite2D" parent="DubuKimchiPanel"]
+position = Vector2(38, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("10_7ojco")
+
+[node name="TofuLabel" type="Label" parent="DubuKimchiPanel/Tofu"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kimchi" type="Sprite2D" parent="DubuKimchiPanel"]
+position = Vector2(58, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("12_i1ayg")
+
+[node name="KimchiLabel" type="Label" parent="DubuKimchiPanel/Kimchi"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pork" type="Sprite2D" parent="DubuKimchiPanel"]
+position = Vector2(79, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("13_2w3e7")
+
+[node name="PorkLabel" type="Label" parent="DubuKimchiPanel/Pork"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GreenOnion" type="Sprite2D" parent="DubuKimchiPanel"]
+position = Vector2(99, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("8_vcyun")
+
+[node name="GreenOnionLabel" type="Label" parent="DubuKimchiPanel/GreenOnion"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RedPepperPowder" type="Sprite2D" parent="DubuKimchiPanel"]
+position = Vector2(120, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("14_p0ite")
+
+[node name="RedPepperPowderLabel" type="Label" parent="DubuKimchiPanel/RedPepperPowder"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="DubuKimchiPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_right = 42.0
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BibimbapPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 20.0
+offset_right = 167.0
+offset_bottom = 41.0
+
+[node name="Bibimbap" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(8.5, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("15_yjt7u")
+
+[node name="Rice" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(38, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("9_f6o15")
+
+[node name="RiceLabel" type="Label" parent="BibimbapPanel/Rice"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Beef" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(58, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("16_sabxj")
+
+[node name="BeefLabel" type="Label" parent="BibimbapPanel/Beef"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Carrot" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(79, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("17_d6mbd")
+
+[node name="CarrotLabel" type="Label" parent="BibimbapPanel/Carrot"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mushroom" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(99, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("18_qfb2a")
+
+[node name="MushroomLabel" type="Label" parent="BibimbapPanel/Mushroom"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Egg" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(120, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("6_xik71")
+
+[node name="EggLabel" type="Label" parent="BibimbapPanel/Egg"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gochujang" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(140, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("19_iibl0")
+
+[node name="GochujangLabel" type="Label" parent="BibimbapPanel/Gochujang"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SesameOil" type="Sprite2D" parent="BibimbapPanel"]
+position = Vector2(160, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("20_nh0wt")
+
+[node name="SesameOilLabel" type="Label" parent="BibimbapPanel/SesameOil"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BibimbapPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_right = 42.0
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="WinLosePanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -181,7 +414,7 @@ offset_left = 112.0
 offset_top = 90.0
 offset_right = 207.0
 offset_bottom = 121.0
-text = "TRY AGAIN"
+text = "NEXT"
 
 [node name="ExitButton" type="Button" parent="WinLosePanel"]
 layout_mode = 0

@@ -1,18 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctmtu7bxpq0dh"]
+[gd_scene load_steps=4 format=3 uid="uid://ctmtu7bxpq0dh"]
 
 [ext_resource type="Script" path="res://Scripts/game_main.gd" id="1_behw0"]
 [ext_resource type="PackedScene" uid="uid://blxl80jm2v1xm" path="res://Scene/Object/UI.tscn" id="3_1kwmv"]
-[ext_resource type="PackedScene" uid="uid://hbdajqfdgos7" path="res://Scene/Object/Buff/TomatoSpeedUp.tscn" id="4_whfsi"]
-[ext_resource type="PackedScene" uid="uid://cndp7clvn7jym" path="res://Scene/Object/Buff/TomatoSizeUp.tscn" id="5_tufkm"]
-[ext_resource type="PackedScene" uid="uid://d2w8d2mnusra1" path="res://Scene/Object/Buff/TomatoTripleUp.tscn" id="6_y3hsl"]
-[ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="7_v0uft"]
-[ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="8_lsihr"]
-[ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="9_2deff"]
-[ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="10_u2iyy"]
-[ext_resource type="PackedScene" uid="uid://cvy4f1s33eyv" path="res://Scene/Enemy/EnemyD.tscn" id="11_exdxs"]
-[ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="12_hi7ea"]
-[ext_resource type="PackedScene" uid="uid://c2p3ylsbm155x" path="res://Scene/Enemy/EnemyE.tscn" id="13_ebi8q"]
-[ext_resource type="PackedScene" uid="uid://f302e3ox3535" path="res://Scene/Object/Spike.tscn" id="14_47xed"]
 [ext_resource type="PackedScene" uid="uid://dp43hk6qcsmqj" path="res://Scene/Object/PlayerOld.tscn" id="16_bovh3"]
 
 [node name="GameMain" type="Node2D"]
@@ -21,129 +10,6 @@ script = ExtResource("1_behw0")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("3_1kwmv")]
-
-[node name="PickableItem" type="Node" parent="."]
-
-[node name="Buff" type="Node" parent="PickableItem"]
-
-[node name="TomatoSpeedUp" parent="PickableItem/Buff" instance=ExtResource("4_whfsi")]
-position = Vector2(39, 523)
-
-[node name="TomatoSpeedUp2" parent="PickableItem/Buff" instance=ExtResource("5_tufkm")]
-position = Vector2(62, 523)
-
-[node name="TomatoSpeedUp3" parent="PickableItem/Buff" instance=ExtResource("6_y3hsl")]
-position = Vector2(127, 520)
-
-[node name="Coin" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(215, 522)
-
-[node name="Coin2" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(232, 522)
-
-[node name="Coin3" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(249, 522)
-
-[node name="Coin4" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(402, 491)
-
-[node name="Coin5" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(430, 491)
-
-[node name="Coin6" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(1200, 506)
-
-[node name="Coin7" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(1225, 506)
-
-[node name="Coin8" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(1249, 506)
-
-[node name="Coin9" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(1578, 506)
-
-[node name="Coin10" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(1704, 522)
-
-[node name="Coin11" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(2252, 426)
-
-[node name="Coin12" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(2272, 426)
-
-[node name="Coin13" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(2292, 426)
-
-[node name="Coin14" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(2639, 538)
-
-[node name="Coin15" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(2665, 538)
-
-[node name="Coin16" parent="PickableItem" instance=ExtResource("7_v0uft")]
-position = Vector2(2689, 538)
-
-[node name="Health" parent="PickableItem" instance=ExtResource("8_lsihr")]
-position = Vector2(497, 506)
-
-[node name="Health2" parent="PickableItem" instance=ExtResource("8_lsihr")]
-position = Vector2(1048, 522)
-
-[node name="Health3" parent="PickableItem" instance=ExtResource("8_lsihr")]
-position = Vector2(1812, 570)
-
-[node name="Health4" parent="PickableItem" instance=ExtResource("8_lsihr")]
-position = Vector2(2536, 522)
-
-[node name="Danger" type="Node" parent="."]
-
-[node name="Enemy" type="Node" parent="Danger"]
-
-[node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("9_2deff")]
-position = Vector2(327, 503)
-rangeLeft = -10.0
-rangeRight = 10.0
-
-[node name="EnemyB" parent="Danger/Enemy" instance=ExtResource("10_u2iyy")]
-position = Vector2(527, 494)
-
-[node name="EnemyD" parent="Danger/Enemy" instance=ExtResource("11_exdxs")]
-position = Vector2(717, 487)
-
-[node name="EnemyC" parent="Danger/Enemy" instance=ExtResource("12_hi7ea")]
-position = Vector2(418, 450)
-
-[node name="EnemyE" parent="Danger/Enemy" instance=ExtResource("13_ebi8q")]
-position = Vector2(197, 520)
-
-[node name="Static" type="Node" parent="Danger"]
-
-[node name="Spike2" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(599, 488)
-
-[node name="Spike3" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(613, 488)
-
-[node name="Spike4" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(627, 488)
-
-[node name="Spike5" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(1001, 568)
-
-[node name="Spike6" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(1225, 470)
-
-[node name="Spike7" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(1640, 534)
-
-[node name="Spike8" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(1897, 568)
-
-[node name="Spike9" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(1869, 568)
-
-[node name="Spike10" parent="Danger/Static" instance=ExtResource("14_47xed")]
-position = Vector2(1883, 568)
 
 [node name="Player" parent="." instance=ExtResource("16_bovh3")]
 position = Vector2(133, 86)

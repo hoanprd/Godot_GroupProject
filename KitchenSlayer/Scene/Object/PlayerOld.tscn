@@ -8,8 +8,8 @@
 radius = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0ayi"]
-radius = 7.0
-height = 22.0
+radius = 6.71429
+height = 20.5714
 
 [sub_resource type="Animation" id="Animation_ogu1n"]
 length = 0.001
@@ -104,6 +104,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 2
+scale = Vector2(0.7, 0.7)
 collision_layer = 2
 collision_mask = 29
 script = ExtResource("1_phlbn")
@@ -123,13 +124,13 @@ collision_mask = 64
 shape = SubResource("CapsuleShape2D_ur3mg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 4)
+position = Vector2(-1, 5)
 shape = SubResource("CapsuleShape2D_x0ayi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 4)
 limit_left = 0
-limit_right = 3250
+limit_right = 2031
 editor_draw_limits = true
 
 [node name="DelayAttackTimer" type="Timer" parent="."]

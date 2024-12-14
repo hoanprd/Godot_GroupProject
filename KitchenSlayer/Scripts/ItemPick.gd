@@ -41,3 +41,27 @@ func _on_body_entered(body: Node2D) -> void:
 		elif _itemId == 5:
 			Global.bean_sprout += 1
 			queue_free()
+		elif _itemId == 6:
+			Global.egg += 1
+			queue_free()
+		elif _itemId == 7:
+			Global.garlic += 1
+			queue_free()
+		elif _itemId == 8:
+			Global.green_onion += 1
+			queue_free()
+		elif _itemId == 9:
+			Global.rice += 1
+			queue_free()
+		elif _itemId == 10:
+			Global.rice += Global.tofu
+			queue_free()
+		elif _itemId == 11:
+			Global.rice += Global.kimchi
+			queue_free()
+		elif _itemId == 12:
+			Global.rice += Global.pork
+			queue_free()
+		elif _itemId == 13:
+			Global.rice += Global.red_pepper_powder
+			queue_free()
