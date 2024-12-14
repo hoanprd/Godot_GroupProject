@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://03cfwu2rac2g"]
+
+[ext_resource type="Script" path="res://Scene/Game/end_game.gd" id="1_cve3g"]
+
+[node name="CreditScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cve3g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+text = "Kitchen slayer
+A
+abc
+B
+xyz
+C
+jkl"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ExitTimer" to="." method="_on_exit_timer_timeout"]

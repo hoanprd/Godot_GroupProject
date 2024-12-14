@@ -57,14 +57,14 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.rice += 1
 			queue_free()
 		elif _itemId == 11:
-			Global.rice += Global.tofu
+			Global.tofu += 1
 			queue_free()
 		elif _itemId == 12:
-			Global.rice += Global.kimchi
+			Global.kimchi += 1
 			queue_free()
 		elif _itemId == 13:
-			Global.rice += Global.pork
+			Global.pork += 1
 			queue_free()
 		elif _itemId == 14:
-			Global.rice += Global.red_pepper_powder
+			Global.red_pepper_powder += 1
 			queue_free()

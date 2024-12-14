@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 150
 
+var die_effect = preload("res://Scene/Object/Effect/BulletDieEffect.tscn")
+
 var dir : int
 var spawnPos : Vector2
 
@@ -19,6 +21,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	var ins = die_effect.instantiate()
+	get_parent().add_child(ins)
+	ins.global_position = self.global_position
 	queue_free()
 
 

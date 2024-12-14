@@ -42,6 +42,7 @@ var doenjang = 0
 var potato = 0
 var onion = 0
 var soy_sauce = 0
+var dialog_trigger = true
 
 func reset_game():
 	health = 3
@@ -61,6 +62,7 @@ func reset_game():
 	player_bullet_quanity_buff_value = 0
 	player_tomato_damage = 1
 	player_buff_speed = false
+	missing_material = false
 	player_buff_speed_value = 0
 	bean_sprout_rice_soup = 0
 	bean_sprout = 0

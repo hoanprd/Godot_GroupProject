@@ -13,6 +13,7 @@ var health_label: Label
 var points_label: Label
 var winLose_panel: Panel
 var winLose_label: Label
+var dialog_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +45,9 @@ func _ready() -> void:
 		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 10:
 		$RecipeBookPanel/BibimbapPanel.visible = true
+	if Global.dialog_trigger == true:
+		Global.stopGame = true
+		$DialogPanel.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,7 +64,7 @@ func _process(delta: float) -> void:
 	elif Global.loseArea == true or Global.loseKill == true:
 		winLose_label.text = "YOU LOSE"
 	
-	if (Global.health <= 0 || Global.stopGame):
+	if (Global.health <= 0 || Global.stopGame and Global.dialog_trigger == false):
 		if (!gameOver):
 			gameOver = true
 			winLose_panel.visible = true
@@ -68,6 +72,7 @@ func _process(delta: float) -> void:
 	
 	updateUI()
 	HealthUpdate()
+	update_dialog()
 
 func HealthUpdate():
 	if Global.getHurt == true or Global.getHealth == true:
@@ -79,12 +84,19 @@ func HealthUpdate():
 		Global.getHealth = false
 
 func updateUI():
+	if Global.stopGame == false:
+		$LevelLabel.text = "Level: " + str(Global.level)
 	pointsLabel.text = str(Global.points)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/BeanSprout/BeanSproutLabel.text = str(Global.bean_sprout)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/Egg/EggLabel.text = str(Global.egg)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/Garlic/GarlicLabel.text = str(Global.garlic)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/Rice/RiceLabel.text = str(Global.rice)
+	$RecipeBookPanel/DubuKimchiPanel/Tofu/TofuLabel.text = str(Global.tofu)
+	$RecipeBookPanel/DubuKimchiPanel/Kimchi/KimchiLabel.text = str(Global.kimchi)
+	$RecipeBookPanel/DubuKimchiPanel/Pork/PorkLabel.text = str(Global.pork)
+	$RecipeBookPanel/DubuKimchiPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$RecipeBookPanel/DubuKimchiPanel/RedPepperPowder/RedPepperPowderLabel.text = str(Global.red_pepper_powder)
 	if Global.missing_material == true:
 		$AnouLabel.text = "Material is missing!"
 		$AnouLabel.visible = true
@@ -99,13 +111,30 @@ func updateUI():
 			open_recipe_book = false
 			$RecipeBookPanel.visible = false
 
+func update_dialog():
+	if Global.level == 1 and Global.dialog_trigger == true:
+		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
+			$DialogPanel/DialogSprite2D/DialogLabel.text = "haha"
+		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
+			$DialogPanel/DialogSprite2D/DialogLabel.text = "hoho"
+		if Input.is_action_just_pressed("shoot"):
+			dialog_index += 1
+			if dialog_index >= 2:
+				Global.dialog_trigger = false
+				Global.stopGame = false
+				$DialogPanel.visible = false
 
 func _on_delay_hurt_get_shot_timeout() -> void:
 	Global.getHurt = false
 
 
 func _on_try_again_button_pressed() -> void:
-	Global.reset_level = true
+	if Global.level < 10:
+		Global.reset_level = true
+	else:
+		get_tree().change_scene_to_file("res://Scene/Game/CreditScene.tscn")
 
 
 func _on_exit_button_pressed() -> void:

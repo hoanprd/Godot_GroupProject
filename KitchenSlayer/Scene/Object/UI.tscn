@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=27 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b5kh37ky6xkn6" path="res://Sprite/Item/seasame oil.png" id="20_nh0wt"]
 [ext_resource type="Texture2D" uid="uid://cl1mabyvlyfa2" path="res://Sprite/UI/DialogBox.png" id="22_w388i"]
 [ext_resource type="Texture2D" uid="uid://buikw5d1aggaj" path="res://Sprite/UI/FacesetBox.png" id="23_0onfv"]
+[ext_resource type="Texture2D" uid="uid://dfjhsqesc2b5l" path="res://Texture/Demon King.png" id="24_34eaq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
 bg_color = Color(0.36668, 0.0670769, 0.116715, 1)
@@ -78,7 +79,6 @@ layout_mode = 0
 offset_left = 122.0
 offset_right = 205.0
 offset_bottom = 23.0
-text = "Level: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -467,10 +467,16 @@ position = Vector2(-122.812, 4)
 texture = ExtResource("23_0onfv")
 
 [node name="AvatarIconSprite2D" type="Sprite2D" parent="DialogPanel/DialogSprite2D/AvatarSprite2D"]
+position = Vector2(-0.0001297, -4.76837e-06)
+scale = Vector2(2.34374, 2.375)
+texture = ExtResource("24_34eaq")
 
 [node name="DialogLabel" type="Label" parent="DialogPanel/DialogSprite2D"]
-offset_right = 40.0
+offset_left = -98.0
+offset_top = -15.0
+offset_right = 144.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="WinLosePanel/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="WinLosePanel/ExitButton" to="." method="_on_exit_button_pressed"]
