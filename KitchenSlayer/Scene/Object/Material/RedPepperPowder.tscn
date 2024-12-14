@@ -11,7 +11,7 @@ z_index = 2
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_pq48g")
-itemId = 13
+itemId = 14
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)

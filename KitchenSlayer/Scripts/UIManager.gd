@@ -4,6 +4,8 @@ extends Control
 @onready var pointsLabel = $PointsLabel
 
 var heart_size : int = 14
+var open_recipe_book = false
+
 var hurtPanel: Panel
 var delay_hurt_get_shot : Timer
 var gameOver: bool
@@ -23,25 +25,25 @@ func _ready() -> void:
 	gameOver = false
 	$Heart.size.x = Global.health * heart_size
 	if Global.level == 1:
-		$BeanSproutRiceSoupPanel.visible = true
+		$RecipeBookPanel/BeanSproutRiceSoupPanel.visible = true
 	elif Global.level == 2:
-		$DubuKimchiPanel.visible = true
+		$RecipeBookPanel/DubuKimchiPanel.visible = true
 	elif Global.level == 3:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 4:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 5:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 6:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 7:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 8:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 9:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 10:
-		$BibimbapPanel.visible = true
+		$RecipeBookPanel/BibimbapPanel.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -78,17 +80,24 @@ func HealthUpdate():
 
 func updateUI():
 	pointsLabel.text = str(Global.points)
-	$BeanSproutRiceSoupPanel/BeanSprout/BeanSproutLabel.text = str(Global.bean_sprout)
-	$BeanSproutRiceSoupPanel/Egg/EggLabel.text = str(Global.egg)
-	$BeanSproutRiceSoupPanel/Garlic/GarlicLabel.text = str(Global.garlic)
-	$BeanSproutRiceSoupPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
-	$BeanSproutRiceSoupPanel/Rice/RiceLabel.text = str(Global.rice)
+	$RecipeBookPanel/BeanSproutRiceSoupPanel/BeanSprout/BeanSproutLabel.text = str(Global.bean_sprout)
+	$RecipeBookPanel/BeanSproutRiceSoupPanel/Egg/EggLabel.text = str(Global.egg)
+	$RecipeBookPanel/BeanSproutRiceSoupPanel/Garlic/GarlicLabel.text = str(Global.garlic)
+	$RecipeBookPanel/BeanSproutRiceSoupPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$RecipeBookPanel/BeanSproutRiceSoupPanel/Rice/RiceLabel.text = str(Global.rice)
 	if Global.missing_material == true:
 		$AnouLabel.text = "Material is missing!"
 		$AnouLabel.visible = true
 	else:
 		$AnouLabel.text = "Material is missing!"
 		$AnouLabel.visible = false
+	if Input.is_action_just_pressed("open_recipe_book"):
+		if open_recipe_book == false:
+			open_recipe_book = true
+			$RecipeBookPanel.visible = true
+		else:
+			open_recipe_book = false
+			$RecipeBookPanel.visible = false
 
 
 func _on_delay_hurt_get_shot_timeout() -> void:

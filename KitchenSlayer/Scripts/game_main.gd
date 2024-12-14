@@ -18,7 +18,9 @@ func _process(delta: float) -> void:
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 2:
-			pass
+			map_path = preload("res://Scene/Game/MapSeedLv2.tscn")
+			ins = map_path.instantiate()
+			get_parent().add_child(ins)
 	if Global.reset_level == true:
 		Global.reset_level = false
 		get_parent().remove_child(ins)

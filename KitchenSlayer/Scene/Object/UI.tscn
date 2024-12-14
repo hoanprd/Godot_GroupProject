@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=26 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://cj7qhx6ui77o4" path="res://Sprite/Item/mushroom.png" id="18_qfb2a"]
 [ext_resource type="Texture2D" uid="uid://bp4uipbrux3ar" path="res://Sprite/Item/gochujang.png" id="19_iibl0"]
 [ext_resource type="Texture2D" uid="uid://b5kh37ky6xkn6" path="res://Sprite/Item/seasame oil.png" id="20_nh0wt"]
+[ext_resource type="Texture2D" uid="uid://cl1mabyvlyfa2" path="res://Sprite/UI/DialogBox.png" id="22_w388i"]
+[ext_resource type="Texture2D" uid="uid://buikw5d1aggaj" path="res://Sprite/UI/FacesetBox.png" id="23_0onfv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
 bg_color = Color(0.36668, 0.0670769, 0.116715, 1)
@@ -89,24 +91,32 @@ offset_bottom = 66.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BeanSproutRiceSoupPanel" type="Panel" parent="."]
+[node name="RecipeBookPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_top = 20.0
-offset_right = 135.0
-offset_bottom = 41.0
+offset_left = 72.0
+offset_right = 248.0
+offset_bottom = 180.0
 
-[node name="BeanSproutRiceSoup" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+[node name="BeanSproutRiceSoupPanel" type="Panel" parent="RecipeBookPanel"]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 172.0
+offset_bottom = 34.0
+
+[node name="BeanSproutRiceSoup" type="Sprite2D" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 position = Vector2(8.5, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("4_syjej")
 
-[node name="BeanSprout" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+[node name="BeanSprout" type="Sprite2D" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 position = Vector2(38, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("5_4vf7d")
 
-[node name="BeanSproutLabel" type="Label" parent="BeanSproutRiceSoupPanel/BeanSprout"]
+[node name="BeanSproutLabel" type="Label" parent="RecipeBookPanel/BeanSproutRiceSoupPanel/BeanSprout"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -115,12 +125,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Egg" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+[node name="Egg" type="Sprite2D" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 position = Vector2(58, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("6_xik71")
 
-[node name="EggLabel" type="Label" parent="BeanSproutRiceSoupPanel/Egg"]
+[node name="EggLabel" type="Label" parent="RecipeBookPanel/BeanSproutRiceSoupPanel/Egg"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -129,12 +139,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Garlic" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+[node name="Garlic" type="Sprite2D" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 position = Vector2(79, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("7_xlsr6")
 
-[node name="GarlicLabel" type="Label" parent="BeanSproutRiceSoupPanel/Garlic"]
+[node name="GarlicLabel" type="Label" parent="RecipeBookPanel/BeanSproutRiceSoupPanel/Garlic"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -143,12 +153,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GreenOnion" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+[node name="GreenOnion" type="Sprite2D" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 position = Vector2(99, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("8_vcyun")
 
-[node name="GreenOnionLabel" type="Label" parent="BeanSproutRiceSoupPanel/GreenOnion"]
+[node name="GreenOnionLabel" type="Label" parent="RecipeBookPanel/BeanSproutRiceSoupPanel/GreenOnion"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -157,12 +167,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Rice" type="Sprite2D" parent="BeanSproutRiceSoupPanel"]
+[node name="Rice" type="Sprite2D" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 position = Vector2(120, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("9_f6o15")
 
-[node name="RiceLabel" type="Label" parent="BeanSproutRiceSoupPanel/Rice"]
+[node name="RiceLabel" type="Label" parent="RecipeBookPanel/BeanSproutRiceSoupPanel/Rice"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -171,7 +181,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="BeanSproutRiceSoupPanel"]
+[node name="Label" type="Label" parent="RecipeBookPanel/BeanSproutRiceSoupPanel"]
 layout_mode = 0
 offset_left = 18.0
 offset_right = 42.0
@@ -181,24 +191,25 @@ text = "="
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DubuKimchiPanel" type="Panel" parent="."]
+[node name="DubuKimchiPanel" type="Panel" parent="RecipeBookPanel"]
 visible = false
 layout_mode = 0
-offset_top = 20.0
-offset_right = 135.0
-offset_bottom = 41.0
+offset_left = 5.0
+offset_top = 38.0
+offset_right = 172.0
+offset_bottom = 59.0
 
-[node name="DubuKimchi" type="Sprite2D" parent="DubuKimchiPanel"]
+[node name="DubuKimchi" type="Sprite2D" parent="RecipeBookPanel/DubuKimchiPanel"]
 position = Vector2(8.5, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("10_5rkbg")
 
-[node name="Tofu" type="Sprite2D" parent="DubuKimchiPanel"]
+[node name="Tofu" type="Sprite2D" parent="RecipeBookPanel/DubuKimchiPanel"]
 position = Vector2(38, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("10_7ojco")
 
-[node name="TofuLabel" type="Label" parent="DubuKimchiPanel/Tofu"]
+[node name="TofuLabel" type="Label" parent="RecipeBookPanel/DubuKimchiPanel/Tofu"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -207,12 +218,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Kimchi" type="Sprite2D" parent="DubuKimchiPanel"]
+[node name="Kimchi" type="Sprite2D" parent="RecipeBookPanel/DubuKimchiPanel"]
 position = Vector2(58, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("12_i1ayg")
 
-[node name="KimchiLabel" type="Label" parent="DubuKimchiPanel/Kimchi"]
+[node name="KimchiLabel" type="Label" parent="RecipeBookPanel/DubuKimchiPanel/Kimchi"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -221,12 +232,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pork" type="Sprite2D" parent="DubuKimchiPanel"]
+[node name="Pork" type="Sprite2D" parent="RecipeBookPanel/DubuKimchiPanel"]
 position = Vector2(79, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("13_2w3e7")
 
-[node name="PorkLabel" type="Label" parent="DubuKimchiPanel/Pork"]
+[node name="PorkLabel" type="Label" parent="RecipeBookPanel/DubuKimchiPanel/Pork"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -235,12 +246,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GreenOnion" type="Sprite2D" parent="DubuKimchiPanel"]
+[node name="GreenOnion" type="Sprite2D" parent="RecipeBookPanel/DubuKimchiPanel"]
 position = Vector2(99, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("8_vcyun")
 
-[node name="GreenOnionLabel" type="Label" parent="DubuKimchiPanel/GreenOnion"]
+[node name="GreenOnionLabel" type="Label" parent="RecipeBookPanel/DubuKimchiPanel/GreenOnion"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -249,12 +260,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RedPepperPowder" type="Sprite2D" parent="DubuKimchiPanel"]
+[node name="RedPepperPowder" type="Sprite2D" parent="RecipeBookPanel/DubuKimchiPanel"]
 position = Vector2(120, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("14_p0ite")
 
-[node name="RedPepperPowderLabel" type="Label" parent="DubuKimchiPanel/RedPepperPowder"]
+[node name="RedPepperPowderLabel" type="Label" parent="RecipeBookPanel/DubuKimchiPanel/RedPepperPowder"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -263,7 +274,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="DubuKimchiPanel"]
+[node name="Label" type="Label" parent="RecipeBookPanel/DubuKimchiPanel"]
 layout_mode = 0
 offset_left = 18.0
 offset_right = 42.0
@@ -273,24 +284,25 @@ text = "="
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BibimbapPanel" type="Panel" parent="."]
+[node name="BibimbapPanel" type="Panel" parent="RecipeBookPanel"]
 visible = false
 layout_mode = 0
-offset_top = 20.0
-offset_right = 167.0
-offset_bottom = 41.0
+offset_left = 4.0
+offset_top = 63.0
+offset_right = 172.0
+offset_bottom = 84.0
 
-[node name="Bibimbap" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Bibimbap" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(8.5, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("15_yjt7u")
 
-[node name="Rice" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Rice" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(38, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("9_f6o15")
 
-[node name="RiceLabel" type="Label" parent="BibimbapPanel/Rice"]
+[node name="RiceLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/Rice"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -299,12 +311,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Beef" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Beef" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(58, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("16_sabxj")
 
-[node name="BeefLabel" type="Label" parent="BibimbapPanel/Beef"]
+[node name="BeefLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/Beef"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -313,12 +325,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Carrot" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Carrot" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(79, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("17_d6mbd")
 
-[node name="CarrotLabel" type="Label" parent="BibimbapPanel/Carrot"]
+[node name="CarrotLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/Carrot"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -327,12 +339,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mushroom" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Mushroom" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(99, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("18_qfb2a")
 
-[node name="MushroomLabel" type="Label" parent="BibimbapPanel/Mushroom"]
+[node name="MushroomLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/Mushroom"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -341,12 +353,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Egg" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Egg" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(120, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("6_xik71")
 
-[node name="EggLabel" type="Label" parent="BibimbapPanel/Egg"]
+[node name="EggLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/Egg"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -355,12 +367,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gochujang" type="Sprite2D" parent="BibimbapPanel"]
+[node name="Gochujang" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(140, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("19_iibl0")
 
-[node name="GochujangLabel" type="Label" parent="BibimbapPanel/Gochujang"]
+[node name="GochujangLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/Gochujang"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -369,12 +381,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SesameOil" type="Sprite2D" parent="BibimbapPanel"]
+[node name="SesameOil" type="Sprite2D" parent="RecipeBookPanel/BibimbapPanel"]
 position = Vector2(160, 7)
 scale = Vector2(0.46875, 0.4375)
 texture = ExtResource("20_nh0wt")
 
-[node name="SesameOilLabel" type="Label" parent="BibimbapPanel/SesameOil"]
+[node name="SesameOilLabel" type="Label" parent="RecipeBookPanel/BibimbapPanel/SesameOil"]
 offset_left = -6.4
 offset_top = 9.14286
 offset_right = 8.6
@@ -383,7 +395,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="BibimbapPanel"]
+[node name="Label" type="Label" parent="RecipeBookPanel/BibimbapPanel"]
 layout_mode = 0
 offset_left = 18.0
 offset_right = 42.0
@@ -437,6 +449,28 @@ texture = ExtResource("1_kp5xg")
 
 [node name="DelayHurtGetShot" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="DialogPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 129.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="DialogSprite2D" type="Sprite2D" parent="DialogPanel"]
+position = Vector2(160, 22)
+scale = Vector2(1.06667, 1)
+texture = ExtResource("22_w388i")
+
+[node name="AvatarSprite2D" type="Sprite2D" parent="DialogPanel/DialogSprite2D"]
+position = Vector2(-122.812, 4)
+texture = ExtResource("23_0onfv")
+
+[node name="AvatarIconSprite2D" type="Sprite2D" parent="DialogPanel/DialogSprite2D/AvatarSprite2D"]
+
+[node name="DialogLabel" type="Label" parent="DialogPanel/DialogSprite2D"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="WinLosePanel/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="WinLosePanel/ExitButton" to="." method="_on_exit_button_pressed"]

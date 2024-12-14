@@ -143,13 +143,10 @@ libraries = {
 autoplay = "idle"
 
 [node name="AttackFX" type="AudioStreamPlayer2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="HurtFX" type="AudioStreamPlayer2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 
