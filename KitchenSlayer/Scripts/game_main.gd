@@ -38,19 +38,19 @@ func _process(delta: float) -> void:
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 7:
-			map_path = preload("res://Scene/Game/MapSeedLv3.tscn")
+			map_path = preload("res://Scene/Game/MapSeedLv7.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 8:
-			map_path = preload("res://Scene/Game/MapSeedLv3.tscn")
+			map_path = preload("res://Scene/Game/MapSeedLv8.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 9:
-			map_path = preload("res://Scene/Game/MapSeedLv3.tscn")
+			map_path = preload("res://Scene/Game/MapSeedLv9.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 10:
-			map_path = preload("res://Scene/Game/MapSeedLv3.tscn")
+			map_path = preload("res://Scene/Game/MapSeedLv10.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 	if Global.reset_level == true:
