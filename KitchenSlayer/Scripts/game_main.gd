@@ -30,11 +30,11 @@ func _process(delta: float) -> void:
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 5:
-			map_path = preload("res://Scene/Game/MapSeedLv3.tscn")
+			map_path = preload("res://Scene/Game/MapSeedLv5.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 6:
-			map_path = preload("res://Scene/Game/MapSeedLv3.tscn")
+			map_path = preload("res://Scene/Game/MapSeedLv6.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 7:

@@ -58,10 +58,25 @@ func _on_body_entered(body: Node2D) -> void:
 					else:
 						Global.level += 1
 			elif Global.level == 4:
-				if Global.tofu >= 1 and Global.kimchi >= 1 and Global.pork >= 1 and Global.green_onion >= 1 and Global.red_pepper_powder >= 1:
+				if Global.doenjang >= 1 and Global.tofu >= 1 and Global.potato >= 1 and Global.onion >= 1 and Global.green_onion >= 1 and Global.mushroom >= 1:
+					print("hi")
+					Global.doenjang -= 1
 					Global.tofu -= 1
+					Global.potato -= 1
+					Global.onion -= 1
+					Global.green_onion -= 1
+					Global.mushroom -= 1
+					Global.win = true
+					Global.stopGame = true
+					if Global.level >= 10:
+						pass
+					else:
+						Global.level += 1
+			elif Global.level == 5:
+				if Global.kimchi >= 1 and Global.pork >= 1 and Global.tofu >= 1 and Global.green_onion >= 1 and Global.red_pepper_powder >= 1:
 					Global.kimchi -= 1
 					Global.pork -= 1
+					Global.tofu -= 1
 					Global.green_onion -= 1
 					Global.red_pepper_powder -= 1
 					Global.win = true
@@ -70,13 +85,28 @@ func _on_body_entered(body: Node2D) -> void:
 						pass
 					else:
 						Global.level += 1
-			elif Global.level == 5:
-				if Global.tofu >= 1 and Global.kimchi >= 1 and Global.pork >= 1 and Global.green_onion >= 1 and Global.red_pepper_powder >= 1:
-					Global.tofu -= 1
+			elif Global.level == 6:
+				if Global.kimchi >= 1 and Global.pork >= 1 and Global.tofu >= 1 and Global.green_onion >= 1 and Global.red_pepper_powder >= 1:
 					Global.kimchi -= 1
 					Global.pork -= 1
+					Global.tofu -= 1
 					Global.green_onion -= 1
 					Global.red_pepper_powder -= 1
+					Global.win = true
+					Global.stopGame = true
+					if Global.level >= 10:
+						pass
+					else:
+						Global.level += 1
+			elif Global.level == 7:
+				if Global.beef >= 1 and Global.onion >= 1 and Global.tofu >= 1 and Global.green_onion >= 1 and Global.soy_sauce >= 1 and Global.sesame_oil >= 1 and Global.garlic >= 1:
+					Global.beef -= 1
+					Global.onion -= 1
+					Global.tofu -= 1
+					Global.green_onion -= 1
+					Global.soy_sauce -= 1
+					Global.sesame_oil -= 1
+					Global.garlic -= 1
 					Global.win = true
 					Global.stopGame = true
 					if Global.level >= 10:

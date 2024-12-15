@@ -495,7 +495,7 @@ vertical_alignment = 1
 [node name="Mushroom" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
 position = Vector2(140, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("19_iibl0")
+texture = ExtResource("18_qfb2a")
 
 [node name="MushroomLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Mushroom"]
 offset_left = -6.4
