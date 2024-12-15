@@ -32,19 +32,28 @@ func _ready() -> void:
 	elif Global.level == 3:
 		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 4:
-		$RecipeBookPanel/BibimbapPanel.visible = true
+		$RecipeBookPanel/DoenjangJjigaePanel.visible = true
 	elif Global.level == 5:
-		$RecipeBookPanel/BibimbapPanel.visible = true
+		$RecipeBookPanel/KimchiJjigaePanel.visible = true
 	elif Global.level == 6:
+		$RecipeBookPanel/DoenjangJjigaePanel.visible = true
 		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 7:
-		$RecipeBookPanel/BibimbapPanel.visible = true
+		$RecipeBookPanel/BulgogiPanel.visible = true
 	elif Global.level == 8:
-		$RecipeBookPanel/BibimbapPanel.visible = true
+		$RecipeBookPanel/JeyukBokkeumPanel.visible = true
 	elif Global.level == 9:
+		$RecipeBookPanel/BulgogiPanel.visible = true
+		$RecipeBookPanel/KimchiJjigaePanel.visible = true
 		$RecipeBookPanel/BibimbapPanel.visible = true
 	elif Global.level == 10:
+		$RecipeBookPanel/BeanSproutRiceSoupPanel.visible = true
+		$RecipeBookPanel/DubuKimchiPanel.visible = true
 		$RecipeBookPanel/BibimbapPanel.visible = true
+		$RecipeBookPanel/DoenjangJjigaePanel.visible = true
+		$RecipeBookPanel/KimchiJjigaePanel.visible = true
+		$RecipeBookPanel/BulgogiPanel.visible = true
+		$RecipeBookPanel/JeyukBokkeumPanel.visible = true
 	if Global.dialog_trigger == true:
 		Global.stopGame = true
 		$DialogPanel.visible = true
@@ -106,6 +115,33 @@ func updateUI():
 	$RecipeBookPanel/BibimbapPanel/Egg/EggLabel.text = str(Global.egg)
 	$RecipeBookPanel/BibimbapPanel/Gochujang/GochujangLabel.text = str(Global.gochujang)
 	$RecipeBookPanel/BibimbapPanel/SesameOil/SesameOilLabel.text = str(Global.sesame_oil)
+	
+	$RecipeBookPanel/DoenjangJjigaePanel/Doenjang/DoenjangLabel.text = str(Global.doenjang)
+	$RecipeBookPanel/DoenjangJjigaePanel/Tofu/TofuLabel.text = str(Global.tofu)
+	$RecipeBookPanel/DoenjangJjigaePanel/Potato/PotatoLabel.text = str(Global.potato)
+	$RecipeBookPanel/DoenjangJjigaePanel/Onion/OnionLabel.text = str(Global.onion)
+	$RecipeBookPanel/DoenjangJjigaePanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$RecipeBookPanel/DoenjangJjigaePanel/Mushroom/MushroomLabel.text = str(Global.mushroom)
+	
+	$RecipeBookPanel/KimchiJjigaePanel/Kimchi/KimchiLabel.text = str(Global.kimchi)
+	$RecipeBookPanel/KimchiJjigaePanel/Pork/PorkLabel.text = str(Global.pork)
+	$RecipeBookPanel/KimchiJjigaePanel/Tofu/TofuLabel.text = str(Global.tofu)
+	$RecipeBookPanel/KimchiJjigaePanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$RecipeBookPanel/KimchiJjigaePanel/RedPepperPowder/RedPepperPowderLabel.text = str(Global.red_pepper_powder)
+	
+	$RecipeBookPanel/BulgogiPanel/Beef/BeefLabel.text = str(Global.beef)
+	$RecipeBookPanel/BulgogiPanel/Onion/OnionLabel.text = str(Global.onion)
+	$RecipeBookPanel/BulgogiPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$RecipeBookPanel/BulgogiPanel/SoySauce/SoySauceLabel.text = str(Global.soy_sauce)
+	$RecipeBookPanel/BulgogiPanel/SesameOil/SesameOilLabel.text = str(Global.sesame_oil)
+	$RecipeBookPanel/BulgogiPanel/Garlic/GarlicLabel.text = str(Global.garlic)
+	
+	$RecipeBookPanel/JeyukBokkeumPanel/Pork/PorkLabel.text = str(Global.pork)
+	$RecipeBookPanel/JeyukBokkeumPanel/Onion/OnionLabel.text = str(Global.onion)
+	$RecipeBookPanel/JeyukBokkeumPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
+	$RecipeBookPanel/JeyukBokkeumPanel/Gochujang/GochujangLabel.text = str(Global.gochujang)
+	$RecipeBookPanel/JeyukBokkeumPanel/RedPepperPowder/RedPepperPowderLabel.text = str(Global.red_pepper_powder)
+	$RecipeBookPanel/JeyukBokkeumPanel/Garlic/GarlicLabel.text = str(Global.garlic)
 	if Global.missing_material == true:
 		$AnouLabel.text = "Material is missing!"
 		$AnouLabel.visible = true

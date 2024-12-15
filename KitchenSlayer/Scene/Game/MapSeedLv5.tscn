@@ -1,25 +1,25 @@
-[gd_scene load_steps=26 format=4 uid="uid://d1kh603a6ypn4"]
+[gd_scene load_steps=26 format=4 uid="uid://cswx2syik7j1s"]
 
-[ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_lerxx"]
-[ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_ftkjw"]
-[ext_resource type="Texture2D" uid="uid://d1drvtmcnyt46" path="res://Tileset/Farmer Story Sprites.png" id="3_1ptsx"]
-[ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="4_ayo5w"]
-[ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="5_8vqjv"]
-[ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="6_8xqnl"]
-[ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="7_1y476"]
-[ext_resource type="PackedScene" uid="uid://cg8gsuvsgrkpr" path="res://Scene/Object/Material/Doenjang.tscn" id="8_r2fdm"]
-[ext_resource type="PackedScene" uid="uid://c56w7qwqvamfu" path="res://Scene/Object/Material/Tofu.tscn" id="9_mdu0q"]
-[ext_resource type="PackedScene" uid="uid://bmecdd3v50uv1" path="res://Scene/Object/Material/Potato.tscn" id="10_oh1gk"]
-[ext_resource type="PackedScene" uid="uid://fa26gtn0d8ql" path="res://Scene/Object/Material/Mushroom.tscn" id="11_ioq5t"]
-[ext_resource type="PackedScene" uid="uid://fb8px626kr2b" path="res://Scene/Object/Material/Onion.tscn" id="11_jg3ue"]
-[ext_resource type="PackedScene" uid="uid://op44npkc1pkw" path="res://Scene/Object/Material/GreenOnion.tscn" id="12_ssf8d"]
-[ext_resource type="PackedScene" uid="uid://hbdajqfdgos7" path="res://Scene/Object/Buff/TomatoSpeedUp.tscn" id="15_iv3gw"]
-[ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="15_ppyx4"]
-[ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="16_jxjfj"]
-[ext_resource type="PackedScene" uid="uid://cndp7clvn7jym" path="res://Scene/Object/Buff/TomatoSizeUp.tscn" id="16_vjcud"]
+[ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_sju3t"]
+[ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_oxx61"]
+[ext_resource type="Texture2D" uid="uid://d1drvtmcnyt46" path="res://Tileset/Farmer Story Sprites.png" id="3_3qhni"]
+[ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="4_7g2sq"]
+[ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="5_g3gwe"]
+[ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="6_cjd54"]
+[ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="7_ufdfu"]
+[ext_resource type="PackedScene" uid="uid://cg8gsuvsgrkpr" path="res://Scene/Object/Material/Doenjang.tscn" id="8_ed8se"]
+[ext_resource type="PackedScene" uid="uid://c56w7qwqvamfu" path="res://Scene/Object/Material/Tofu.tscn" id="9_m2iin"]
+[ext_resource type="PackedScene" uid="uid://bmecdd3v50uv1" path="res://Scene/Object/Material/Potato.tscn" id="10_lb8x3"]
+[ext_resource type="PackedScene" uid="uid://fb8px626kr2b" path="res://Scene/Object/Material/Onion.tscn" id="11_0m86y"]
+[ext_resource type="PackedScene" uid="uid://op44npkc1pkw" path="res://Scene/Object/Material/GreenOnion.tscn" id="12_bnl4g"]
+[ext_resource type="PackedScene" uid="uid://fa26gtn0d8ql" path="res://Scene/Object/Material/Mushroom.tscn" id="13_dh4co"]
+[ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="14_ai7gg"]
+[ext_resource type="PackedScene" uid="uid://hbdajqfdgos7" path="res://Scene/Object/Buff/TomatoSpeedUp.tscn" id="15_qpnhm"]
+[ext_resource type="PackedScene" uid="uid://cndp7clvn7jym" path="res://Scene/Object/Buff/TomatoSizeUp.tscn" id="16_7a5jr"]
+[ext_resource type="PackedScene" uid="uid://dpmldcawr36fe" path="res://Scene/Object/Coin.tscn" id="17_y1xg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc6vo"]
-texture = ExtResource("1_lerxx")
+texture = ExtResource("1_sju3t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -70,7 +70,7 @@ texture = ExtResource("1_lerxx")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6duoq"]
-texture = ExtResource("2_ftkjw")
+texture = ExtResource("2_oxx61")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -222,7 +222,7 @@ texture = ExtResource("2_ftkjw")
 11:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ji8pm"]
-texture = ExtResource("3_1ptsx")
+texture = ExtResource("3_3qhni")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -842,7 +842,7 @@ sources/0 = SubResource("TileSetAtlasSource_vc6vo")
 sources/2 = SubResource("TileSetAtlasSource_ji8pm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdslh"]
-texture = ExtResource("1_lerxx")
+texture = ExtResource("1_sju3t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -893,7 +893,7 @@ texture = ExtResource("1_lerxx")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhk8m"]
-texture = ExtResource("2_ftkjw")
+texture = ExtResource("2_oxx61")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -1041,7 +1041,7 @@ texture = ExtResource("2_ftkjw")
 11:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75lsa"]
-texture = ExtResource("3_1ptsx")
+texture = ExtResource("3_3qhni")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1637,12 +1637,12 @@ tile_set = SubResource("TileSet_6q52e")
 
 [node name="MapAreaEnter" type="Node" parent="."]
 
-[node name="DeathAreaEnter2" parent="MapAreaEnter" instance=ExtResource("4_ayo5w")]
+[node name="DeathAreaEnter2" parent="MapAreaEnter" instance=ExtResource("4_7g2sq")]
 position = Vector2(1015, 172)
 scale = Vector2(8, 0.501)
 id = 1
 
-[node name="WinAreaEnter3" parent="MapAreaEnter" instance=ExtResource("4_ayo5w")]
+[node name="WinAreaEnter3" parent="MapAreaEnter" instance=ExtResource("4_7g2sq")]
 position = Vector2(1960, 160)
 scale = Vector2(0.8, 0.8)
 
@@ -1650,29 +1650,29 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Enemy" type="Node" parent="Danger"]
 
-[node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("5_8vqjv")]
+[node name="EnemyA" parent="Danger/Enemy" instance=ExtResource("5_g3gwe")]
 position = Vector2(812, 182)
 rangeLeft = -10.0
 rangeRight = 10.0
 
-[node name="EnemyA2" parent="Danger/Enemy" instance=ExtResource("5_8vqjv")]
+[node name="EnemyA2" parent="Danger/Enemy" instance=ExtResource("5_g3gwe")]
 position = Vector2(1415, 86)
 rangeLeft = -10.0
 rangeRight = 10.0
 
-[node name="EnemyB" parent="Danger/Enemy" instance=ExtResource("6_8xqnl")]
+[node name="EnemyB" parent="Danger/Enemy" instance=ExtResource("6_cjd54")]
 position = Vector2(648, 112)
 
-[node name="EnemyB2" parent="Danger/Enemy" instance=ExtResource("6_8xqnl")]
+[node name="EnemyB2" parent="Danger/Enemy" instance=ExtResource("6_cjd54")]
 position = Vector2(1148, 96)
 
-[node name="EnemyB3" parent="Danger/Enemy" instance=ExtResource("6_8xqnl")]
+[node name="EnemyB3" parent="Danger/Enemy" instance=ExtResource("6_cjd54")]
 position = Vector2(1742, 95)
 
-[node name="EnemyC" parent="Danger/Enemy" instance=ExtResource("7_1y476")]
+[node name="EnemyC" parent="Danger/Enemy" instance=ExtResource("7_ufdfu")]
 position = Vector2(517, 150)
 
-[node name="EnemyC2" parent="Danger/Enemy" instance=ExtResource("7_1y476")]
+[node name="EnemyC2" parent="Danger/Enemy" instance=ExtResource("7_ufdfu")]
 position = Vector2(966, 89)
 
 [node name="Static" type="Node" parent="Danger"]
@@ -1681,63 +1681,63 @@ position = Vector2(966, 89)
 
 [node name="CookingMaterial" type="Node" parent="PickableItem"]
 
-[node name="Doenjang" parent="PickableItem/CookingMaterial" instance=ExtResource("8_r2fdm")]
+[node name="Doenjang" parent="PickableItem/CookingMaterial" instance=ExtResource("8_ed8se")]
 position = Vector2(280, 202)
 
-[node name="Tofu" parent="PickableItem/CookingMaterial" instance=ExtResource("9_mdu0q")]
+[node name="Tofu" parent="PickableItem/CookingMaterial" instance=ExtResource("9_m2iin")]
 position = Vector2(552, 186)
 
-[node name="Potato" parent="PickableItem/CookingMaterial" instance=ExtResource("10_oh1gk")]
+[node name="Potato" parent="PickableItem/CookingMaterial" instance=ExtResource("10_lb8x3")]
 position = Vector2(744, 170)
 
-[node name="Onion" parent="PickableItem/CookingMaterial" instance=ExtResource("11_jg3ue")]
+[node name="Onion" parent="PickableItem/CookingMaterial" instance=ExtResource("11_0m86y")]
 position = Vector2(1064, 122)
 
-[node name="GreenOnion" parent="PickableItem/CookingMaterial" instance=ExtResource("12_ssf8d")]
+[node name="GreenOnion" parent="PickableItem/CookingMaterial" instance=ExtResource("12_bnl4g")]
 position = Vector2(1448, 104)
 
-[node name="Mushroom" parent="PickableItem/CookingMaterial" instance=ExtResource("11_ioq5t")]
+[node name="Mushroom" parent="PickableItem/CookingMaterial" instance=ExtResource("13_dh4co")]
 position = Vector2(1672, 108)
 
 [node name="Booster" type="Node" parent="PickableItem"]
 
-[node name="Health" parent="PickableItem/Booster" instance=ExtResource("15_ppyx4")]
+[node name="Health" parent="PickableItem/Booster" instance=ExtResource("14_ai7gg")]
 position = Vector2(1000, 122)
 
-[node name="Health2" parent="PickableItem/Booster" instance=ExtResource("15_ppyx4")]
+[node name="Health2" parent="PickableItem/Booster" instance=ExtResource("14_ai7gg")]
 position = Vector2(1592, 106)
 
-[node name="TomatoSpeedUp" parent="PickableItem/Booster" instance=ExtResource("15_iv3gw")]
+[node name="TomatoSpeedUp" parent="PickableItem/Booster" instance=ExtResource("15_qpnhm")]
 position = Vector2(360, 170)
 
-[node name="TomatoSpeedUp2" parent="PickableItem/Booster" instance=ExtResource("16_vjcud")]
+[node name="TomatoSpeedUp2" parent="PickableItem/Booster" instance=ExtResource("16_7a5jr")]
 position = Vector2(1192, 122)
 
 [node name="Coin" type="Node" parent="PickableItem"]
 
-[node name="Coin" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(312, 170)
 
-[node name="Coin2" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin2" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(328, 170)
 
-[node name="Coin3" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin3" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(344, 170)
 
-[node name="Coin4" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin4" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(872, 170)
 
-[node name="Coin5" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin5" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(888, 154)
 
-[node name="Coin6" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin6" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(1224, 90)
 
-[node name="Coin7" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin7" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(1238, 90)
 
-[node name="Coin8" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin8" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(1252, 90)
 
-[node name="Coin9" parent="PickableItem/Coin" instance=ExtResource("16_jxjfj")]
+[node name="Coin9" parent="PickableItem/Coin" instance=ExtResource("17_y1xg1")]
 position = Vector2(1266, 90)

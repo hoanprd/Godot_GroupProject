@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg8gsuvsgrkpr"]
+
+[ext_resource type="Script" path="res://Scripts/ItemPick.gd" id="1_e3hjh"]
+[ext_resource type="Texture2D" uid="uid://belotrivab53r" path="res://Sprite/Item/rice.png" id="2_lpsbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aavao"]
+size = Vector2(14, 12)
+
+[node name="Doenjang" type="Area2D"]
+z_index = 2
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_e3hjh")
+itemId = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_lpsbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aavao")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

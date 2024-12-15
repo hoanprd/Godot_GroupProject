@@ -83,3 +83,12 @@ func _on_body_entered(body: Node2D) -> void:
 		elif _itemId == 19:
 			Global.sesame_oil += 1
 			queue_free()
+		elif _itemId == 20:
+			Global.doenjang += 1
+			queue_free()
+		elif _itemId == 21:
+			Global.potato += 1
+			queue_free()
+		elif _itemId == 22:
+			Global.onion += 1
+			queue_free()
