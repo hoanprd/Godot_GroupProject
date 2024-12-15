@@ -12,7 +12,7 @@ func _ready():
 	_damageDeal = damageDeal
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body.name == "Player" && Global.health <= 100 && Global.health > 0):
+	if (body.name == "Player" && Global.health <= 3 && Global.health > 0):
 		Global.health -= _damageDeal
 		Global.getHurt = true
 		hurtTimer.start()
@@ -20,7 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	if (Global.health <= 100 && Global.health > 0):
+	if (Global.health <= 3 && Global.health > 0):
 		Global.health -= _damageDeal
 		Global.getHurt = true
 		hurtTimer.start()
@@ -29,7 +29,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if (body.name == "Player" && Global.health <= 100):
+	if (body.name == "Player" && Global.health <= 3):
 		Global.getHurt = false
 		hurtTimer.stop()
 		timer.stop()

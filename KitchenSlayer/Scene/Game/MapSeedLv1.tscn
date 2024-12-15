@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bd0hly7uwfbhe"]
+[gd_scene load_steps=25 format=4 uid="uid://bd0hly7uwfbhe"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_vn7es"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_hbf8g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4gd2ircklii3" path="res://Scene/Object/AreaEnter.tscn" id="4_w3fx4"]
 [ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="5_qu73o"]
 [ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="6_1exex"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="7_i60ag"]
 [ext_resource type="PackedScene" uid="uid://cndp7clvn7jym" path="res://Scene/Object/Buff/TomatoSizeUp.tscn" id="8_8gu0r"]
 [ext_resource type="PackedScene" uid="uid://7f41204df030" path="res://Scene/Object/Material/BeanSprout.tscn" id="8_fjdyg"]
 [ext_resource type="PackedScene" uid="uid://bnyl4uayx30cv" path="res://Scene/Object/Material/Egg.tscn" id="9_u55v8"]
@@ -1640,6 +1641,9 @@ position = Vector2(911, 161)
 position = Vector2(1083, 140)
 
 [node name="Static" type="Node" parent="Danger"]
+
+[node name="FireA" parent="Danger/Static" instance=ExtResource("7_i60ag")]
+position = Vector2(188, 160)
 
 [node name="PickableItem" type="Node" parent="."]
 
