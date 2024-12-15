@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://03cfwu2rac2g"]
+[gd_scene load_steps=10 format=3 uid="uid://03cfwu2rac2g"]
 
 [ext_resource type="Script" path="res://Scene/Game/end_game.gd" id="1_cve3g"]
 [ext_resource type="Texture2D" uid="uid://dvrlml4uectv0" path="res://Sprite/Player/player_right_idle.png" id="2_v0ytw"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dkake2ebajrof" path="res://Sprite/Item/Dubu_Kimchi_32x32.png" id="4_bqliv"]
 [ext_resource type="Texture2D" uid="uid://b5se4htwaev0o" path="res://Sprite/Item/Doenjang_Jjigae_32x32.png" id="4_y20t2"]
 [ext_resource type="Texture2D" uid="uid://m6e3kakhevgn" path="res://Sprite/Item/Bibimbap_32x32.png" id="5_6kpka"]
+[ext_resource type="Texture2D" uid="uid://6kgysww5oor3" path="res://Sprite/Item/Kimchi_Jjigae_32x32.png" id="5_qhvjj"]
+[ext_resource type="Texture2D" uid="uid://cbnup0mknhmte" path="res://Sprite/Item/Jeyuk_Bokkeum_32x32.png" id="6_3rekl"]
+[ext_resource type="Texture2D" uid="uid://c7gtjs57d20ug" path="res://Sprite/Item/Bulgogi_32x32.png" id="9_8qkcw"]
 
 [node name="CreditScene" type="Control"]
 layout_mode = 3
@@ -50,11 +53,11 @@ texture = ExtResource("4_y20t2")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Panel"]
 position = Vector2(64, 139)
-texture = ExtResource("4_bqliv")
+texture = ExtResource("5_qhvjj")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Panel"]
 position = Vector2(252, 151)
-texture = ExtResource("4_bqliv")
+texture = ExtResource("6_3rekl")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Panel"]
 position = Vector2(293, 28)
@@ -63,6 +66,10 @@ texture = ExtResource("4_bqliv")
 [node name="Sprite2D7" type="Sprite2D" parent="Panel"]
 position = Vector2(25, 105)
 texture = ExtResource("5_6kpka")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Panel"]
+position = Vector2(60, 22)
+texture = ExtResource("9_8qkcw")
 
 [node name="ExitTimer" type="Timer" parent="."]
 wait_time = 5.0
