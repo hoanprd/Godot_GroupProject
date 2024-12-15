@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm26ijkq15nu2"]
+
+[ext_resource type="Script" path="res://Scripts/ItemPick.gd" id="1_o3msm"]
+[ext_resource type="Texture2D" uid="uid://ckkugx6qy2pyp" path="res://Sprite/Item/beef.png" id="2_rfdpi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aavao"]
+size = Vector2(14, 12)
+
+[node name="Beef" type="Area2D"]
+z_index = 2
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_o3msm")
+itemId = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_rfdpi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aavao")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

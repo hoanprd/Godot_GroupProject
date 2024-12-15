@@ -43,12 +43,14 @@ func _on_body_entered(body: Node2D) -> void:
 				else:
 					Global.missing_material = true
 			elif Global.level == 3:
-				if Global.tofu >= 1 and Global.kimchi >= 1 and Global.pork >= 1 and Global.green_onion >= 1 and Global.red_pepper_powder >= 1:
-					Global.tofu -= 1
-					Global.kimchi -= 1
-					Global.pork -= 1
-					Global.green_onion -= 1
-					Global.red_pepper_powder -= 1
+				if Global.rice >= 1 and Global.beef >= 1 and Global.carrot >= 1 and Global.mushroom >= 1 and Global.egg >= 1 and Global.gochujang >= 1 and Global.sesame_oil >= 1:
+					Global.rice -= 1
+					Global.beef -= 1
+					Global.carrot -= 1
+					Global.mushroom -= 1
+					Global.egg -= 1
+					Global.gochujang -= 1
+					Global.sesame_oil -= 1
 					Global.win = true
 					Global.stopGame = true
 					if Global.level >= 10:

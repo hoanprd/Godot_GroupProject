@@ -92,11 +92,20 @@ func updateUI():
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/Garlic/GarlicLabel.text = str(Global.garlic)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
 	$RecipeBookPanel/BeanSproutRiceSoupPanel/Rice/RiceLabel.text = str(Global.rice)
+	
 	$RecipeBookPanel/DubuKimchiPanel/Tofu/TofuLabel.text = str(Global.tofu)
 	$RecipeBookPanel/DubuKimchiPanel/Kimchi/KimchiLabel.text = str(Global.kimchi)
 	$RecipeBookPanel/DubuKimchiPanel/Pork/PorkLabel.text = str(Global.pork)
 	$RecipeBookPanel/DubuKimchiPanel/GreenOnion/GreenOnionLabel.text = str(Global.green_onion)
 	$RecipeBookPanel/DubuKimchiPanel/RedPepperPowder/RedPepperPowderLabel.text = str(Global.red_pepper_powder)
+	
+	$RecipeBookPanel/BibimbapPanel/Rice/RiceLabel.text = str(Global.rice)
+	$RecipeBookPanel/BibimbapPanel/Beef/BeefLabel.text = str(Global.beef)
+	$RecipeBookPanel/BibimbapPanel/Carrot/CarrotLabel.text = str(Global.carrot)
+	$RecipeBookPanel/BibimbapPanel/Mushroom/MushroomLabel.text = str(Global.mushroom)
+	$RecipeBookPanel/BibimbapPanel/Egg/EggLabel.text = str(Global.egg)
+	$RecipeBookPanel/BibimbapPanel/Gochujang/GochujangLabel.text = str(Global.gochujang)
+	$RecipeBookPanel/BibimbapPanel/SesameOil/SesameOilLabel.text = str(Global.sesame_oil)
 	if Global.missing_material == true:
 		$AnouLabel.text = "Material is missing!"
 		$AnouLabel.visible = true

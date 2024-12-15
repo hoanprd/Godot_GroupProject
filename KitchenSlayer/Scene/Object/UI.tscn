@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=30 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
@@ -21,8 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://cj7qhx6ui77o4" path="res://Sprite/Item/mushroom.png" id="18_qfb2a"]
 [ext_resource type="Texture2D" uid="uid://bp4uipbrux3ar" path="res://Sprite/Item/gochujang.png" id="19_iibl0"]
 [ext_resource type="Texture2D" uid="uid://b5kh37ky6xkn6" path="res://Sprite/Item/seasame oil.png" id="20_nh0wt"]
+[ext_resource type="Texture2D" uid="uid://b5se4htwaev0o" path="res://Sprite/Item/Doenjang_Jjigae_32x32.png" id="21_oiio8"]
+[ext_resource type="Texture2D" uid="uid://c1n5vaamu8pp8" path="res://Sprite/Item/Potato.png" id="22_ul6mi"]
 [ext_resource type="Texture2D" uid="uid://cl1mabyvlyfa2" path="res://Sprite/UI/DialogBox.png" id="22_w388i"]
 [ext_resource type="Texture2D" uid="uid://buikw5d1aggaj" path="res://Sprite/UI/FacesetBox.png" id="23_0onfv"]
+[ext_resource type="Texture2D" uid="uid://c0jbd3rmlbo1e" path="res://Sprite/Item/Onion.png" id="23_rg0po"]
 [ext_resource type="Texture2D" uid="uid://dfjhsqesc2b5l" path="res://Texture/Demon King.png" id="24_34eaq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
@@ -92,7 +95,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RecipeBookPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 72.0
 offset_right = 248.0
@@ -396,6 +398,113 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="RecipeBookPanel/BibimbapPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_right = 42.0
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DoenjangJjigaePanel" type="Panel" parent="RecipeBookPanel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 88.0
+offset_right = 172.0
+offset_bottom = 109.0
+
+[node name="DoenjangJjigae" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(8.5, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("21_oiio8")
+
+[node name="Rice" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(38, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("9_f6o15")
+
+[node name="RiceLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Rice"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tofu" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(58, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("10_7ojco")
+
+[node name="TofuLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Tofu"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Potato" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(79, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("22_ul6mi")
+
+[node name="PotatoLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Potato"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Onion" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(99, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("23_rg0po")
+
+[node name="OnionLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Onion"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GreenOnion" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(120, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("8_vcyun")
+
+[node name="GreenOnionLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/GreenOnion"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mushroom" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
+position = Vector2(140, 7)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("19_iibl0")
+
+[node name="MushroomLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Mushroom"]
+offset_left = -6.4
+offset_top = 9.14286
+offset_right = 8.6
+offset_bottom = 32.1429
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel"]
 layout_mode = 0
 offset_left = 18.0
 offset_right = 42.0

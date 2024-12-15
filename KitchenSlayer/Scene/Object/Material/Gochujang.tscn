@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dppyc0lxgdpu5"]
+
+[ext_resource type="Script" path="res://Scripts/ItemPick.gd" id="1_h3eo3"]
+[ext_resource type="Texture2D" uid="uid://bp4uipbrux3ar" path="res://Sprite/Item/gochujang.png" id="2_k3pj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aavao"]
+size = Vector2(14, 12)
+
+[node name="Gochujang" type="Area2D"]
+z_index = 2
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_h3eo3")
+itemId = 18
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_k3pj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aavao")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
