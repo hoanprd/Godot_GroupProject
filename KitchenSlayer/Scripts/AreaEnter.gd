@@ -21,10 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.rice -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
 				else:
 					Global.missing_material = true
 			elif Global.level == 2:
@@ -36,10 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.red_pepper_powder -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
 				else:
 					Global.missing_material = true
 			elif Global.level == 3:
@@ -53,10 +47,9 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.sesame_oil -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 4:
 				if Global.doenjang >= 1 and Global.tofu >= 1 and Global.potato >= 1 and Global.onion >= 1 and Global.green_onion >= 1 and Global.mushroom >= 1:
 					print("hi")
@@ -68,10 +61,9 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.mushroom -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 5:
 				if Global.kimchi >= 1 and Global.pork >= 1 and Global.tofu >= 1 and Global.green_onion >= 1 and Global.red_pepper_powder >= 1:
 					Global.kimchi -= 1
@@ -81,10 +73,9 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.red_pepper_powder -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 6:
 				if Global.doenjang >= 1 and Global.tofu >= 1 and Global.potato >= 1 and Global.onion >= 1 and Global.green_onion >= 1 and Global.mushroom >= 2 and Global.rice >= 1 and Global.beef >= 1 and Global.carrot >= 1 and Global.egg >= 1 and Global.gochujang >= 1 and Global.sesame_oil >= 1:
 					Global.doenjang -= 1
@@ -101,10 +92,9 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.sesame_oil -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 7:
 				if Global.beef >= 1 and Global.onion >= 1 and Global.green_onion >= 1 and Global.soy_sauce >= 1 and Global.sesame_oil >= 1 and Global.garlic >= 1:
 					Global.beef -= 1
@@ -116,10 +106,9 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.garlic -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 8:
 				if Global.pork >= 1 and Global.onion >= 1 and Global.green_onion >= 1 and Global.gochujang >= 1 and Global.red_pepper_powder >= 1 and Global.garlic >= 1:
 					Global.pork -= 1
@@ -130,44 +119,42 @@ func _on_body_entered(body: Node2D) -> void:
 					Global.garlic -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						pass
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 9:
 				if Global.beef >= 2:
 					Global.beef -= 2
-					#Global.onion -= 1
-					#Global.soy_sauce -= 1
-					#Global.green_onion -= 2
-					#Global.soy_sauce -= 1
-					#Global.sesame_oil -= 2
-					#Global.garlic -= 1
-					#Global.kimchi -= 1
-					#Global.pork -= 1
-					#Global.tofu -= 1
-					#Global.red_pepper_powder -= 1
-					#Global.rice -= 1
-					#Global.carrot -= 1
-					#Global.mushroom -= 1
-					#Global.egg -= 1
-					#Global.gochujang -= 1
+					Global.onion -= 1
+					Global.soy_sauce -= 1
+					Global.green_onion -= 2
+					Global.soy_sauce -= 1
+					Global.sesame_oil -= 2
+					Global.garlic -= 1
+					Global.kimchi -= 1
+					Global.pork -= 1
+					Global.tofu -= 1
+					Global.red_pepper_powder -= 1
+					Global.rice -= 1
+					Global.carrot -= 1
+					Global.mushroom -= 1
+					Global.egg -= 1
+					Global.gochujang -= 1
 					Global.win = true
 					Global.stopGame = true
-					if Global.level >= 10:
-						Global.end_game = true
-					else:
-						Global.level += 1
+					Global.level += 1
+				else:
+					Global.missing_material = true
 			elif Global.level == 10:
-				if Global.kimchi >= 2 and Global.pork >= 3 and Global.tofu >= 3 and Global.green_onion >= 6 and Global.red_pepper_powder >= 3 and Global.rice >= 2 and Global.beef >= 2 and Global.carrot >= 1 and Global.mushroom >= 2 and Global.egg >= 2 and Global.gochujang >= 2 and Global.sesame_oil >= 2 and Global.doenjang >= 1 and Global.potato >= 1 and Global.onion >= 3 and Global.soy_sauce >= 1 and Global.garlic >= 3 and Global.rice >= 1 and Global.bean_sprout >= 1:
-					Global.win = true
-					Global.stopGame = true
-					if Global.level >= 10:
-						get_tree().change_scene_to_file("res://Scene/Game/CreditScene.tscn")
-					else:
-						Global.level += 1
-			else:
-				Global.missing_material = true
+				#if Global.kimchi >= 2 and Global.pork >= 3 and Global.tofu >= 3 and Global.green_onion >= 6 and Global.red_pepper_powder >= 3 and Global.rice >= 2 and Global.beef >= 2 and Global.carrot >= 1 and Global.mushroom >= 2 and Global.egg >= 2 and Global.gochujang >= 2 and Global.sesame_oil >= 2 and Global.doenjang >= 1 and Global.potato >= 1 and Global.onion >= 3 and Global.soy_sauce >= 1 and Global.garlic >= 3 and Global.rice >= 1 and Global.bean_sprout >= 1:
+					#Global.win = true
+					#Global.stopGame = true
+					#Global.level += 1
+				#else:
+					#Global.missing_material = true
+				Global.win = true
+				Global.stopGame = true
+				Global.level += 1
 		elif _id == 1:
 			Global.loseArea = true
 			Global.stopGame = true

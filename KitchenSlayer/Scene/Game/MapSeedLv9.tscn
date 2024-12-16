@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://b63rgjaaolqv6"]
+[gd_scene load_steps=40 format=4 uid="uid://b63rgjaaolqv6"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_7bajn"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_u45d8"]
@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="7_pjlkq"]
 [ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="8_hkgwf"]
 [ext_resource type="PackedScene" uid="uid://cvy4f1s33eyv" path="res://Scene/Enemy/EnemyD.tscn" id="9_t77ct"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="10_d60tl"]
 [ext_resource type="PackedScene" uid="uid://ihi221sbl44e" path="res://Scene/Object/Material/Kimchi.tscn" id="10_epjw0"]
 [ext_resource type="PackedScene" uid="uid://c2p3ylsbm155x" path="res://Scene/Enemy/EnemyE.tscn" id="10_uolak"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="11_abwqd"]
+[ext_resource type="PackedScene" uid="uid://d4mswnm324avr" path="res://Scene/Object/FireB.tscn" id="11_mo1on"]
 [ext_resource type="PackedScene" uid="uid://dspmj1n1hqq07" path="res://Scene/Object/Material/Pork.tscn" id="11_yyymy"]
 [ext_resource type="PackedScene" uid="uid://c56w7qwqvamfu" path="res://Scene/Object/Material/Tofu.tscn" id="12_5pv3r"]
 [ext_resource type="PackedScene" uid="uid://hbdajqfdgos7" path="res://Scene/Object/Buff/TomatoSpeedUp.tscn" id="12_37y7x"]
@@ -1741,6 +1743,27 @@ position = Vector2(1739, 70)
 
 [node name="Static" type="Node" parent="Danger"]
 
+[node name="FireA" parent="Danger/Static" instance=ExtResource("10_d60tl")]
+position = Vector2(167, 160)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("10_d60tl")]
+position = Vector2(295, 160)
+
+[node name="FireA3" parent="Danger/Static" instance=ExtResource("10_d60tl")]
+position = Vector2(312, 160)
+
+[node name="FireB" parent="Danger/Static" instance=ExtResource("11_mo1on")]
+position = Vector2(648, 144)
+
+[node name="FireB2" parent="Danger/Static" instance=ExtResource("11_mo1on")]
+position = Vector2(680, 144)
+
+[node name="FireB3" parent="Danger/Static" instance=ExtResource("11_mo1on")]
+position = Vector2(872, 128)
+
+[node name="FireB4" parent="Danger/Static" instance=ExtResource("11_mo1on")]
+position = Vector2(920, 64)
+
 [node name="PickableItem" type="Node" parent="."]
 
 [node name="CookingMaterial" type="Node" parent="PickableItem"]
@@ -1808,10 +1831,10 @@ position = Vector2(953, 106)
 position = Vector2(1176, 26)
 
 [node name="TomatoSpeedUp" parent="PickableItem/Booster" instance=ExtResource("12_37y7x")]
-position = Vector2(439, 122)
+position = Vector2(472, 106)
 
 [node name="TomatoTripleUp" parent="PickableItem/Booster" instance=ExtResource("13_25xya")]
-position = Vector2(1208, 120)
+position = Vector2(1224, 24)
 
 [node name="Coin" type="Node" parent="PickableItem"]
 

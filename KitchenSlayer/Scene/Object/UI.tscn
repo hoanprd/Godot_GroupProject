@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=35 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
@@ -22,12 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://bp4uipbrux3ar" path="res://Sprite/Item/gochujang.png" id="19_iibl0"]
 [ext_resource type="Texture2D" uid="uid://b5kh37ky6xkn6" path="res://Sprite/Item/seasame oil.png" id="20_nh0wt"]
 [ext_resource type="Texture2D" uid="uid://b5se4htwaev0o" path="res://Sprite/Item/Doenjang_Jjigae_32x32.png" id="21_oiio8"]
+[ext_resource type="Texture2D" uid="uid://d1bgyqultnvcd" path="res://Sprite/Item/Doenjang.png" id="22_6k0ty"]
 [ext_resource type="Texture2D" uid="uid://c1n5vaamu8pp8" path="res://Sprite/Item/Potato.png" id="22_ul6mi"]
 [ext_resource type="Texture2D" uid="uid://cl1mabyvlyfa2" path="res://Sprite/UI/DialogBox.png" id="22_w388i"]
 [ext_resource type="Texture2D" uid="uid://buikw5d1aggaj" path="res://Sprite/UI/FacesetBox.png" id="23_0onfv"]
 [ext_resource type="Texture2D" uid="uid://c0jbd3rmlbo1e" path="res://Sprite/Item/Onion.png" id="23_rg0po"]
 [ext_resource type="Texture2D" uid="uid://dfjhsqesc2b5l" path="res://Texture/Demon King.png" id="24_34eaq"]
 [ext_resource type="Texture2D" uid="uid://6kgysww5oor3" path="res://Sprite/Item/Kimchi_Jjigae_32x32.png" id="24_q5nnu"]
+[ext_resource type="Texture2D" uid="uid://c7gtjs57d20ug" path="res://Sprite/Item/Bulgogi_32x32.png" id="26_feer3"]
+[ext_resource type="Texture2D" uid="uid://b4c8g5poxru67" path="res://Sprite/Item/soy sauce.png" id="26_yi6aa"]
+[ext_resource type="Texture2D" uid="uid://cbnup0mknhmte" path="res://Sprite/Item/Jeyuk_Bokkeum_32x32.png" id="28_bd5vf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
 bg_color = Color(0.36668, 0.0670769, 0.116715, 1)
@@ -101,6 +105,15 @@ layout_mode = 0
 offset_left = 72.0
 offset_right = 248.0
 offset_bottom = 180.0
+
+[node name="Label" type="Label" parent="RecipeBookPanel"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 23.0
+scale = Vector2(0.5, 0.5)
+text = "Recipe book"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BeanSproutRiceSoupPanel" type="Panel" parent="RecipeBookPanel"]
 visible = false
@@ -425,7 +438,7 @@ texture = ExtResource("21_oiio8")
 [node name="Doenjang" type="Sprite2D" parent="RecipeBookPanel/DoenjangJjigaePanel"]
 position = Vector2(38, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("9_f6o15")
+texture = ExtResource("22_6k0ty")
 
 [node name="DoenjangLabel" type="Label" parent="RecipeBookPanel/DoenjangJjigaePanel/Doenjang"]
 offset_left = -6.4
@@ -520,9 +533,9 @@ vertical_alignment = 1
 visible = false
 layout_mode = 0
 offset_left = 4.0
-offset_top = 88.0
+offset_top = 113.0
 offset_right = 172.0
-offset_bottom = 109.0
+offset_bottom = 134.0
 
 [node name="KimchiJjigae" type="Sprite2D" parent="RecipeBookPanel/KimchiJjigaePanel"]
 position = Vector2(8.5, 7)
@@ -613,19 +626,19 @@ vertical_alignment = 1
 visible = false
 layout_mode = 0
 offset_left = 4.0
-offset_top = 88.0
+offset_top = 137.0
 offset_right = 172.0
-offset_bottom = 109.0
+offset_bottom = 157.0
 
 [node name="Bulgogi" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
 position = Vector2(8.5, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("24_q5nnu")
+texture = ExtResource("26_feer3")
 
 [node name="Beef" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
 position = Vector2(38, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("12_i1ayg")
+texture = ExtResource("16_sabxj")
 
 [node name="BeefLabel" type="Label" parent="RecipeBookPanel/BulgogiPanel/Beef"]
 offset_left = -6.4
@@ -639,7 +652,7 @@ vertical_alignment = 1
 [node name="Onion" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
 position = Vector2(58, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("13_2w3e7")
+texture = ExtResource("23_rg0po")
 
 [node name="OnionLabel" type="Label" parent="RecipeBookPanel/BulgogiPanel/Onion"]
 offset_left = -6.4
@@ -653,7 +666,7 @@ vertical_alignment = 1
 [node name="GreenOnion" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
 position = Vector2(79, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("10_7ojco")
+texture = ExtResource("8_vcyun")
 
 [node name="GreenOnionLabel" type="Label" parent="RecipeBookPanel/BulgogiPanel/GreenOnion"]
 offset_left = -6.4
@@ -667,7 +680,7 @@ vertical_alignment = 1
 [node name="SoySauce" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
 position = Vector2(99, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("8_vcyun")
+texture = ExtResource("26_yi6aa")
 
 [node name="SoySauceLabel" type="Label" parent="RecipeBookPanel/BulgogiPanel/SoySauce"]
 offset_left = -6.4
@@ -681,7 +694,7 @@ vertical_alignment = 1
 [node name="SesameOil" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
 position = Vector2(120, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("14_p0ite")
+texture = ExtResource("20_nh0wt")
 
 [node name="SesameOilLabel" type="Label" parent="RecipeBookPanel/BulgogiPanel/SesameOil"]
 offset_left = -6.4
@@ -693,9 +706,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Garlic" type="Sprite2D" parent="RecipeBookPanel/BulgogiPanel"]
-position = Vector2(120, 7)
+position = Vector2(140, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("14_p0ite")
+texture = ExtResource("7_xlsr6")
 
 [node name="GarlicLabel" type="Label" parent="RecipeBookPanel/BulgogiPanel/Garlic"]
 offset_left = -6.4
@@ -720,19 +733,19 @@ vertical_alignment = 1
 visible = false
 layout_mode = 0
 offset_left = 4.0
-offset_top = 88.0
+offset_top = 160.0
 offset_right = 172.0
-offset_bottom = 109.0
+offset_bottom = 180.0
 
 [node name="JeyukBokkeum" type="Sprite2D" parent="RecipeBookPanel/JeyukBokkeumPanel"]
 position = Vector2(8.5, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("24_q5nnu")
+texture = ExtResource("28_bd5vf")
 
 [node name="Pork" type="Sprite2D" parent="RecipeBookPanel/JeyukBokkeumPanel"]
 position = Vector2(38, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("12_i1ayg")
+texture = ExtResource("13_2w3e7")
 
 [node name="PorkLabel" type="Label" parent="RecipeBookPanel/JeyukBokkeumPanel/Pork"]
 offset_left = -6.4
@@ -746,7 +759,7 @@ vertical_alignment = 1
 [node name="Onion" type="Sprite2D" parent="RecipeBookPanel/JeyukBokkeumPanel"]
 position = Vector2(58, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("13_2w3e7")
+texture = ExtResource("23_rg0po")
 
 [node name="OnionLabel" type="Label" parent="RecipeBookPanel/JeyukBokkeumPanel/Onion"]
 offset_left = -6.4
@@ -760,7 +773,7 @@ vertical_alignment = 1
 [node name="GreenOnion" type="Sprite2D" parent="RecipeBookPanel/JeyukBokkeumPanel"]
 position = Vector2(79, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("10_7ojco")
+texture = ExtResource("8_vcyun")
 
 [node name="GreenOnionLabel" type="Label" parent="RecipeBookPanel/JeyukBokkeumPanel/GreenOnion"]
 offset_left = -6.4
@@ -774,7 +787,7 @@ vertical_alignment = 1
 [node name="Gochujang" type="Sprite2D" parent="RecipeBookPanel/JeyukBokkeumPanel"]
 position = Vector2(99, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("8_vcyun")
+texture = ExtResource("19_iibl0")
 
 [node name="GochujangLabel" type="Label" parent="RecipeBookPanel/JeyukBokkeumPanel/Gochujang"]
 offset_left = -6.4
@@ -800,9 +813,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Garlic" type="Sprite2D" parent="RecipeBookPanel/JeyukBokkeumPanel"]
-position = Vector2(120, 7)
+position = Vector2(140, 7)
 scale = Vector2(0.46875, 0.4375)
-texture = ExtResource("14_p0ite")
+texture = ExtResource("7_xlsr6")
 
 [node name="GarlicLabel" type="Label" parent="RecipeBookPanel/JeyukBokkeumPanel/Garlic"]
 offset_left = -6.4
@@ -892,9 +905,12 @@ texture = ExtResource("24_34eaq")
 [node name="DialogLabel" type="Label" parent="DialogPanel/DialogSprite2D"]
 offset_left = -98.0
 offset_top = -15.0
-offset_right = 144.0
-offset_bottom = 23.0
+offset_right = 204.0
+offset_bottom = 33.0
+scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -8
+autowrap_mode = 3
 
 [connection signal="pressed" from="WinLosePanel/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="WinLosePanel/ExitButton" to="." method="_on_exit_button_pressed"]

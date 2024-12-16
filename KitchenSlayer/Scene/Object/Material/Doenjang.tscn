@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cg8gsuvsgrkpr"]
 
 [ext_resource type="Script" path="res://Scripts/ItemPick.gd" id="1_e3hjh"]
-[ext_resource type="Texture2D" uid="uid://belotrivab53r" path="res://Sprite/Item/rice.png" id="2_lpsbp"]
+[ext_resource type="Texture2D" uid="uid://d1bgyqultnvcd" path="res://Sprite/Item/Doenjang.png" id="2_bwpkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aavao"]
 size = Vector2(14, 12)
@@ -15,7 +15,7 @@ itemId = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_lpsbp")
+texture = ExtResource("2_bwpkj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aavao")
