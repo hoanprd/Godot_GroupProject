@@ -92,3 +92,6 @@ func _on_body_entered(body: Node2D) -> void:
 		elif _itemId == 22:
 			Global.onion += 1
 			queue_free()
+		elif _itemId == 23:
+			Global.soy_sauce += 1
+			queue_free()

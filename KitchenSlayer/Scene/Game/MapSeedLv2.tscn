@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://chmx6ug24wlgl"]
+[gd_scene load_steps=25 format=4 uid="uid://chmx6ug24wlgl"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_4fmcy"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_2wdpg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qxb2ta8cornj" path="res://Scene/Enemy/EnemyA.tscn" id="5_p3cyb"]
 [ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="6_5y501"]
 [ext_resource type="PackedScene" uid="uid://c56w7qwqvamfu" path="res://Scene/Object/Material/Tofu.tscn" id="7_dp00n"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="7_hxka4"]
 [ext_resource type="PackedScene" uid="uid://ihi221sbl44e" path="res://Scene/Object/Material/Kimchi.tscn" id="8_8la63"]
 [ext_resource type="PackedScene" uid="uid://dspmj1n1hqq07" path="res://Scene/Object/Material/Pork.tscn" id="9_toco3"]
 [ext_resource type="PackedScene" uid="uid://op44npkc1pkw" path="res://Scene/Object/Material/GreenOnion.tscn" id="10_v86fl"]
@@ -1635,6 +1636,12 @@ position = Vector2(1093, 113)
 position = Vector2(1537, 110)
 
 [node name="Static" type="Node" parent="Danger"]
+
+[node name="FireA" parent="Danger/Static" instance=ExtResource("7_hxka4")]
+position = Vector2(1736, 112)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("7_hxka4")]
+position = Vector2(1809, 112)
 
 [node name="PickableItem" type="Node" parent="."]
 

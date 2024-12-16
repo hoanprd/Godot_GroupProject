@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsnffos7375rh"]
+[gd_scene load_steps=7 format=3 uid="uid://d4mswnm324avr"]
 
-[ext_resource type="Script" path="res://Scripts/Spike.gd" id="1_qonln"]
-[ext_resource type="Texture2D" uid="uid://bivru1o8g772d" path="res://Sprite/Danger/Static/burning_green_1.png" id="2_m33ia"]
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="1_dd2lj"]
+[ext_resource type="Texture2D" uid="uid://duyrdanf1gdtw" path="res://Sprite/Danger/Static/burning_purple_1.png" id="2_dtv7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7frxx"]
-size = Vector2(13, 16)
+size = Vector2(14, 15)
 
 [sub_resource type="Animation" id="Animation_advew"]
 length = 0.001
@@ -44,19 +44,19 @@ _data = {
 "idle": SubResource("Animation_4e4uk")
 }
 
-[node name="FireA" type="Area2D"]
+[node name="FireB" type="Area2D"]
 z_index = 2
 collision_layer = 8
 collision_mask = 2
-script = ExtResource("1_qonln")
-damageDeal = 1
+script = ExtResource("1_dd2lj")
+damageDeal = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_m33ia")
+texture = ExtResource("2_dtv7q")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 8)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_7frxx")
 
 [node name="Timer" type="Timer" parent="."]

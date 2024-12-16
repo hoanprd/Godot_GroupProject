@@ -18,7 +18,7 @@ var player_bullet_quanity_buff_value = 0
 var player_tomato_damage = 1
 var player_buff_speed = false
 var player_buff_speed_value = 0
-var level = 1
+var level = 9
 var reset_level = false
 var missing_material = false
 
@@ -42,7 +42,8 @@ var doenjang = 0
 var potato = 0
 var onion = 0
 var soy_sauce = 0
-var dialog_trigger = true
+var dialog_trigger = false
+var end_game = false
 
 func reset_game():
 	health = 3

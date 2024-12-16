@@ -1643,7 +1643,10 @@ position = Vector2(1083, 140)
 [node name="Static" type="Node" parent="Danger"]
 
 [node name="FireA" parent="Danger/Static" instance=ExtResource("7_i60ag")]
-position = Vector2(188, 160)
+position = Vector2(1480, 256)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("7_i60ag")]
+position = Vector2(1542, 256)
 
 [node name="PickableItem" type="Node" parent="."]
 

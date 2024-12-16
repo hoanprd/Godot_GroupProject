@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cxqs87o0ru5wk"]
+[gd_scene load_steps=31 format=4 uid="uid://cxqs87o0ru5wk"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_kaibc"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_6ac4i"]
@@ -9,6 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="7_k8gob"]
 [ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="8_26va4"]
 [ext_resource type="PackedScene" uid="uid://cvy4f1s33eyv" path="res://Scene/Enemy/EnemyD.tscn" id="9_knk0h"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="10_kr1df"]
+[ext_resource type="PackedScene" uid="uid://dm26ijkq15nu2" path="res://Scene/Object/Material/Beef.tscn" id="10_twyiy"]
+[ext_resource type="PackedScene" uid="uid://d4mswnm324avr" path="res://Scene/Object/FireB.tscn" id="11_t60oc"]
+[ext_resource type="PackedScene" uid="uid://fb8px626kr2b" path="res://Scene/Object/Material/Onion.tscn" id="11_x02sd"]
+[ext_resource type="PackedScene" uid="uid://op44npkc1pkw" path="res://Scene/Object/Material/GreenOnion.tscn" id="12_3hv0f"]
+[ext_resource type="PackedScene" uid="uid://4d82alc8dd8m" path="res://Scene/Object/Material/SoySauce.tscn" id="13_hcmij"]
+[ext_resource type="PackedScene" uid="uid://djie4rgfb6gak" path="res://Scene/Object/Material/SesameOil.tscn" id="14_iqgdw"]
+[ext_resource type="PackedScene" uid="uid://dfywl0pc7t7o2" path="res://Scene/Object/Material/Garlic.tscn" id="15_os317"]
 [ext_resource type="PackedScene" uid="uid://b6kjdvyo7phgq" path="res://Scene/Object/Health.tscn" id="15_rt6ta"]
 [ext_resource type="PackedScene" uid="uid://hbdajqfdgos7" path="res://Scene/Object/Buff/TomatoSpeedUp.tscn" id="16_k5ou1"]
 [ext_resource type="PackedScene" uid="uid://d2w8d2mnusra1" path="res://Scene/Object/Buff/TomatoTripleUp.tscn" id="17_v1yq6"]
@@ -1724,9 +1732,48 @@ position = Vector2(1254, 164)
 
 [node name="Static" type="Node" parent="Danger"]
 
+[node name="FireA" parent="Danger/Static" instance=ExtResource("10_kr1df")]
+position = Vector2(632, 176)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("10_kr1df")]
+position = Vector2(648, 176)
+
+[node name="FireA3" parent="Danger/Static" instance=ExtResource("10_kr1df")]
+position = Vector2(664, 176)
+
+[node name="FireB" parent="Danger/Static" instance=ExtResource("11_t60oc")]
+position = Vector2(898, 64)
+
+[node name="FireB2" parent="Danger/Static" instance=ExtResource("11_t60oc")]
+position = Vector2(935, 64)
+
+[node name="FireB3" parent="Danger/Static" instance=ExtResource("11_t60oc")]
+position = Vector2(1339, 160)
+
+[node name="FireB4" parent="Danger/Static" instance=ExtResource("11_t60oc")]
+position = Vector2(1388, 160)
+
 [node name="PickableItem" type="Node" parent="."]
 
 [node name="CookingMaterial" type="Node" parent="PickableItem"]
+
+[node name="Beef" parent="PickableItem/CookingMaterial" instance=ExtResource("10_twyiy")]
+position = Vector2(392, 140)
+
+[node name="Onion" parent="PickableItem/CookingMaterial" instance=ExtResource("11_x02sd")]
+position = Vector2(599, 170)
+
+[node name="GreenOnion" parent="PickableItem/CookingMaterial" instance=ExtResource("12_3hv0f")]
+position = Vector2(776, 168)
+
+[node name="SoySauce" parent="PickableItem/CookingMaterial" instance=ExtResource("13_hcmij")]
+position = Vector2(1065, 58)
+
+[node name="SesameOil" parent="PickableItem/CookingMaterial" instance=ExtResource("14_iqgdw")]
+position = Vector2(1401, 74)
+
+[node name="Garlic" parent="PickableItem/CookingMaterial" instance=ExtResource("15_os317")]
+position = Vector2(1545, 75)
 
 [node name="Booster" type="Node" parent="PickableItem"]
 

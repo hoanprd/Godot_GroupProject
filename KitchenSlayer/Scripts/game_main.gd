@@ -11,6 +11,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Global.end_game:
+		get_parent().remove_child(ins)
 	if map_ins == false and Global.stopGame == false:
 		map_ins = true
 		if Global.level == 1:
@@ -50,6 +52,7 @@ func _process(delta: float) -> void:
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)
 		elif Global.level == 10:
+			print("hi")
 			map_path = preload("res://Scene/Game/MapSeedLv10.tscn")
 			ins = map_path.instantiate()
 			get_parent().add_child(ins)

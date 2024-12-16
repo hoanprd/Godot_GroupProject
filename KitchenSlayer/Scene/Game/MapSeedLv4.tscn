@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://d1kh603a6ypn4"]
+[gd_scene load_steps=29 format=4 uid="uid://d1kh603a6ypn4"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_lerxx"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_ftkjw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="7_1y476"]
 [ext_resource type="PackedScene" uid="uid://cg8gsuvsgrkpr" path="res://Scene/Object/Material/Doenjang.tscn" id="8_r2fdm"]
 [ext_resource type="PackedScene" uid="uid://c56w7qwqvamfu" path="res://Scene/Object/Material/Tofu.tscn" id="9_mdu0q"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="9_w3euu"]
 [ext_resource type="PackedScene" uid="uid://bmecdd3v50uv1" path="res://Scene/Object/Material/Potato.tscn" id="10_oh1gk"]
 [ext_resource type="PackedScene" uid="uid://fa26gtn0d8ql" path="res://Scene/Object/Material/Mushroom.tscn" id="11_ioq5t"]
 [ext_resource type="PackedScene" uid="uid://fb8px626kr2b" path="res://Scene/Object/Material/Onion.tscn" id="11_jg3ue"]
@@ -1728,6 +1729,21 @@ position = Vector2(517, 150)
 position = Vector2(966, 89)
 
 [node name="Static" type="Node" parent="Danger"]
+
+[node name="FireA" parent="Danger/Static" instance=ExtResource("9_w3euu")]
+position = Vector2(328, 208)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("9_w3euu")]
+position = Vector2(344, 208)
+
+[node name="FireA3" parent="Danger/Static" instance=ExtResource("9_w3euu")]
+position = Vector2(360, 208)
+
+[node name="FireA4" parent="Danger/Static" instance=ExtResource("9_w3euu")]
+position = Vector2(1280, 80)
+
+[node name="FireA5" parent="Danger/Static" instance=ExtResource("9_w3euu")]
+position = Vector2(1464, 112)
 
 [node name="PickableItem" type="Node" parent="."]
 

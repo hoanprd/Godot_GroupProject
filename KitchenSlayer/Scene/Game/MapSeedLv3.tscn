@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dhcmgvbwqeyd5"]
+[gd_scene load_steps=26 format=4 uid="uid://dhcmgvbwqeyd5"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_orhno"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_kvrhc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dw6ftivc741ax" path="res://Scene/Enemy/EnemyB.tscn" id="6_0lmym"]
 [ext_resource type="PackedScene" uid="uid://v43dcnqv1wxi" path="res://Scene/Enemy/EnemyC.tscn" id="7_1wwf3"]
 [ext_resource type="PackedScene" uid="uid://whfxb8t3eqvi" path="res://Scene/Object/Material/Rice.tscn" id="8_lbexk"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="8_nodks"]
 [ext_resource type="PackedScene" uid="uid://dm26ijkq15nu2" path="res://Scene/Object/Material/Beef.tscn" id="9_yt7hu"]
 [ext_resource type="PackedScene" uid="uid://b5kk8wdwrtx2k" path="res://Scene/Object/Material/Carrot.tscn" id="10_epwjp"]
 [ext_resource type="PackedScene" uid="uid://fa26gtn0d8ql" path="res://Scene/Object/Material/Mushroom.tscn" id="11_n8rv4"]
@@ -1644,6 +1645,15 @@ position = Vector2(1631, 129)
 position = Vector2(568, 77)
 
 [node name="Static" type="Node" parent="Danger"]
+
+[node name="FireA" parent="Danger/Static" instance=ExtResource("8_nodks")]
+position = Vector2(440, 176)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("8_nodks")]
+position = Vector2(808, 144)
+
+[node name="FireA3" parent="Danger/Static" instance=ExtResource("8_nodks")]
+position = Vector2(1556, 192)
 
 [node name="PickableItem" type="Node" parent="."]
 

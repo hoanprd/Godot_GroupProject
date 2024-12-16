@@ -176,7 +176,7 @@ func _on_delay_hurt_get_shot_timeout() -> void:
 
 
 func _on_try_again_button_pressed() -> void:
-	if Global.level < 10:
+	if Global.level <= 10:
 		Global.reset_level = true
 	else:
 		get_tree().change_scene_to_file("res://Scene/Game/CreditScene.tscn")

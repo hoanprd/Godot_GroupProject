@@ -135,27 +135,27 @@ func _on_body_entered(body: Node2D) -> void:
 					else:
 						Global.level += 1
 			elif Global.level == 9:
-				if Global.beef >= 2 and Global.onion >= 1 and Global.green_onion >= 2 and Global.soy_sauce >= 1 and Global.sesame_oil >= 2 and Global.garlic >= 1 and Global.kimchi >= 1 and Global.pork >= 1 and Global.tofu >= 1 and Global.red_pepper_powder >= 1 and Global.rice >= 1 and Global.carrot >= 1 and Global.mushroom >= 1 and Global.egg >= 1 and Global.gochujang >= 1:
+				if Global.beef >= 2:
 					Global.beef -= 2
-					Global.onion -= 1
-					Global.soy_sauce -= 1
-					Global.green_onion -= 2
-					Global.soy_sauce -= 1
-					Global.sesame_oil -= 2
-					Global.garlic -= 1
-					Global.kimchi -= 1
-					Global.pork -= 1
-					Global.tofu -= 1
-					Global.red_pepper_powder -= 1
-					Global.rice -= 1
-					Global.carrot -= 1
-					Global.mushroom -= 1
-					Global.egg -= 1
-					Global.gochujang -= 1
+					#Global.onion -= 1
+					#Global.soy_sauce -= 1
+					#Global.green_onion -= 2
+					#Global.soy_sauce -= 1
+					#Global.sesame_oil -= 2
+					#Global.garlic -= 1
+					#Global.kimchi -= 1
+					#Global.pork -= 1
+					#Global.tofu -= 1
+					#Global.red_pepper_powder -= 1
+					#Global.rice -= 1
+					#Global.carrot -= 1
+					#Global.mushroom -= 1
+					#Global.egg -= 1
+					#Global.gochujang -= 1
 					Global.win = true
 					Global.stopGame = true
 					if Global.level >= 10:
-						pass
+						Global.end_game = true
 					else:
 						Global.level += 1
 			elif Global.level == 10:

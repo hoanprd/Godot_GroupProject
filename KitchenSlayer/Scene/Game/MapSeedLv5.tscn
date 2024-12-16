@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cswx2syik7j1s"]
+[gd_scene load_steps=30 format=4 uid="uid://cswx2syik7j1s"]
 
 [ext_resource type="Texture2D" uid="uid://perxugvwkbrr" path="res://Tileset/BackgroundTile.png" id="1_sju3t"]
 [ext_resource type="Texture2D" uid="uid://bkwxktrbo1gc4" path="res://Tileset/TilemapLab6_Fix.png" id="2_oxx61"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvy4f1s33eyv" path="res://Scene/Enemy/EnemyD.tscn" id="8_8xd07"]
 [ext_resource type="PackedScene" uid="uid://ihi221sbl44e" path="res://Scene/Object/Material/Kimchi.tscn" id="9_k5ii5"]
 [ext_resource type="PackedScene" uid="uid://c56w7qwqvamfu" path="res://Scene/Object/Material/Tofu.tscn" id="9_m2iin"]
+[ext_resource type="PackedScene" uid="uid://dsnffos7375rh" path="res://Scene/Object/FireA.tscn" id="10_1o5f8"]
 [ext_resource type="PackedScene" uid="uid://dspmj1n1hqq07" path="res://Scene/Object/Material/Pork.tscn" id="10_tb3r0"]
 [ext_resource type="PackedScene" uid="uid://op44npkc1pkw" path="res://Scene/Object/Material/GreenOnion.tscn" id="12_bnl4g"]
 [ext_resource type="PackedScene" uid="uid://bojj7bagni84r" path="res://Scene/Object/Material/RedPepperPowder.tscn" id="13_vwwuo"]
@@ -1788,6 +1789,21 @@ position = Vector2(858, 78)
 position = Vector2(1084, 84)
 
 [node name="Static" type="Node" parent="Danger"]
+
+[node name="FireA" parent="Danger/Static" instance=ExtResource("10_1o5f8")]
+position = Vector2(528, 144)
+
+[node name="FireA2" parent="Danger/Static" instance=ExtResource("10_1o5f8")]
+position = Vector2(938, 144)
+
+[node name="FireA3" parent="Danger/Static" instance=ExtResource("10_1o5f8")]
+position = Vector2(1576, 144)
+
+[node name="FireA4" parent="Danger/Static" instance=ExtResource("10_1o5f8")]
+position = Vector2(1613, 144)
+
+[node name="FireA5" parent="Danger/Static" instance=ExtResource("10_1o5f8")]
+position = Vector2(1649, 144)
 
 [node name="PickableItem" type="Node" parent="."]
 
