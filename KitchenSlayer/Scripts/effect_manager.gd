@@ -1,5 +1,7 @@
 extends Node2D
 
+#Im Eun Seong
+
 @export var id : int
 
 var _id

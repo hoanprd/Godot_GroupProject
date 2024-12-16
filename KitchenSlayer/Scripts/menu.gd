@@ -1,5 +1,7 @@
 extends Control
 
+#Ho Hoang My
+
 var game_scene = preload("res://Scene/Game/TestScene.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
@@ -18,3 +20,18 @@ func _on_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+func _on_credit_button_pressed() -> void:
+	$Panel/CreditPanel.visible = true
+
+
+func _on_close_credit_panel_button_pressed() -> void:
+	$Panel/CreditPanel.visible = false
+
+
+func _on_setting_button_pressed() -> void:
+	$Panel/SettingPanel.visible = true
+
+
+func _on_close_setting_panel_button_pressed() -> void:
+	$Panel/SettingPanel.visible = false

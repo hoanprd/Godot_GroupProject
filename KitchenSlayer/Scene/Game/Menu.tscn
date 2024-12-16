@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cei8vomvc8xge"]
+[gd_scene load_steps=15 format=3 uid="uid://cei8vomvc8xge"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_hcwk3"]
 [ext_resource type="Texture2D" uid="uid://beahankxdrmin" path="res://Sprite/UI/MenuBG.png" id="2_128c8"]
 [ext_resource type="Texture2D" uid="uid://2j53qk7i7s" path="res://Texture/PlayerIcon.png" id="3_3lxuh"]
+[ext_resource type="Texture2D" uid="uid://dvrlml4uectv0" path="res://Sprite/Player/player_right_idle.png" id="4_30g4p"]
+[ext_resource type="Texture2D" uid="uid://chq5xfmpws7ih" path="res://Sprite/Item/Bean_Sprout_Rice_Soup_32x32.png" id="5_yc5hj"]
+[ext_resource type="Texture2D" uid="uid://b5se4htwaev0o" path="res://Sprite/Item/Doenjang_Jjigae_32x32.png" id="6_b3aie"]
+[ext_resource type="Texture2D" uid="uid://6kgysww5oor3" path="res://Sprite/Item/Kimchi_Jjigae_32x32.png" id="7_i2ubh"]
+[ext_resource type="Texture2D" uid="uid://cbnup0mknhmte" path="res://Sprite/Item/Jeyuk_Bokkeum_32x32.png" id="8_big6a"]
+[ext_resource type="Texture2D" uid="uid://dkake2ebajrof" path="res://Sprite/Item/Dubu_Kimchi_32x32.png" id="9_abrry"]
+[ext_resource type="Texture2D" uid="uid://m6e3kakhevgn" path="res://Sprite/Item/Bibimbap_32x32.png" id="10_4ludk"]
+[ext_resource type="Texture2D" uid="uid://c7gtjs57d20ug" path="res://Sprite/Item/Bulgogi_32x32.png" id="11_38663"]
+[ext_resource type="Script" path="res://Scripts/volume_h_slider.gd" id="12_r82vf"]
+[ext_resource type="AudioStream" uid="uid://ckmdd3p37io2k" path="res://Sound/BGM/MenuBGM.ogg" id="13_u5vvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwx2k"]
+bg_color = Color(0.194349, 0.194349, 0.194349, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -26,18 +39,39 @@ texture = ExtResource("3_3lxuh")
 
 [node name="PlayButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 90.0
-offset_right = 207.0
-offset_bottom = 121.0
+offset_left = 120.0
+offset_top = 65.0
+offset_right = 215.0
+offset_bottom = 96.0
+scale = Vector2(0.8, 0.8)
 text = "PLAY"
+
+[node name="CreditButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 93.0
+offset_right = 215.0
+offset_bottom = 124.0
+scale = Vector2(0.8, 0.8)
+text = "CREDIT"
+
+[node name="SettingButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 121.0
+offset_right = 215.0
+offset_bottom = 152.0
+scale = Vector2(0.8, 0.8)
+text = "SETTING
+"
 
 [node name="ExitButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 129.0
-offset_right = 207.0
-offset_bottom = 160.0
+offset_left = 120.0
+offset_top = 149.0
+offset_right = 215.0
+offset_bottom = 180.0
+scale = Vector2(0.8, 0.8)
 text = "EXIT"
 
 [node name="Label" type="Label" parent="Panel"]
@@ -48,5 +82,137 @@ text = "Kitchen Slayer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CreditPanel" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bwx2k")
+
+[node name="Label" type="Label" parent="Panel/CreditPanel"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+text = "Kitchen slayer credit
+
+Im Eun Seong
+Ho Hoang My
+Nam Chang Hyeon
+
+Thanks for playing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(36, 53)
+texture = ExtResource("4_30g4p")
+hframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(258, 89)
+texture = ExtResource("5_yc5hj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(288, 118)
+texture = ExtResource("6_b3aie")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(64, 139)
+texture = ExtResource("7_i2ubh")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(252, 151)
+texture = ExtResource("8_big6a")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(293, 28)
+texture = ExtResource("9_abrry")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(25, 105)
+texture = ExtResource("10_4ludk")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Panel/CreditPanel"]
+position = Vector2(60, 22)
+texture = ExtResource("11_38663")
+
+[node name="CloseCreditPanelButton" type="Button" parent="Panel/CreditPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 33.0
+scale = Vector2(0.8, 0.8)
+text = "Back"
+
+[node name="SettingPanel" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bwx2k")
+
+[node name="BGMLabel" type="Label" parent="Panel/SettingPanel"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 63.0
+offset_right = 87.0
+offset_bottom = 86.0
+text = "BGM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FXLabel" type="Label" parent="Panel/SettingPanel"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 104.0
+offset_right = 87.0
+offset_bottom = 127.0
+text = "FX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGMHSlider" type="HSlider" parent="Panel/SettingPanel"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 65.0
+offset_right = 282.0
+offset_bottom = 85.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("12_r82vf")
+bus_name = "Music"
+
+[node name="FXHSlider" type="HSlider" parent="Panel/SettingPanel"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 106.0
+offset_right = 282.0
+offset_bottom = 126.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("12_r82vf")
+bus_name = "SFX"
+
+[node name="CloseSettingPanelButton" type="Button" parent="Panel/SettingPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 33.0
+scale = Vector2(0.8, 0.8)
+text = "Back"
+
+[node name="MenuBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_u5vvt")
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/CreditPanel/CloseCreditPanelButton" to="." method="_on_close_credit_panel_button_pressed"]
+[connection signal="pressed" from="Panel/SettingPanel/CloseSettingPanelButton" to="." method="_on_close_setting_panel_button_pressed"]

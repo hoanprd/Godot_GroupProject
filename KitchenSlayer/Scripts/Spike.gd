@@ -1,5 +1,7 @@
 extends Area2D
 
+#Nam Chang Hyeon
+
 @export var damageDeal : int
 
 var timer: Timer

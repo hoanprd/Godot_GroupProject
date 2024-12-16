@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://18r3mmtgnnav" path="res://Sprite/Player_Run.png" id="5_bhbkk"]
 [ext_resource type="AudioStream" uid="uid://clpyq0wna2bjm" path="res://Sound/FX/ThiefAttackFX.wav" id="6_4lnu0"]
 [ext_resource type="AudioStream" uid="uid://mkirlimp38kk" path="res://Sound/FX/JumpFX.mp3" id="6_kk3dy"]
-[ext_resource type="AudioStream" uid="uid://bygfjnbes7f5u" path="res://Sound/BGM/Lab6_BGM.mp3" id="7_djig2"]
+[ext_resource type="AudioStream" uid="uid://bygfjnbes7f5u" path="res://Sound/BGM/ABC_BGM.mp3" id="7_djig2"]
 [ext_resource type="AudioStream" uid="uid://b5evjx71n5w7j" path="res://Sound/FX/ManHurtFX.mp3" id="7_e2iuw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur3mg"]

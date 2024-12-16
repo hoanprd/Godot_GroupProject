@@ -1,5 +1,7 @@
 extends Control
 
+#Nam Chang Hyeon
+
 @onready var healthBar = $HealthBar
 @onready var pointsLabel = $PointsLabel
 

@@ -23,6 +23,7 @@ grow_vertical = 2
 script = ExtResource("1_cve3g")
 
 [node name="DialogPanel" type="Panel" parent="."]
+layout_mode = 0
 offset_top = 129.0
 offset_right = 320.0
 offset_bottom = 180.0

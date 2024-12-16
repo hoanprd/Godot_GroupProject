@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#Nam Chang Hyeon
+
 const SPEED = 150
 
 var die_effect = preload("res://Scene/Object/Effect/BulletDieEffect.tscn")

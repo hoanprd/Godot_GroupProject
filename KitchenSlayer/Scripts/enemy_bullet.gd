@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#Im Eun Seong
+
 const SPEED = 150
 
 var body_target : Vector2

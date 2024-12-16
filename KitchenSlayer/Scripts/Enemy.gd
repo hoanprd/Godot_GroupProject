@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#Im Eun Seong
+
 @export var id : int
 @export var hp : int
 @export var damageDeal : int

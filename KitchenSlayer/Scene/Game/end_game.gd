@@ -1,5 +1,7 @@
 extends Control
 
+#Nam Chang Hyeon
+
 var dialog_index = 0
 
 func _process(delta: float) -> void:

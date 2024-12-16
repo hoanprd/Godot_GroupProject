@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+#Ho Hoang My
+
 @onready var move_right_force = Vector2(20, 0)
 @onready var move_left_force = Vector2(-20, 0)
 @onready var jump_force = Vector2(0, -300)

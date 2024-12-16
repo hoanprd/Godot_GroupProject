@@ -148,16 +148,20 @@ autoplay = "idle"
 
 [node name="AttackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_w2bhp")
+bus = &"SFX"
 
 [node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ojlwx")
+bus = &"SFX"
 
 [node name="HurtFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pumj5")
+bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_lcbxi")
 autoplay = true
+bus = &"Music"
 
 [connection signal="area_entered" from="PlayerDamageBox" to="." method="_on_player_damage_box_area_entered"]
 [connection signal="timeout" from="DelayAttackTimer" to="." method="_on_delay_attack_timer_timeout"]

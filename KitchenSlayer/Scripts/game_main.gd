@@ -1,5 +1,7 @@
 extends Node2D
 
+#Im Eun Seong
+
 var map_path
 var map_ins = false
 var ins

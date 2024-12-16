@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#Ho Hoang My
+
 var bullet = preload("res://Scene/Object/TomatoBullet.tscn")
 var die_effect = preload("res://Scene/Object/Effect/DieEffect.tscn")
 
@@ -15,6 +17,8 @@ var die_effect = preload("res://Scene/Object/Effect/DieEffect.tscn")
 const SPEED = 100
 const JUMP_FORCE = -280
 const GRAVITY = 900
+const PUSH_FORCE := 15.0
+const MIN_PUSH_FORCE := 30.0
 
 var stop_effect = false
 var vertical_velocity = 0.0
@@ -56,6 +60,7 @@ func _process(delta):
 			hurt_sound.play()
 		handle_movement(delta)
 		handle_gravity_and_jump(delta)
+		_interact_rigidbody()
 
 # Function to handle player movement (horizontal)
 func handle_movement(delta):
@@ -125,6 +130,13 @@ func handle_gravity_and_jump(delta):
 	velocity.y = vertical_velocity
 
 	move_and_slide()
+
+func _interact_rigidbody():
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			var push_force = (PUSH_FORCE * velocity.length() / SPEED) + MIN_PUSH_FORCE
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 func _on_delay_attack_timer_timeout() -> void:
 	attackAction = false

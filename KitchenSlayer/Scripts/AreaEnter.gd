@@ -1,5 +1,7 @@
 extends Area2D
 
+#Im Eun Seong
+
 @export var id : int
 
 var _id
