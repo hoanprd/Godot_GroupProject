@@ -162,18 +162,23 @@ func updateUI():
 func update_dialog():
 	if Global.level == 1 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "You finally woke up."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Where am I?"
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "This is a place where great chefs are brought to."
 		if dialog_index == 3:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "If you want to survive, cook something delicious with the ingredients you get here."
 		elif dialog_index == 4:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Well that's fine."
 		if Input.is_action_just_pressed("shoot"):
@@ -184,15 +189,19 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 2 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Bean Sprout Rice Soup is good too, you have passed a level."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Can I go home yet?"
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
-			$DialogPanel/DialogSprite2D/DialogLabel.text = "Not yet because I'm still hungry"
+			$DialogPanel/DialogSprite2D/DialogLabel.text = "Not yet because I'm still hungry."
 		if dialog_index == 3:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Then I will cook the next dish."
 		if Input.is_action_just_pressed("shoot"):
@@ -203,15 +212,19 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 3 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "The last dish was also very interesting."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "My Dubu Kimchi is the best."
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Oh? So what else do you have?"
 		if dialog_index == 3:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Take a guess."
 		if Input.is_action_just_pressed("shoot"):
@@ -222,15 +235,19 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 4 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "How does my Bibimbap taste?"
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Also very interesting and delicious."
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "But this is still not enough for me."
 		if dialog_index == 3:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "So I have to add more flavor."
 		if Input.is_action_just_pressed("shoot"):
@@ -241,12 +258,15 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 5 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "So what now?"
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
-			$DialogPanel/DialogSprite2D/DialogLabel.text = "Close to perfection"
+			$DialogPanel/DialogSprite2D/DialogLabel.text = "Close to perfection."
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "If you are not satisfied, the next dish will change you."
 		if Input.is_action_just_pressed("shoot"):
@@ -257,12 +277,15 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 6 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Kimchi Jjigae definitely scored a perfect score."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "It seems so but we need more than one."
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Okay buy 1 get 1 free this time."
 		if Input.is_action_just_pressed("shoot"):
@@ -273,12 +296,15 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 7 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Great combination but quite boring."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Boring? I still have that trick up my sleeve."
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "I'm looking forward to it."
 		if Input.is_action_just_pressed("shoot"):
@@ -289,12 +315,15 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 8 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "The new dish is delicious but I need more."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Okay let's see how my last dish turns out?"
 		if dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "Yes! I need more."
 		if Input.is_action_just_pressed("shoot"):
@@ -305,14 +334,17 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 9 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "You have come a long way."
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "I hope to receive many rewards."
-		if dialog_index == 2:
+		elif dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
-			$DialogPanel/DialogSprite2D/DialogLabel.text = "Yes if you fill my stomach"
+			$DialogPanel/DialogSprite2D/DialogLabel.text = "Yes if you fill my stomach."
 		if Input.is_action_just_pressed("shoot"):
 			dialog_index += 1
 			if dialog_index >= 3:
@@ -321,12 +353,15 @@ func update_dialog():
 				$DialogPanel.visible = false
 	elif Global.level == 10 and Global.dialog_trigger == true:
 		if dialog_index == 0:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "The final challenge has come!"
 		elif dialog_index == 1:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "You need to present the whole dish as best you can."
-		if dialog_index == 2:
+		elif dialog_index == 2:
+			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
 			$DialogPanel/DialogSprite2D/DialogLabel.text = "This will be the challenge that I will win."
 		if Input.is_action_just_pressed("shoot"):
