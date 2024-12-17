@@ -44,56 +44,92 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.player_bullet_quanity_buff = true
 			queue_free()
 		elif _itemId == 6:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got bean sprout"
 			Global.bean_sprout += 1
 			queue_free()
 		elif _itemId == 7:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got egg"
 			Global.egg += 1
 			queue_free()
 		elif _itemId == 8:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got garlic"
 			Global.garlic += 1
 			queue_free()
 		elif _itemId == 9:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got green onion"
 			Global.green_onion += 1
 			queue_free()
 		elif _itemId == 10:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got rice"
 			Global.rice += 1
 			queue_free()
 		elif _itemId == 11:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got tofu"
 			Global.tofu += 1
 			queue_free()
 		elif _itemId == 12:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got kimchi"
 			Global.kimchi += 1
 			queue_free()
 		elif _itemId == 13:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got pork"
 			Global.pork += 1
 			queue_free()
 		elif _itemId == 14:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got red pepper powder"
 			Global.red_pepper_powder += 1
 			queue_free()
 		elif _itemId == 15:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got beef"
 			Global.beef += 1
 			queue_free()
 		elif _itemId == 16:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got carrot"
 			Global.carrot += 1
 			queue_free()
 		elif _itemId == 17:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got mushroom"
 			Global.mushroom += 1
 			queue_free()
 		elif _itemId == 18:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got gochujang"
 			Global.gochujang += 1
 			queue_free()
 		elif _itemId == 19:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got sesame oil"
 			Global.sesame_oil += 1
 			queue_free()
 		elif _itemId == 20:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got doenjang"
 			Global.doenjang += 1
 			queue_free()
 		elif _itemId == 21:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got potato"
 			Global.potato += 1
 			queue_free()
 		elif _itemId == 22:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got onion"
 			Global.onion += 1
 			queue_free()
 		elif _itemId == 23:
+			Global.pick_cooking_item = true
+			Global.pick_item_info_text = "You got soy sauce"
 			Global.soy_sauce += 1
 			queue_free()

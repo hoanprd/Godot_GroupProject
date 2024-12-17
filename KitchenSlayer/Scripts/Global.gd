@@ -23,6 +23,8 @@ var player_buff_speed_value = 0
 var level = 1
 var reset_level = false
 var missing_material = false
+var pick_cooking_item = false
+var pick_item_info_text = "You got "
 
 #Material
 var bean_sprout_rice_soup = 0

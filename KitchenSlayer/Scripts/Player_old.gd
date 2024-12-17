@@ -61,6 +61,7 @@ func _process(delta):
 		handle_movement(delta)
 		handle_gravity_and_jump(delta)
 		_interact_rigidbody()
+		update_pickup_info()
 
 # Function to handle player movement (horizontal)
 func handle_movement(delta):
@@ -138,6 +139,13 @@ func _interact_rigidbody():
 			var push_force = (PUSH_FORCE * velocity.length() / SPEED) + MIN_PUSH_FORCE
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
+func update_pickup_info():
+	if Global.pick_cooking_item == true:
+		Global.pick_cooking_item = false
+		$PickUpItemLabel.visible = true
+		$PickUpItemLabel.text = Global.pick_item_info_text
+		$DelayPickUpInfoTimer.start()
+
 func _on_delay_attack_timer_timeout() -> void:
 	attackAction = false
 	delayAction = false
@@ -148,3 +156,8 @@ func _on_player_damage_box_area_entered(area: Area2D) -> void:
 		Global.health -= 1
 		Global.get_shot = true
 		Global.getHurt = true
+
+
+func _on_delay_pick_up_info_timer_timeout() -> void:
+	$PickUpItemLabel.visible = false
+	$PickUpItemLabel.text = "You got "

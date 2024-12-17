@@ -163,5 +163,20 @@ stream = ExtResource("7_lcbxi")
 autoplay = true
 bus = &"Music"
 
+[node name="DelayPickUpInfoTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="PickUpItemLabel" type="Label" parent="."]
+visible = false
+offset_left = -73.0
+offset_top = -29.0
+offset_right = 219.0
+offset_bottom = -6.0
+scale = Vector2(0.5, 0.5)
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="area_entered" from="PlayerDamageBox" to="." method="_on_player_damage_box_area_entered"]
 [connection signal="timeout" from="DelayAttackTimer" to="." method="_on_delay_attack_timer_timeout"]
+[connection signal="timeout" from="DelayPickUpInfoTimer" to="." method="_on_delay_pick_up_info_timer_timeout"]
