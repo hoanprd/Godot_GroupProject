@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cei8vomvc8xge"]
+[gd_scene load_steps=17 format=3 uid="uid://cei8vomvc8xge"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_hcwk3"]
 [ext_resource type="Texture2D" uid="uid://beahankxdrmin" path="res://Sprite/UI/MenuBG.png" id="2_128c8"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://m6e3kakhevgn" path="res://Sprite/Item/Bibimbap_32x32.png" id="10_4ludk"]
 [ext_resource type="Texture2D" uid="uid://c7gtjs57d20ug" path="res://Sprite/Item/Bulgogi_32x32.png" id="11_38663"]
 [ext_resource type="Script" path="res://Scripts/volume_h_slider.gd" id="12_r82vf"]
+[ext_resource type="Texture2D" uid="uid://chpdyytl81ltp" path="res://Sprite/Player/Tomato.png" id="12_rfh0a"]
+[ext_resource type="Texture2D" uid="uid://pjvw381dlwvq" path="res://Sprite/UI/pngtree-keyboard-keys-vector-png-image_6705739.png" id="12_t4fpm"]
 [ext_resource type="AudioStream" uid="uid://ckmdd3p37io2k" path="res://Sound/BGM/MenuBGM.ogg" id="13_u5vvt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwx2k"]
@@ -63,6 +65,16 @@ offset_right = 215.0
 offset_bottom = 152.0
 scale = Vector2(0.8, 0.8)
 text = "SETTING
+"
+
+[node name="TutorialButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 93.0
+offset_right = 300.0
+offset_bottom = 124.0
+scale = Vector2(0.8, 0.8)
+text = "TUTORIAL
 "
 
 [node name="ExitButton" type="Button" parent="Panel"]
@@ -145,6 +157,85 @@ offset_bottom = 33.0
 scale = Vector2(0.8, 0.8)
 text = "Back"
 
+[node name="TutorialPanel" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bwx2k")
+
+[node name="Label" type="Label" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 23.0
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 67.0
+offset_right = 145.0
+offset_bottom = 116.0
+scale = Vector2(0.6, 0.6)
+text = "Use A, W, D, S
+to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 67.0
+offset_right = 324.0
+offset_bottom = 116.0
+scale = Vector2(0.6, 0.6)
+text = "Press left move
+to shoot tomato"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 142.0
+offset_right = 387.0
+offset_bottom = 191.0
+scale = Vector2(0.6, 0.6)
+text = "Collect cooking material to win the game
+Press 'K' to open recipe book"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/TutorialPanel"]
+position = Vector2(73, 53)
+scale = Vector2(0.137326, 0.119618)
+texture = ExtResource("12_t4fpm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/TutorialPanel"]
+position = Vector2(240, 52)
+texture = ExtResource("12_rfh0a")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel/TutorialPanel"]
+position = Vector2(120, 124)
+texture = ExtResource("4_30g4p")
+hframes = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/TutorialPanel"]
+position = Vector2(211, 128)
+scale = Vector2(0.46875, 0.4375)
+texture = ExtResource("5_yc5hj")
+
+[node name="CloseTutorialPanelButton" type="Button" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 33.0
+scale = Vector2(0.8, 0.8)
+text = "Back"
+
 [node name="SettingPanel" type="Panel" parent="Panel"]
 visible = false
 layout_mode = 0
@@ -213,6 +304,8 @@ bus = &"Music"
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Panel/CreditPanel/CloseCreditPanelButton" to="." method="_on_close_credit_panel_button_pressed"]
+[connection signal="pressed" from="Panel/TutorialPanel/CloseTutorialPanelButton" to="." method="_on_close_tutorial_panel_button_pressed"]
 [connection signal="pressed" from="Panel/SettingPanel/CloseSettingPanelButton" to="." method="_on_close_setting_panel_button_pressed"]

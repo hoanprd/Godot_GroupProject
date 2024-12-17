@@ -35,3 +35,11 @@ func _on_setting_button_pressed() -> void:
 
 func _on_close_setting_panel_button_pressed() -> void:
 	$Panel/SettingPanel.visible = false
+
+
+func _on_tutorial_button_pressed() -> void:
+	$Panel/TutorialPanel.visible = true
+
+
+func _on_close_tutorial_panel_button_pressed() -> void:
+	$Panel/TutorialPanel.visible = false
