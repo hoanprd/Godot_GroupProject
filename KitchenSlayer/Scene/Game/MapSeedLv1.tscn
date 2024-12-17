@@ -1632,6 +1632,16 @@ position = Vector2(530, 150)
 rangeLeft = -10.0
 rangeRight = 10.0
 
+[node name="EnemyA3" parent="Danger/Enemy" instance=ExtResource("5_qu73o")]
+position = Vector2(1510, 261)
+rangeLeft = -10.0
+rangeRight = 10.0
+
+[node name="EnemyA4" parent="Danger/Enemy" instance=ExtResource("5_qu73o")]
+position = Vector2(1792, 166)
+rangeLeft = -10.0
+rangeRight = 10.0
+
 [node name="EnemyB" parent="Danger/Enemy" instance=ExtResource("6_1exex")]
 position = Vector2(711, 176)
 
@@ -1640,6 +1650,9 @@ position = Vector2(911, 161)
 
 [node name="EnemyB3" parent="Danger/Enemy" instance=ExtResource("6_1exex")]
 position = Vector2(1083, 140)
+
+[node name="EnemyB4" parent="Danger/Enemy" instance=ExtResource("6_1exex")]
+position = Vector2(1441, 171)
 
 [node name="Static" type="Node" parent="Danger"]
 
