@@ -161,6 +161,7 @@ func updateUI():
 
 func update_dialog():
 	if Global.level == 1 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
@@ -188,6 +189,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 2 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
@@ -211,6 +213,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 3 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D2.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
@@ -234,6 +237,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 4 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D3.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
@@ -257,6 +261,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 5 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D3.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
@@ -276,6 +281,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 6 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D3.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Player"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/PlayerIcon.png")
@@ -295,6 +301,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 7 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D4.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
@@ -314,6 +321,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 8 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D4.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
@@ -333,6 +341,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 9 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D4.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")
@@ -352,6 +361,7 @@ func update_dialog():
 				Global.stopGame = false
 				$DialogPanel.visible = false
 	elif Global.level == 10 and Global.dialog_trigger == true:
+		$DialogPanel/BGSprite2D3.visible = true
 		if dialog_index == 0:
 			$DialogPanel/DialogSprite2D/NameLabel.text = "Demon king"
 			$DialogPanel/DialogSprite2D/AvatarSprite2D/AvatarIconSprite2D.texture = preload("res://Texture/Demon King.png")

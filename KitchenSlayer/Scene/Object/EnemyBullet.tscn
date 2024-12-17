@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://ujxmlftkdcgc"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_446dw"]
-[ext_resource type="Texture2D" uid="uid://chpdyytl81ltp" path="res://Sprite/Player/Tomato.png" id="2_cbsg6"]
+[ext_resource type="Texture2D" uid="uid://b2mev5mg728jq" path="res://Sprite/MonsterBullet.png" id="2_q0t7b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gglk"]
-radius = 6.0
+radius = 8.0
 
 [node name="EnemyBullet" type="CharacterBody2D" groups=["enemyBullet"]]
 z_index = 2
@@ -14,7 +14,7 @@ collision_mask = 3
 script = ExtResource("1_446dw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_cbsg6")
+texture = ExtResource("2_q0t7b")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["enemyBullet"]]
 collision_layer = 64

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://blxl80jm2v1xm"]
+[gd_scene load_steps=39 format=3 uid="uid://blxl80jm2v1xm"]
 
 [ext_resource type="Script" path="res://Scripts/UIManager.gd" id="1_8got3"]
 [ext_resource type="Texture2D" uid="uid://dsy5dtjwj34ki" path="res://Sprite/Item/Heart1.png" id="1_ig474"]
@@ -32,6 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://c7gtjs57d20ug" path="res://Sprite/Item/Bulgogi_32x32.png" id="26_feer3"]
 [ext_resource type="Texture2D" uid="uid://b4c8g5poxru67" path="res://Sprite/Item/soy sauce.png" id="26_yi6aa"]
 [ext_resource type="Texture2D" uid="uid://cbnup0mknhmte" path="res://Sprite/Item/Jeyuk_Bokkeum_32x32.png" id="28_bd5vf"]
+[ext_resource type="Texture2D" uid="uid://beahankxdrmin" path="res://Sprite/UI/MenuBG.png" id="30_wjbpq"]
+[ext_resource type="Texture2D" uid="uid://dmjcpr18vjc3r" path="res://Sprite/UI/BackgroundDia2.png" id="31_36vk7"]
+[ext_resource type="Texture2D" uid="uid://ctga3ve5xf1h" path="res://Sprite/UI/BackgroundDia3.png" id="32_qoryu"]
+[ext_resource type="Texture2D" uid="uid://bxf6sk8weu41i" path="res://Sprite/UI/BackgroundDia4.png" id="33_bevdx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0jvx"]
 bg_color = Color(0.36668, 0.0670769, 0.116715, 1)
@@ -883,12 +887,35 @@ wait_time = 0.5
 
 [node name="DialogPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 129.0
 offset_right = 320.0
 offset_bottom = 180.0
 
+[node name="BGSprite2D" type="Sprite2D" parent="DialogPanel"]
+visible = false
+position = Vector2(160, 66)
+scale = Vector2(0.39801, 0.303448)
+texture = ExtResource("30_wjbpq")
+
+[node name="BGSprite2D2" type="Sprite2D" parent="DialogPanel"]
+visible = false
+position = Vector2(160, 66)
+scale = Vector2(0.39801, 0.303448)
+texture = ExtResource("31_36vk7")
+
+[node name="BGSprite2D3" type="Sprite2D" parent="DialogPanel"]
+visible = false
+position = Vector2(160, 66)
+scale = Vector2(0.39801, 0.303448)
+texture = ExtResource("32_qoryu")
+
+[node name="BGSprite2D4" type="Sprite2D" parent="DialogPanel"]
+visible = false
+position = Vector2(160, 66)
+scale = Vector2(0.39801, 0.303448)
+texture = ExtResource("33_bevdx")
+
 [node name="DialogSprite2D" type="Sprite2D" parent="DialogPanel"]
-position = Vector2(160, 22)
+position = Vector2(160, 150)
 scale = Vector2(1.06667, 1)
 texture = ExtResource("22_w388i")
 

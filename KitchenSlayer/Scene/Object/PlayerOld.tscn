@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp43hk6qcsmqj"]
+[gd_scene load_steps=15 format=3 uid="uid://dp43hk6qcsmqj"]
 
 [ext_resource type="Script" path="res://Scripts/Player_old.gd" id="1_phlbn"]
 [ext_resource type="Texture2D" uid="uid://dvrlml4uectv0" path="res://Sprite/Player/player_right_idle.png" id="2_wesx2"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dwda0m7b7cic6" path="res://Sound/FX/TomatoShoot.mp3" id="4_w2bhp"]
 [ext_resource type="AudioStream" uid="uid://mkirlimp38kk" path="res://Sound/FX/JumpFX.mp3" id="5_ojlwx"]
 [ext_resource type="AudioStream" uid="uid://b5evjx71n5w7j" path="res://Sound/FX/ManHurtFX.mp3" id="6_pumj5"]
+[ext_resource type="AudioStream" uid="uid://bpf7och7sqbnf" path="res://Sound/FX/PickUpCookingMaterial.mp3" id="7_43k0u"]
 [ext_resource type="AudioStream" uid="uid://cj2i72ebmmrej" path="res://Sound/BGM/MapBGMA.ogg" id="7_lcbxi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur3mg"]
@@ -156,6 +157,10 @@ bus = &"SFX"
 
 [node name="HurtFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pumj5")
+bus = &"SFX"
+
+[node name="PickUpCookingMaterialFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_43k0u")
 bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]

@@ -2,8 +2,6 @@ extends Control
 
 #Ho Hoang My
 
-var game_scene = preload("res://Scene/Game/TestScene.tscn").instantiate()
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

@@ -141,6 +141,8 @@ func _interact_rigidbody():
 
 func update_pickup_info():
 	if Global.pick_cooking_item == true:
+		AudioServer.set_bus_mute(sfxBus, false)
+		$PickUpCookingMaterialFX.play()
 		Global.pick_cooking_item = false
 		$PickUpItemLabel.visible = true
 		$PickUpItemLabel.text = Global.pick_item_info_text

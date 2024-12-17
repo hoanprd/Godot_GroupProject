@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://cei8vomvc8xge"]
+[gd_scene load_steps=18 format=3 uid="uid://cei8vomvc8xge"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_hcwk3"]
 [ext_resource type="Texture2D" uid="uid://beahankxdrmin" path="res://Sprite/UI/MenuBG.png" id="2_128c8"]
 [ext_resource type="Texture2D" uid="uid://2j53qk7i7s" path="res://Texture/PlayerIcon.png" id="3_3lxuh"]
 [ext_resource type="Texture2D" uid="uid://dvrlml4uectv0" path="res://Sprite/Player/player_right_idle.png" id="4_30g4p"]
+[ext_resource type="FontFile" uid="uid://bw12xb6ypqykp" path="res://Font/NormalFont.ttf" id="4_oqd12"]
 [ext_resource type="Texture2D" uid="uid://chq5xfmpws7ih" path="res://Sprite/Item/Bean_Sprout_Rice_Soup_32x32.png" id="5_yc5hj"]
 [ext_resource type="Texture2D" uid="uid://b5se4htwaev0o" path="res://Sprite/Item/Doenjang_Jjigae_32x32.png" id="6_b3aie"]
 [ext_resource type="Texture2D" uid="uid://6kgysww5oor3" path="res://Sprite/Item/Kimchi_Jjigae_32x32.png" id="7_i2ubh"]
@@ -90,7 +91,8 @@ text = "EXIT"
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 42.0
-text = "KOREAN DISH ADVENTURE"
+theme_override_fonts/font = ExtResource("4_oqd12")
+text = "KOREAN       DISH      ADVENTURE"
 horizontal_alignment = 1
 vertical_alignment = 1
 

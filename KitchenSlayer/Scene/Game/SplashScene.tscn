@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://j7ay055hc61"]
+
+[ext_resource type="Texture2D" uid="uid://g36ldgpnobva" path="res://Sprite/UI/SplashBG.jpg" id="1_fu20n"]
+[ext_resource type="Script" path="res://Scripts/splash_scene.gd" id="1_k1qgk"]
+[ext_resource type="FontFile" uid="uid://bw12xb6ypqykp" path="res://Font/NormalFont.ttf" id="1_ni81b"]
+
+[node name="SplashScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1qgk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="BGSprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(160, 90)
+scale = Vector2(0.625, 0.351563)
+texture = ExtResource("1_fu20n")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 41.0
+offset_right = 319.0
+offset_bottom = 135.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("1_ni81b")
+text = "KOREAN       DISH      ADVENTURE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndSplashTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="EndSplashTimer" to="." method="_on_end_splash_timer_timeout"]
