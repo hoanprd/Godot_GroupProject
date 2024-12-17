@@ -35,8 +35,8 @@ scale = Vector2(0.39801, 0.413793)
 texture = ExtResource("2_128c8")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Panel"]
-position = Vector2(157, 21.5)
-scale = Vector2(1.5, 1.5625)
+position = Vector2(157, 46)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_3lxuh")
 
 [node name="PlayButton" type="Button" parent="Panel"]
@@ -88,9 +88,9 @@ text = "EXIT"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_right = 165.0
+offset_right = 320.0
 offset_bottom = 42.0
-text = "Kitchen Slayer"
+text = "KOREAN DISH ADVENTURE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
