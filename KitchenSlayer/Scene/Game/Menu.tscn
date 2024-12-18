@@ -131,8 +131,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bwx2k")
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
-text = "Kitchen slayer credit
-
+text = "KOREAN DISH ADVENTURE
+Credit:
 Im Eun Seong
 Ho Hoang My
 Nam Chang Hyeon
@@ -171,7 +171,7 @@ position = Vector2(25, 105)
 texture = ExtResource("10_4ludk")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Panel/CreditPanel"]
-position = Vector2(60, 22)
+position = Vector2(70, 42)
 texture = ExtResource("11_38663")
 
 [node name="CloseCreditPanelButton" type="Button" parent="Panel/CreditPanel"]
