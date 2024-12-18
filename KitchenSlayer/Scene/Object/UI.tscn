@@ -849,9 +849,9 @@ offset_bottom = 180.0
 [node name="WinLoseLabel" type="Label" parent="WinLosePanel"]
 layout_mode = 0
 offset_left = 105.0
-offset_top = 40.0
+offset_top = 10.0
 offset_right = 212.0
-offset_bottom = 69.0
+offset_bottom = 33.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -870,6 +870,24 @@ offset_top = 129.0
 offset_right = 207.0
 offset_bottom = 160.0
 text = "EXIT"
+
+[node name="KillLabel" type="Label" parent="WinLosePanel"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 57.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="WinLosePanel"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 60.0
+offset_right = 236.0
+offset_bottom = 83.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HurtPanel" type="Panel" parent="."]
 visible = false

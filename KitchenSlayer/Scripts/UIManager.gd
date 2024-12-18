@@ -73,6 +73,8 @@ func _process(delta: float) -> void:
 		hurtPanel.visible = false
 	if Global.win == true:
 		winLose_label.text = "YOU WIN"
+		$WinLosePanel/KillLabel.text = "Total kill: " + str(Global.total_level_kill)
+		$WinLosePanel/CoinLabel.text = "Total coin: " + str(Global.points)
 	elif Global.loseArea == true or Global.loseKill == true:
 		winLose_label.text = "YOU LOSE"
 	

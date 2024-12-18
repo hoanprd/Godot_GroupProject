@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgsp0cn4tvn0d"
-path="res://.godot/imported/impale_3.png-2d94d9fd909cb0a521d623bc1181aec4.ctex"
+uid="uid://b44oilbwgjs03"
+path="res://.godot/imported/LeftArrowUI.png-c55a7cbf4ebe0535e6d4690335240d95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Danger/Static/impale_3.png"
-dest_files=["res://.godot/imported/impale_3.png-2d94d9fd909cb0a521d623bc1181aec4.ctex"]
+source_file="res://Sprite/UI/LeftArrowUI.png"
+dest_files=["res://.godot/imported/LeftArrowUI.png-c55a7cbf4ebe0535e6d4690335240d95.ctex"]
 
 [params]
 

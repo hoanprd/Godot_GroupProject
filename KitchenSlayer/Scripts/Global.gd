@@ -20,6 +20,7 @@ var player_bullet_quanity_buff_value = 0
 var player_tomato_damage = 1
 var player_buff_speed = false
 var player_buff_speed_value = 0
+var total_level_kill = 0
 var level = 1
 var reset_level = false
 var missing_material = false
@@ -68,6 +69,7 @@ func reset_game():
 	player_tomato_damage = 1
 	player_buff_speed = false
 	missing_material = false
+	total_level_kill = 0
 	player_buff_speed_value = 0
 	bean_sprout_rice_soup = 0
 	bean_sprout = 0

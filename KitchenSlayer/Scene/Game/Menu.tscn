@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cei8vomvc8xge"]
+[gd_scene load_steps=19 format=3 uid="uid://cei8vomvc8xge"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_hcwk3"]
 [ext_resource type="Texture2D" uid="uid://beahankxdrmin" path="res://Sprite/UI/MenuBG.png" id="2_128c8"]
 [ext_resource type="Texture2D" uid="uid://2j53qk7i7s" path="res://Texture/PlayerIcon.png" id="3_3lxuh"]
 [ext_resource type="Texture2D" uid="uid://dvrlml4uectv0" path="res://Sprite/Player/player_right_idle.png" id="4_30g4p"]
 [ext_resource type="FontFile" uid="uid://bw12xb6ypqykp" path="res://Font/NormalFont.ttf" id="4_oqd12"]
+[ext_resource type="Texture2D" uid="uid://b44oilbwgjs03" path="res://Sprite/UI/LeftArrowUI.png" id="4_pypp6"]
 [ext_resource type="Texture2D" uid="uid://chq5xfmpws7ih" path="res://Sprite/Item/Bean_Sprout_Rice_Soup_32x32.png" id="5_yc5hj"]
 [ext_resource type="Texture2D" uid="uid://b5se4htwaev0o" path="res://Sprite/Item/Doenjang_Jjigae_32x32.png" id="6_b3aie"]
 [ext_resource type="Texture2D" uid="uid://6kgysww5oor3" path="res://Sprite/Item/Kimchi_Jjigae_32x32.png" id="7_i2ubh"]
@@ -36,25 +37,44 @@ scale = Vector2(0.39801, 0.413793)
 texture = ExtResource("2_128c8")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Panel"]
-position = Vector2(157, 46)
+position = Vector2(156, 52)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_3lxuh")
+
+[node name="LeftTextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 120.0
+offset_right = 280.0
+offset_bottom = 320.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_pypp6")
+
+[node name="RightTextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 152.0
+offset_right = 440.0
+offset_bottom = 352.0
+rotation = 3.14159
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_pypp6")
 
 [node name="PlayButton" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 65.0
+offset_top = 121.0
 offset_right = 215.0
-offset_bottom = 96.0
+offset_bottom = 152.0
 scale = Vector2(0.8, 0.8)
 text = "PLAY"
 
 [node name="CreditButton" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 93.0
+offset_top = 121.0
 offset_right = 215.0
-offset_bottom = 124.0
+offset_bottom = 153.0
 scale = Vector2(0.8, 0.8)
 text = "CREDIT"
 
@@ -70,10 +90,10 @@ text = "SETTING
 
 [node name="TutorialButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 205.0
-offset_top = 93.0
-offset_right = 300.0
-offset_bottom = 124.0
+offset_left = 120.0
+offset_top = 121.0
+offset_right = 215.0
+offset_bottom = 153.0
 scale = Vector2(0.8, 0.8)
 text = "TUTORIAL
 "
@@ -81,9 +101,9 @@ text = "TUTORIAL
 [node name="ExitButton" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 149.0
+offset_top = 121.0
 offset_right = 215.0
-offset_bottom = 180.0
+offset_bottom = 152.0
 scale = Vector2(0.8, 0.8)
 text = "EXIT"
 
@@ -193,7 +213,7 @@ offset_top = 67.0
 offset_right = 324.0
 offset_bottom = 116.0
 scale = Vector2(0.6, 0.6)
-text = "Press left move
+text = "Press 'left move' or 'Q'
 to shoot tomato"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -303,6 +323,7 @@ stream = ExtResource("13_u5vvt")
 autoplay = true
 bus = &"Music"
 
+[connection signal="pressed" from="Panel/LeftTextureButton" to="." method="_on_left_texture_button_pressed"]
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
