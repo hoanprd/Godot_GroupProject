@@ -7,6 +7,7 @@ var UI_show_index
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UI_show_index = 0
+	menu_button_update()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,4 +48,43 @@ func _on_close_tutorial_panel_button_pressed() -> void:
 
 func _on_left_texture_button_pressed() -> void:
 	if UI_show_index > 0:
-		UI_show_index--
+		UI_show_index -= 1
+		menu_button_update()
+
+
+func _on_right_texture_button_pressed() -> void:
+	if UI_show_index <= 3:
+		UI_show_index += 1
+		menu_button_update()
+
+func menu_button_update():
+	if UI_show_index == 0:
+		$Panel/PlayButton.visible = true
+		$Panel/CreditButton.visible = false
+		$Panel/SettingButton.visible = false
+		$Panel/TutorialButton.visible = false
+		$Panel/ExitButton.visible = false
+	elif UI_show_index == 1:
+		$Panel/PlayButton.visible = false
+		$Panel/CreditButton.visible = true
+		$Panel/SettingButton.visible = false
+		$Panel/TutorialButton.visible = false
+		$Panel/ExitButton.visible = false
+	elif UI_show_index == 2:
+		$Panel/PlayButton.visible = false
+		$Panel/CreditButton.visible = false
+		$Panel/SettingButton.visible = true
+		$Panel/TutorialButton.visible = false
+		$Panel/ExitButton.visible = false
+	elif UI_show_index == 3:
+		$Panel/PlayButton.visible = false
+		$Panel/CreditButton.visible = false
+		$Panel/SettingButton.visible = false
+		$Panel/TutorialButton.visible = true
+		$Panel/ExitButton.visible = false
+	elif UI_show_index == 4:
+		$Panel/PlayButton.visible = false
+		$Panel/CreditButton.visible = false
+		$Panel/SettingButton.visible = false
+		$Panel/TutorialButton.visible = false
+		$Panel/ExitButton.visible = true
