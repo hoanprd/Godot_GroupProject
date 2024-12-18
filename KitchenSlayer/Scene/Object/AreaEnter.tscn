@@ -9,6 +9,8 @@ z_index = 2
 collision_mask = 2
 script = ExtResource("1_66tnh")
 
+[node name="HoHoangMy" type="Node" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_fd4sq")

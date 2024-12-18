@@ -1,6 +1,6 @@
 extends Node2D
 
-#Im Eun Seong
+#Nam Chang Hyeon
 
 var map_path
 var map_ins = false

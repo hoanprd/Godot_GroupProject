@@ -22,6 +22,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cve3g")
 
+[node name="HoHoangMy" type="Node" parent="."]
+
 [node name="DialogPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_top = 129.0

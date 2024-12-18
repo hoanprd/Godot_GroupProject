@@ -7,6 +7,8 @@
 [node name="GameMain" type="Node2D"]
 script = ExtResource("1_behw0")
 
+[node name="NamChangHyeon" type="Node" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("3_1kwmv")]

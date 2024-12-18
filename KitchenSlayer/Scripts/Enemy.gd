@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#Im Eun Seong
+#Nam Chang Hyeon
 
 @export var id : int
 @export var hp : int

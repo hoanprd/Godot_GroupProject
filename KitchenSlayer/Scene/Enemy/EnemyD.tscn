@@ -67,6 +67,8 @@ rangeLeft = -20.0
 rangeRight = 20.0
 chase_limit = 40.0
 
+[node name="NamChangHyeon" type="Node" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_87uqy")
 hframes = 2

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#Ho Hoang My
+#Nam Chang Hyeon
 
 var bullet = preload("res://Scene/Object/TomatoBullet.tscn")
 var die_effect = preload("res://Scene/Object/Effect/DieEffect.tscn")

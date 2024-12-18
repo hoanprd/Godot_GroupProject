@@ -1,6 +1,6 @@
 extends Node
 
-#Ho Hoang My
+#Nam Chang Hyeon
 
 var health = 3
 var points = 0

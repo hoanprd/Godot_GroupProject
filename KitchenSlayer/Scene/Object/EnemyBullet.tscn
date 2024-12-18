@@ -13,6 +13,8 @@ collision_layer = 64
 collision_mask = 3
 script = ExtResource("1_446dw")
 
+[node name="ImEunSeong" type="Node" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_q0t7b")
 

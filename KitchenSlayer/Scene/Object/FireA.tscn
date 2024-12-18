@@ -51,6 +51,8 @@ collision_mask = 2
 script = ExtResource("1_qonln")
 damageDeal = 1
 
+[node name="NamChangHyeon" type="Node" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_m33ia")
 hframes = 8

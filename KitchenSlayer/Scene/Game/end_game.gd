@@ -1,6 +1,6 @@
 extends Control
 
-#Nam Chang Hyeon
+#Ho Hoang My
 
 var dialog_index = 0
 

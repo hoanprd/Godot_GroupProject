@@ -50,6 +50,8 @@ collision_mask = 2
 script = ExtResource("1_y8ayd")
 itemId = 4
 
+[node name="ImEunSeong" type="Node" parent="."]
+
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qwukq")
 hframes = 3

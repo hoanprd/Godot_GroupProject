@@ -1,6 +1,6 @@
 extends Area2D
 
-#Ho Hoang My
+#Im Eun Seong
 
 @export var itemId : int
 

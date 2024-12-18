@@ -44,6 +44,8 @@ z_index = 2
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_7crxs")
 
+[node name="ImEunSeong" type="Node" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_prglw")
 

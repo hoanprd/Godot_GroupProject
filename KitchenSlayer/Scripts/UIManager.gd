@@ -1,6 +1,6 @@
 extends Control
 
-#Nam Chang Hyeon
+#Ho Hoang My
 
 @onready var healthBar = $HealthBar
 @onready var pointsLabel = $PointsLabel

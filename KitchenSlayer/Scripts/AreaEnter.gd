@@ -1,6 +1,6 @@
 extends Area2D
 
-#Im Eun Seong
+#Ho Hoang My
 
 @export var id : int
 

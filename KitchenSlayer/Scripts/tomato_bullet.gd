@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#Nam Chang Hyeon
+#Im Eun Seong
 
 const SPEED = 150
 

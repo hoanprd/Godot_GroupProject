@@ -44,6 +44,8 @@ z_index = 2
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_xxhld")
 
+[node name="ImEunSeong" type="Node" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
 texture = ExtResource("1_yhwcu")
